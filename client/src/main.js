@@ -12,6 +12,7 @@ import MessageSvg from '@/components/svgs/MessageSvg.vue';
 import LinkedinSvg from '@/components/svgs/LinkedinSvg.vue';
 import InstagramSvg from '@/components/svgs/InstagramSvg.vue';
 import GithubSvg from '@/components/svgs/GithubSvg.vue';
+import GithubOutlineSvg from '@/components/svgs/GithubOutlineSvg.vue';
 import TwitterSvg from '@/components/svgs/TwitterSvg.vue';
 import LaptopSvg from '@/components/svgs/LaptopSvg.vue';
 import SquareArrowSvg from '@/components/svgs/SquareArrowSvg.vue';
@@ -35,6 +36,7 @@ app
   .component('LinkedinSvg', LinkedinSvg)
   .component('InstagramSvg', InstagramSvg)
   .component('GithubSvg', GithubSvg)
+  .component('GithubOutlineSvg', GithubOutlineSvg)
   .component('TwitterSvg', TwitterSvg)
   .component('SquareArrowSvg', SquareArrowSvg)
   .component('LaptopSvg', LaptopSvg);

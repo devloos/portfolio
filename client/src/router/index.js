@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 const Home = () => import('@/views/Home.vue');
-const Projects = () => import('@/views/Projects.vue');
+const Projects = () => import('@/views/projects/Projects.vue');
 const Contact = () => import('@/views/Contact.vue');
 const Resume = () => import('@/views/Resume.vue');
 const PageNotFound = () => import('@/views/PageNotFound.vue');
