@@ -1,7 +1,6 @@
 <script setup>
 import { buildTagUrl } from '@/assets/utility';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
-import { useDark } from '@vueuse/core';
 
 defineProps({
   project: {
@@ -9,8 +8,6 @@ defineProps({
     required: true,
   },
 });
-
-const isDark = useDark();
 </script>
 
 <template>
@@ -54,7 +51,7 @@ const isDark = useDark();
               :src="
                 buildTagUrl({
                   text: tag.title,
-                  backgroundColor: isDark ? '333' : 'cbd5e1',
+                  backgroundColor: '121923',
                   style: 'plastic',
                   logo: tag.logoName,
                 })

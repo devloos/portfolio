@@ -46,7 +46,7 @@ const { project } = toRefs(props);
             :src="
               buildTagUrl({
                 text: tag.title,
-                backgroundColor: '333',
+                backgroundColor: '121923',
                 logo: tag.logoName,
               })
             "

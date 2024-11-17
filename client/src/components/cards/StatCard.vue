@@ -24,13 +24,13 @@ const statCardUrl = computed(() => {
   url.searchParams.append('icon_color', '1e81b0');
 
   if (isDark.value) {
-    url.searchParams.append('bg_color', '333');
-    url.searchParams.append('text_color', 'f1f5f9');
-    url.searchParams.append('title_color', 'f1f5f9');
+    url.searchParams.append('bg_color', '121923');
+    url.searchParams.append('text_color', 'e2e8f0');
+    url.searchParams.append('title_color', 'e2e8f0');
   } else {
-    url.searchParams.append('bg_color', 'cbd5e1');
-    url.searchParams.append('text_color', '333');
-    url.searchParams.append('title_color', '333');
+    url.searchParams.append('bg_color', 'd9e6f5');
+    url.searchParams.append('text_color', '18212f');
+    url.searchParams.append('title_color', '18212f');
   }
 
   url.searchParams.append('border_color', '699cd5');
