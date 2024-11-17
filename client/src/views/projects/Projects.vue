@@ -4,7 +4,6 @@ import FeaturedProject from './-FeaturedProject.vue';
 import { onMounted, ref } from 'vue';
 import { useSmartFetch } from '@/composables/smart-fetch';
 import SmartImg from '@/components/smart/SmartImg.vue';
-import { getImageKitUrl } from '@/assets/utility';
 
 useHead({
   title: 'Devlos | Projects',
@@ -67,20 +66,12 @@ onMounted(() => {
               <template #image>
                 <div class="relative mb-6 sm:mb-10 lg:mb-0">
                   <div class="shadow-xl" data-swiper-parallax="-50">
-                    <video
-                      v-if="projectOne.file.type === 'video'"
-                      class="rounded"
-                      :src="getImageKitUrl(projectOne.file.src)"
-                      muted
-                      autoplay
-                      loop
-                    />
                     <SmartImg
-                      v-else
                       class="rounded"
                       :src="projectOne.file.src"
                       width="3454"
                       height="1924"
+                      :type="projectOne.file.type"
                       :alt="projectOne.title"
                     />
                   </div>
@@ -107,20 +98,12 @@ onMounted(() => {
               <template #image>
                 <div class="relative mb-6 sm:mb-10 lg:mb-0">
                   <div class="shadow-xl" data-swiper-parallax="-50">
-                    <video
-                      v-if="projectTwo.file.type === 'video'"
-                      class="rounded"
-                      :src="getImageKitUrl(projectTwo.file.src)"
-                      muted
-                      autoplay
-                      loop
-                    />
                     <SmartImg
-                      v-else
                       class="rounded"
                       :src="projectTwo.file.src"
                       width="3454"
                       height="1924"
+                      :type="projectTwo.file.type"
                       :alt="projectTwo.title"
                     />
                   </div>
@@ -142,20 +125,12 @@ onMounted(() => {
               <template #image>
                 <div class="relative mb-6 sm:mb-10 lg:mb-0">
                   <div class="shadow-xl" data-swiper-parallax="-50">
-                    <video
-                      v-if="projectThree.file.type === 'video'"
-                      class="rounded"
-                      :src="getImageKitUrl(projectThree.file.src)"
-                      muted
-                      autoplay
-                      loop
-                    />
                     <SmartImg
-                      v-else
                       class="rounded"
                       :src="projectThree.file.src"
                       width="3454"
                       height="1924"
+                      :type="projectThree.file.type"
                       :alt="projectThree.title"
                     />
                   </div>

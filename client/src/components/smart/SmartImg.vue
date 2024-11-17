@@ -27,6 +27,10 @@ const props = defineProps({
     type: String,
     default: 'lazy',
   },
+  type: {
+    type: String,
+    default: 'image',
+  },
 });
 
 // standard sizes taken from https://github.com/HCESrl/responsive-image-sizes/blob/master/src/index.js
@@ -77,6 +81,7 @@ const placeholder =
 
 <template>
   <img
+    v-if="type === 'image'"
     :src="placeholder"
     :srcset="srcset"
     :width="width"
@@ -86,4 +91,5 @@ const placeholder =
     sizes="auto"
     :alt="props.alt"
   />
+  <video v-else-if="type === 'video'" :src="getImageKitUrl(src)" muted autoplay loop />
 </template>
