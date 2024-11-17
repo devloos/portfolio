@@ -66,7 +66,7 @@ onMounted(() => {
             <FeaturedProject v-if="projectOne" class="mx-auto" :project="projectOne">
               <template #image>
                 <div class="relative mb-6 sm:mb-10 lg:mb-0">
-                  <div data-swiper-parallax="-50">
+                  <div class="shadow-xl" data-swiper-parallax="-50">
                     <video
                       v-if="projectOne.file.type === 'video'"
                       class="rounded"
@@ -98,12 +98,6 @@ onMounted(() => {
                   />
                 </div>
               </template>
-
-              <template #description>
-                <p>
-                  {{ projectOne.description }}
-                </p>
-              </template>
             </FeaturedProject>
           </div>
         </swiper-slide>
@@ -112,7 +106,7 @@ onMounted(() => {
             <FeaturedProject v-if="projectTwo" class="mx-auto" :project="projectTwo">
               <template #image>
                 <div class="relative mb-6 sm:mb-10 lg:mb-0">
-                  <div data-swiper-parallax="-50">
+                  <div class="shadow-xl" data-swiper-parallax="-50">
                     <video
                       v-if="projectTwo.file.type === 'video'"
                       class="rounded"
@@ -138,12 +132,6 @@ onMounted(() => {
                   />
                 </div>
               </template>
-
-              <template #description>
-                <p>
-                  {{ projectTwo.description }}
-                </p>
-              </template>
             </FeaturedProject>
           </div>
         </swiper-slide>
@@ -153,7 +141,7 @@ onMounted(() => {
             <FeaturedProject v-if="projectThree" class="mx-auto" :project="projectThree">
               <template #image>
                 <div class="relative mb-6 sm:mb-10 lg:mb-0">
-                  <div data-swiper-parallax="-50">
+                  <div class="shadow-xl" data-swiper-parallax="-50">
                     <video
                       v-if="projectThree.file.type === 'video'"
                       class="rounded"
@@ -178,12 +166,6 @@ onMounted(() => {
                     data-swiper-parallax="-500"
                   />
                 </div>
-              </template>
-
-              <template #description>
-                <p>
-                  {{ projectThree.description }}
-                </p>
               </template>
             </FeaturedProject>
           </div>
