@@ -11,7 +11,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="grid max-w-6xl justify-center lg:justify-normal lg:text-end">
+  <div class="grid max-w-6xl items-center justify-center lg:justify-normal lg:text-end">
     <div class="max-w-xl lg:col-start-1 lg:row-start-1 lg:pb-0">
       <slot name="image" />
     </div>
@@ -65,13 +65,13 @@ defineProps({
       </div>
 
       <div class="flex items-center gap-4 lg:justify-end">
-        <a href="#">
+        <a v-if="project.source" :href="project.source" target="_blank">
           <SmartSvg
             class="h-5 w-5 hover:stroke-alternate dark:stroke-slate-200 hover:dark:stroke-alternate"
             name="GithubOutlineSvg"
           />
         </a>
-        <a href="#">
+        <a v-if="project.site" :href="project.site" target="_blank">
           <SmartSvg
             class="h-6 w-6 -translate-y-[1px] hover:stroke-alternate"
             name="SquareArrowSvg"

@@ -1,6 +1,10 @@
 <script setup>
 import { useHead } from '@unhead/vue';
 import FeaturedProject from './-FeaturedProject.vue';
+import { onMounted, ref } from 'vue';
+import { useSmartFetch } from '@/composables/smart-fetch';
+import SmartImg from '@/components/smart/SmartImg.vue';
+import { getImageKitUrl } from '@/assets/utility';
 
 useHead({
   title: 'Devlos | Projects',
@@ -12,36 +16,34 @@ useHead({
   ],
 });
 
-const project = {
-  title: 'Pokemon Store',
-  tags: [
-    {
-      title: 'Javascript',
-      logoName: 'javascript',
-      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+const projectOne = ref(null);
+const projectTwo = ref(null);
+const projectThree = ref(null);
+const projectFour = ref(null);
+
+async function fetchFeaturedProjects() {
+  const response = await useSmartFetch({
+    url: '/api/project/list',
+    method: 'GET',
+    params: {
+      featured: true,
+      include: {
+        tags: true,
+      },
     },
-    {
-      title: 'Vue js',
-      logoName: 'vuedotjs',
-      url: 'https://vuejs.org/guide/introduction.html',
-    },
-    {
-      title: 'Tailwind CSS',
-      logoName: 'tailwindcss',
-      url: 'https://tailwindcss.com/docs/installation',
-    },
-    {
-      title: 'Laravel',
-      logoName: 'laravel',
-      url: 'https://laravel.com/docs/10.x',
-    },
-    {
-      title: 'MongoDB',
-      logoName: 'mongodb',
-      url: 'https://www.mongodb.com/docs',
-    },
-  ],
-};
+  });
+
+  if (response.success) {
+    [projectOne.value, projectTwo.value, projectThree.value, projectFour.value] =
+      response.data;
+  }
+
+  console.log(projectOne.value);
+}
+
+onMounted(() => {
+  fetchFeaturedProjects();
+});
 </script>
 
 <template>
@@ -63,21 +65,32 @@ const project = {
       >
         <swiper-slide>
           <div class="pb-8 pt-10">
-            <FeaturedProject class="mx-auto" :project>
+            <FeaturedProject v-if="projectOne" class="mx-auto" :project="projectOne">
               <template #image>
                 <div class="relative mb-6 sm:mb-10">
-                  <img src="/macbook.png" alt="macbook" data-swiper-parallax="-50" />
+                  <video
+                    v-if="projectOne.file.type === 'video'"
+                    class="rounded"
+                    :src="getImageKitUrl(projectOne.file.src)"
+                    data-swiper-parallax="-50"
+                    muted
+                    autoplay
+                    loop
+                  />
+                  <SmartImg
+                    v-else
+                    class="rounded"
+                    :src="projectOne.file.src"
+                    width="3454"
+                    height="1924"
+                    :alt="projectOne.title"
+                    data-swiper-parallax="-50"
+                  />
                   <img
                     class="absolute -top-10 left-1/2 max-w-28 sm:max-w-36"
                     src="/dark-cube.png"
                     alt="Dark Cube"
                     data-swiper-parallax="-500"
-                  />
-                  <img
-                    class="absolute right-14 top-1/2 max-w-28 sm:max-w-36"
-                    src="/dark-romb.png"
-                    alt="Dark Romb"
-                    data-swiper-parallax="-1000"
                   />
                   <img
                     class="absolute -bottom-12 left-24 max-w-28 sm:-bottom-16 sm:max-w-36"
@@ -90,38 +103,39 @@ const project = {
 
               <template #description>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error culpa
-                  molestias laborum hic facilis atque id maiores aut, magni ab, deleniti
-                  fugiat iusto quisquam. Ratione blanditiis laudantium omnis quibusdam
-                  aliquid!
+                  {{ projectOne.description }}
                 </p>
               </template>
             </FeaturedProject>
           </div>
         </swiper-slide>
-
         <swiper-slide>
           <div class="pb-8 pt-10">
-            <FeaturedProject class="mx-auto" :project>
+            <FeaturedProject v-if="projectTwo" class="mx-auto" :project="projectTwo">
               <template #image>
                 <div class="relative mb-6 sm:mb-10">
-                  <img src="/macbook.png" alt="macbook" data-swiper-parallax="-50" />
-                  <img
-                    class="absolute -top-10 left-1/2 max-w-28 sm:max-w-36"
-                    src="/dark-cube.png"
-                    alt="Dark Cube"
-                    data-swiper-parallax="-300"
+                  <video
+                    v-if="projectTwo.file.type === 'video'"
+                    class="rounded"
+                    :src="getImageKitUrl(projectTwo.file.src)"
+                    data-swiper-parallax="-50"
+                    muted
+                    autoplay
+                    loop
                   />
-                  <img
-                    class="absolute right-14 top-1/2 max-w-28 sm:max-w-36"
-                    src="/dark-romb.png"
-                    alt="Dark Romb"
-                    data-swiper-parallax="-800"
+                  <SmartImg
+                    v-else
+                    class="rounded"
+                    :src="projectTwo.file.src"
+                    width="3454"
+                    height="1924"
+                    :alt="project.title"
+                    data-swiper-parallax="-50"
                   />
                   <img
                     class="absolute -bottom-12 left-24 max-w-28 sm:-bottom-16 sm:max-w-36"
-                    src="/white-cube.png"
-                    alt="White Cube"
+                    src="/dark-cube.png"
+                    alt="Dark Cube"
                     data-swiper-parallax="-500"
                   />
                 </div>
@@ -129,31 +143,7 @@ const project = {
 
               <template #description>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error culpa
-                  molestias laborum hic facilis atque id maiores aut, magni ab, deleniti
-                  fugiat iusto quisquam. Ratione blanditiis laudantium omnis quibusdam
-                  aliquid!
-                </p>
-              </template>
-            </FeaturedProject>
-          </div>
-        </swiper-slide>
-
-        <swiper-slide>
-          <div class="pb-8 pt-10">
-            <FeaturedProject class="mx-auto" :project>
-              <template #image>
-                <div class="relative mb-6 sm:mb-10">
-                  <img src="/macbook.png" alt="macbook" data-swiper-parallax="-50" />
-                </div>
-              </template>
-
-              <template #description>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error culpa
-                  molestias laborum hic facilis atque id maiores aut, magni ab, deleniti
-                  fugiat iusto quisquam. Ratione blanditiis laudantium omnis quibusdam
-                  aliquid!
+                  {{ projectTwo.description }}
                 </p>
               </template>
             </FeaturedProject>
