@@ -28,7 +28,17 @@ const isDark = useDark();
       >
         Featured Project
       </h4>
-      <h5 class="pb-3 text-2xl font-bold lg:pb-10 lg:text-3xl">{{ project.title }}</h5>
+      <h5
+        class="flex whitespace-pre pb-3 text-2xl font-bold lg:justify-end lg:pb-10 lg:text-3xl"
+      >
+        <p
+          v-for="(letter, i) in project.title"
+          :key="i"
+          class="animate-rubberband cursor-default transition-all hover:text-alternate"
+        >
+          {{ letter }}
+        </p>
+      </h5>
       <div class="mb-3 rounded lg:mb-10 lg:bg-primary-700 lg:p-6 lg:text-slate-200">
         <slot name="description" />
       </div>
@@ -60,7 +70,7 @@ const isDark = useDark();
       <div class="flex items-center gap-4 lg:justify-end">
         <a href="#">
           <SmartSvg
-            class="h-5 w-5 hover:stroke-alternate dark:stroke-slate-200"
+            class="h-5 w-5 hover:stroke-alternate dark:stroke-slate-200 hover:dark:stroke-alternate"
             name="GithubOutlineSvg"
           />
         </a>
@@ -74,3 +84,33 @@ const isDark = useDark();
     </div>
   </div>
 </template>
+
+<style>
+.animate-rubberband:hover {
+  animation: rubberband 800ms alternate ease-out;
+}
+
+@keyframes rubberband {
+  0% {
+    transform: scaleX(1) scaleY(1);
+  }
+  40% {
+    transform: scaleX(1.12) scaleY(0.75);
+  }
+  55% {
+    transform: scaleX(0.85) scaleY(1);
+  }
+  65% {
+    transform: scaleX(1.09) scaleY(0.85);
+  }
+  75% {
+    transform: scaleX(0.9) scaleY(1);
+  }
+  90% {
+    transform: scaleX(1.05) scaleY(0.95);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+}
+</style>
