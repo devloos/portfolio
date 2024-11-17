@@ -37,8 +37,6 @@ async function fetchFeaturedProjects() {
     [projectOne.value, projectTwo.value, projectThree.value, projectFour.value] =
       response.data;
   }
-
-  console.log(projectOne.value);
 }
 
 onMounted(() => {
@@ -67,36 +65,36 @@ onMounted(() => {
           <div class="pb-8 pt-10">
             <FeaturedProject v-if="projectOne" class="mx-auto" :project="projectOne">
               <template #image>
-                <div class="relative mb-6 sm:mb-10">
-                  <video
-                    v-if="projectOne.file.type === 'video'"
-                    class="rounded"
-                    :src="getImageKitUrl(projectOne.file.src)"
-                    data-swiper-parallax="-50"
-                    muted
-                    autoplay
-                    loop
-                  />
-                  <SmartImg
-                    v-else
-                    class="rounded"
-                    :src="projectOne.file.src"
-                    width="3454"
-                    height="1924"
-                    :alt="projectOne.title"
-                    data-swiper-parallax="-50"
-                  />
+                <div class="relative mb-6 sm:mb-10 lg:mb-0">
+                  <div data-swiper-parallax="-50">
+                    <video
+                      v-if="projectOne.file.type === 'video'"
+                      class="rounded"
+                      :src="getImageKitUrl(projectOne.file.src)"
+                      muted
+                      autoplay
+                      loop
+                    />
+                    <SmartImg
+                      v-else
+                      class="rounded"
+                      :src="projectOne.file.src"
+                      width="3454"
+                      height="1924"
+                      :alt="projectOne.title"
+                    />
+                  </div>
                   <img
                     class="absolute -top-10 left-1/2 max-w-28 sm:max-w-36"
                     src="/dark-cube.png"
                     alt="Dark Cube"
-                    data-swiper-parallax="-500"
+                    data-swiper-parallax="-400"
                   />
                   <img
                     class="absolute -bottom-12 left-24 max-w-28 sm:-bottom-16 sm:max-w-36"
                     src="/white-cube.png"
                     alt="White Cube"
-                    data-swiper-parallax="-800"
+                    data-swiper-parallax="-1200"
                   />
                 </div>
               </template>
@@ -113,25 +111,66 @@ onMounted(() => {
           <div class="pb-8 pt-10">
             <FeaturedProject v-if="projectTwo" class="mx-auto" :project="projectTwo">
               <template #image>
-                <div class="relative mb-6 sm:mb-10">
-                  <video
-                    v-if="projectTwo.file.type === 'video'"
-                    class="rounded"
-                    :src="getImageKitUrl(projectTwo.file.src)"
-                    data-swiper-parallax="-50"
-                    muted
-                    autoplay
-                    loop
+                <div class="relative mb-6 sm:mb-10 lg:mb-0">
+                  <div data-swiper-parallax="-50">
+                    <video
+                      v-if="projectTwo.file.type === 'video'"
+                      class="rounded"
+                      :src="getImageKitUrl(projectTwo.file.src)"
+                      muted
+                      autoplay
+                      loop
+                    />
+                    <SmartImg
+                      v-else
+                      class="rounded"
+                      :src="projectTwo.file.src"
+                      width="3454"
+                      height="1924"
+                      :alt="projectTwo.title"
+                    />
+                  </div>
+                  <img
+                    class="absolute -bottom-12 left-24 max-w-28 sm:-bottom-16 sm:max-w-36"
+                    src="/dark-cube.png"
+                    alt="Dark Cube"
+                    data-swiper-parallax="-800"
                   />
-                  <SmartImg
-                    v-else
-                    class="rounded"
-                    :src="projectTwo.file.src"
-                    width="3454"
-                    height="1924"
-                    :alt="project.title"
-                    data-swiper-parallax="-50"
-                  />
+                </div>
+              </template>
+
+              <template #description>
+                <p>
+                  {{ projectTwo.description }}
+                </p>
+              </template>
+            </FeaturedProject>
+          </div>
+        </swiper-slide>
+
+        <swiper-slide>
+          <div class="pb-8 pt-10">
+            <FeaturedProject v-if="projectThree" class="mx-auto" :project="projectThree">
+              <template #image>
+                <div class="relative mb-6 sm:mb-10 lg:mb-0">
+                  <div data-swiper-parallax="-50">
+                    <video
+                      v-if="projectThree.file.type === 'video'"
+                      class="rounded"
+                      :src="getImageKitUrl(projectThree.file.src)"
+                      muted
+                      autoplay
+                      loop
+                    />
+                    <SmartImg
+                      v-else
+                      class="rounded"
+                      :src="projectThree.file.src"
+                      width="3454"
+                      height="1924"
+                      :alt="projectThree.title"
+                    />
+                  </div>
                   <img
                     class="absolute -bottom-12 left-24 max-w-28 sm:-bottom-16 sm:max-w-36"
                     src="/dark-cube.png"
@@ -143,7 +182,7 @@ onMounted(() => {
 
               <template #description>
                 <p>
-                  {{ projectTwo.description }}
+                  {{ projectThree.description }}
                 </p>
               </template>
             </FeaturedProject>

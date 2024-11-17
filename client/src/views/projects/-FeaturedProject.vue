@@ -11,14 +11,14 @@ defineProps({
 </script>
 
 <template>
-  <div class="grid max-w-6xl items-center justify-center lg:justify-normal lg:text-end">
-    <div class="max-w-xl lg:col-start-1 lg:row-start-1 lg:pb-0">
+  <div class="grid max-w-7xl items-center justify-center lg:justify-normal lg:text-end">
+    <div class="max-w-xl lg:col-start-1 lg:row-start-1 lg:pb-0 xl:max-w-2xl">
       <slot name="image" />
     </div>
 
     <div
       class="z-10 flex max-w-xl flex-col justify-center justify-self-end lg:col-start-1 lg:row-start-1 xl:max-w-2xl"
-      data-swiper-parallax="-150"
+      data-swiper-parallax="-200"
     >
       <h4
         class="pb-2 text-lg font-semibold text-alternate dark:text-alternate-300 lg:text-xl"
