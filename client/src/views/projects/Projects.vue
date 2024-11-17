@@ -58,6 +58,7 @@ const project = {
           enabled: true,
           forceToAxis: true,
         }"
+        space-between="80"
         :speed="1600"
       >
         <swiper-slide>
@@ -65,7 +66,7 @@ const project = {
             <FeaturedProject class="mx-auto" :project>
               <template #image>
                 <div class="relative mb-6 sm:mb-10">
-                  <img src="/macbook.png" alt="macbook" data-swiper-parallax="100" />
+                  <img src="/macbook.png" alt="macbook" data-swiper-parallax="-50" />
                   <img
                     class="absolute -top-10 left-1/2 max-w-28 sm:max-w-36"
                     src="/dark-cube.png"
@@ -104,7 +105,7 @@ const project = {
             <FeaturedProject class="mx-auto" :project>
               <template #image>
                 <div class="relative mb-6 sm:mb-10">
-                  <img src="/macbook.png" alt="macbook" />
+                  <img src="/macbook.png" alt="macbook" data-swiper-parallax="-50" />
                   <img
                     class="absolute -top-10 left-1/2 max-w-28 sm:max-w-36"
                     src="/dark-cube.png"
@@ -143,22 +144,7 @@ const project = {
             <FeaturedProject class="mx-auto" :project>
               <template #image>
                 <div class="relative mb-6 sm:mb-10">
-                  <img src="/macbook.png" alt="macbook" />
-                  <img
-                    class="absolute -top-10 left-1/2 max-w-28 sm:max-w-36"
-                    src="/dark-cube.png"
-                    alt="Dark Cube"
-                  />
-                  <img
-                    class="absolute right-14 top-1/2 max-w-28 sm:max-w-36"
-                    src="/dark-romb.png"
-                    alt="Dark Romb"
-                  />
-                  <img
-                    class="absolute -bottom-12 left-24 max-w-28 sm:-bottom-16 sm:max-w-36"
-                    src="/white-cube.png"
-                    alt="White Cube"
-                  />
+                  <img src="/macbook.png" alt="macbook" data-swiper-parallax="-50" />
                 </div>
               </template>
 
