@@ -161,5 +161,11 @@ const project = {
         </swiper-slide>
       </swiper-container>
     </div>
+
+    <div class="container flex items-center justify-center gap-2 py-24">
+      <hr class="grow" />
+      <h1 class="text-lg font-semibold">PROJECT PAGE UNFINISHED</h1>
+      <hr class="grow" />
+    </div>
   </div>
 </template>
