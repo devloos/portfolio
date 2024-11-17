@@ -21,6 +21,7 @@ const isDark = useDark();
 
     <div
       class="z-10 flex max-w-xl flex-col justify-center justify-self-end lg:col-start-1 lg:row-start-1 xl:max-w-2xl"
+      data-swiper-parallax="-150"
     >
       <h4
         class="pb-2 text-lg font-semibold text-alternate dark:text-alternate-300 lg:text-xl"
