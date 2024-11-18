@@ -120,10 +120,10 @@ onMounted(() => {
         </swiper-slide>
 
         <swiper-slide>
-          <div class="pb-8 pt-10">
+          <div class="relative pb-8 pt-10">
             <FeaturedProject v-if="projectThree" class="mx-auto" :project="projectThree">
               <template #image>
-                <div class="relative mb-6 sm:mb-10 lg:mb-0">
+                <div class="mb-6 sm:mb-10 lg:mb-0">
                   <div class="shadow-xl" data-swiper-parallax="-50">
                     <SmartImg
                       class="rounded"
@@ -134,15 +134,32 @@ onMounted(() => {
                       :alt="projectThree.title"
                     />
                   </div>
-                  <img
-                    class="absolute -bottom-12 left-24 max-w-28 sm:-bottom-16 sm:max-w-36"
-                    src="/dark-cube.png"
-                    alt="Dark Cube"
-                    data-swiper-parallax="-500"
-                  />
                 </div>
               </template>
             </FeaturedProject>
+            <div class="dots" data-swiper-parallax="-500" />
+          </div>
+        </swiper-slide>
+
+        <swiper-slide>
+          <div class="relative pb-8 pt-10">
+            <FeaturedProject v-if="projectFour" class="mx-auto" :project="projectFour">
+              <template #image>
+                <div class="mb-6 sm:mb-10 lg:mb-0">
+                  <div class="shadow-xl" data-swiper-parallax="-50">
+                    <SmartImg
+                      class="rounded"
+                      :src="projectFour.file.src"
+                      width="3454"
+                      height="1924"
+                      :type="projectFour.file.type"
+                      :alt="projectFour.title"
+                    />
+                  </div>
+                </div>
+              </template>
+            </FeaturedProject>
+            <div class="diagonal-lines" data-swiper-parallax="-500" />
           </div>
         </swiper-slide>
       </swiper-container>
@@ -155,3 +172,37 @@ onMounted(() => {
     </div>
   </div>
 </template>
+
+<style>
+.dots {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 75%;
+  height: 75%;
+  opacity: 1;
+  z-index: -100;
+
+  background-image: radial-gradient(#4383cb 2px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.diagonal-lines {
+  position: absolute;
+  left: 35%;
+  top: 0px;
+  width: 40%;
+  height: 90%;
+  z-index: -100;
+  opacity: 0.5;
+
+  background-color: rgba(255, 255, 255, 0);
+  background: repeating-linear-gradient(
+    45deg,
+    #4383cb,
+    #4383cb 2px,
+    rgba(255, 255, 255, 0) 2px,
+    rgba(255, 255, 255, 0) 10px
+  );
+}
+</style>

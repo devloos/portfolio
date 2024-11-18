@@ -37,7 +37,7 @@ defineProps({
         </p>
       </h5>
       <div
-        class="mb-3 rounded shadow-xl lg:mb-10 lg:bg-primary-700 lg:p-6 lg:text-slate-200"
+        class="mb-3 rounded lg:mb-10 lg:bg-primary-700 lg:p-6 lg:text-slate-200 lg:shadow-xl"
       >
         <p>
           {{ project.description }}
