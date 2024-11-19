@@ -17,6 +17,7 @@ import GithubOutlineSvg from '@/components/svgs/GithubOutlineSvg.vue';
 import TwitterSvg from '@/components/svgs/TwitterSvg.vue';
 import LaptopSvg from '@/components/svgs/LaptopSvg.vue';
 import SquareArrowSvg from '@/components/svgs/SquareArrowSvg.vue';
+import FolderSvg from '@/components/svgs/FolderSvg.vue';
 
 import '@/assets/hamburger.scss';
 import '@/assets/index.css';
@@ -42,7 +43,8 @@ app
   .component('GithubOutlineSvg', GithubOutlineSvg)
   .component('TwitterSvg', TwitterSvg)
   .component('SquareArrowSvg', SquareArrowSvg)
-  .component('LaptopSvg', LaptopSvg);
+  .component('LaptopSvg', LaptopSvg)
+  .component('FolderSvg', FolderSvg);
 
 router.isReady().then(() => {
   app.mount('#app');

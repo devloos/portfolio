@@ -4,6 +4,8 @@ import FeaturedProject from './-FeaturedProject.vue';
 import { onMounted, ref } from 'vue';
 import { useSmartFetch } from '@/composables/smart-fetch';
 import SmartImg from '@/components/smart/SmartImg.vue';
+import SmartSvg from '@/components/smart/SmartSvg.vue';
+import { buildTagUrl } from '@/assets/utility';
 
 useHead({
   title: 'Devlos | Projects',
@@ -19,6 +21,8 @@ const projectOne = ref(null);
 const projectTwo = ref(null);
 const projectThree = ref(null);
 const projectFour = ref(null);
+
+const projects = ref([]);
 
 async function fetchFeaturedProjects() {
   const response = await useSmartFetch({
@@ -38,8 +42,25 @@ async function fetchFeaturedProjects() {
   }
 }
 
+async function fetchProjects() {
+  const response = await useSmartFetch({
+    url: '/api/project/list',
+    method: 'GET',
+    params: {
+      include: {
+        tags: true,
+      },
+    },
+  });
+
+  if (response.success) {
+    projects.value = response.data;
+  }
+}
+
 onMounted(() => {
   fetchFeaturedProjects();
+  fetchProjects();
 });
 </script>
 
@@ -165,10 +186,66 @@ onMounted(() => {
       </swiper-container>
     </div>
 
-    <div class="container flex items-center justify-center gap-2 py-24">
-      <hr class="grow" />
-      <h1 class="text-lg font-semibold">PROJECT PAGE UNFINISHED</h1>
-      <hr class="grow" />
+    <div class="mx-auto max-w-6xl px-3 pb-14 pt-28 sm:px-10 xl:px-0">
+      <h3 class="pb-14 text-center text-lg font-bold tracking-wider">
+        Other Noteworthy Projects
+      </h3>
+      <div class="grid auto-rows-fr gap-3 md:grid-cols-2 xl:grid-cols-3">
+        <div
+          v-for="project in projects"
+          :key="project.id"
+          class="flex flex-col rounded bg-alternate-100 p-8 transition-all hover:-translate-y-2 dark:bg-primary-700"
+        >
+          <div class="flex justify-between">
+            <SmartSvg class="h-9 w-9 fill-alternate" name="FolderSvg" />
+
+            <div class="flex items-center gap-4 lg:justify-end">
+              <a v-if="project.source" :href="project.source" target="_blank">
+                <SmartSvg
+                  class="h-5 w-5 hover:stroke-alternate dark:stroke-slate-200 hover:dark:stroke-alternate"
+                  name="GithubOutlineSvg"
+                />
+              </a>
+              <a v-if="project.site" :href="project.site" target="_blank">
+                <SmartSvg
+                  class="h-6 w-6 -translate-y-[1px] hover:stroke-alternate"
+                  name="SquareArrowSvg"
+                />
+              </a>
+            </div>
+          </div>
+
+          <h4 class="py-3 text-xl font-bold">{{ project.title }}</h4>
+
+          <p class="ellipsis mb-4 text-sm">
+            {{ project.description }}
+          </p>
+
+          <div class="flex flex-wrap gap-1">
+            <div v-for="tag in project?.tags" :key="tag.id">
+              <a
+                :href="tag.url"
+                target="_blank"
+                class="inline-block transition-all hover:opacity-80"
+              >
+                <img
+                  :src="
+                    buildTagUrl({
+                      text: tag.title,
+                      backgroundColor: '121923',
+                      logo: tag.logoName,
+                    })
+                  "
+                  width=""
+                  loading="lazy"
+                  :aria-label="tag.title"
+                  :alt="tag.title"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -204,5 +281,14 @@ onMounted(() => {
     rgba(255, 255, 255, 0) 2px,
     rgba(255, 255, 255, 0) 10px
   );
+}
+
+.ellipsis {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-clamp: 7; /* Number of lines before ellipsis */
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
 }
 </style>
