@@ -47,6 +47,7 @@ async function fetchProjects() {
     url: '/api/project/list',
     method: 'GET',
     params: {
+      // featured: false,
       include: {
         tags: true,
       },
@@ -191,10 +192,11 @@ onMounted(() => {
         Other Noteworthy Projects
       </h3>
       <div class="grid auto-rows-fr gap-3 md:grid-cols-2 xl:grid-cols-3">
-        <div
+        <a
           v-for="project in projects"
           :key="project.id"
-          class="flex flex-col rounded bg-alternate-100 p-8 transition-all hover:-translate-y-2 dark:bg-primary-700"
+          :href="project.source"
+          class="group flex flex-col rounded bg-alternate-100 p-8 transition-all hover:-translate-y-2 dark:bg-primary-700"
         >
           <div class="flex justify-between">
             <SmartSvg class="h-9 w-9 fill-alternate" name="FolderSvg" />
@@ -215,7 +217,11 @@ onMounted(() => {
             </div>
           </div>
 
-          <h4 class="py-3 text-xl font-bold">{{ project.title }}</h4>
+          <h4
+            class="py-3 text-xl font-bold transition-all group-hover:text-alternate-300"
+          >
+            {{ project.title }}
+          </h4>
 
           <p class="ellipsis mb-4 text-sm">
             {{ project.description }}
@@ -244,7 +250,7 @@ onMounted(() => {
               </a>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
