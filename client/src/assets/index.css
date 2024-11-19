@@ -47,30 +47,20 @@ body::before {
   .light-conic-border {
     background-image: conic-gradient(
         from var(--border-angle),
-        rgb(100, 132, 161),
-        rgb(100, 132, 161) 50%,
-        rgb(100, 132, 161)
+        #f1f5f9,
+        #f1f5f9 50%,
+        #f1f5f9
       ),
-      conic-gradient(
-        from var(--border-angle),
-        transparent 20%,
-        rgb(26, 76, 120),
-        rgb(39, 34, 24)
-      );
+      conic-gradient(from var(--border-angle), transparent 20%, rgb(26, 76, 120), #f1f5f9);
   }
 
   .dark-conic-border {
     background-image: conic-gradient(
         from var(--border-angle),
-        rgb(39, 39, 39),
-        rgb(39, 39, 39) 50%,
-        rgb(39, 39, 39)
+        #1e293b,
+        #1e293b 50%,
+        #1e293b
       ),
-      conic-gradient(
-        from var(--border-angle),
-        transparent 20%,
-        rgb(26, 76, 120),
-        rgb(39, 34, 24)
-      );
+      conic-gradient(from var(--border-angle), transparent 20%, rgb(26, 76, 120), #1e293b);
   }
 }

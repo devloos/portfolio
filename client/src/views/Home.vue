@@ -274,7 +274,7 @@ function isHoveredIndex(i) {
                   :src="
                     buildTagUrl({
                       text: tag.title,
-                      backgroundColor: isDark ? '333' : 'cbd5e1',
+                      backgroundColor: isDark ? '121923' : 'd9e6f5',
                       style: 'for-the-badge',
                       logo: tag.logoName,
                     })

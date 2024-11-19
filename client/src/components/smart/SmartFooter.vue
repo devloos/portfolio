@@ -10,7 +10,7 @@ const year = new Date().getFullYear();
 <template>
   <div class="relative mt-24 pt-12">
     <TopWave class="fill-alternate-100 dark:fill-primary-700" />
-    <div class="absolute -top-10 w-full px-3 text-white dark:text-slate-200">
+    <div class="absolute -top-10 w-full px-3">
       <div
         class="border-animated dark:dark-conic-border light-conic-border mx-auto w-fit rounded bg-slate-500 p-8 shadow-lg dark:bg-gray-600 md:px-10 md:py-12 lg:px-12 lg:py-14"
       >
@@ -25,7 +25,7 @@ const year = new Date().getFullYear();
             </p>
           </div>
           <div>
-            <RouterLink class="group inline-block" to="/contact">
+            <RouterLink class="group inline-block text-slate-200" to="/contact">
               <StyledButton
                 class="bg-primary ring-1 ring-primary-100 dark:bg-slate-700 dark:ring-slate-400"
               >

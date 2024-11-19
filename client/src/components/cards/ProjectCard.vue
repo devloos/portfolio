@@ -1,5 +1,5 @@
 <script setup>
-import { buildTagUrl, getImageKitUrl } from '@/assets/utility';
+import { buildTagUrl } from '@/assets/utility';
 import { toRefs } from 'vue';
 import SmartImg from '@/components/smart/SmartImg.vue';
 
@@ -15,20 +15,12 @@ const { project } = toRefs(props);
 
 <template>
   <div class="group flex h-full max-w-xl flex-col rounded shadow-lg dark:shadow-2xl">
-    <video
-      v-if="project.file.type === 'video'"
-      class="rounded-t"
-      :src="getImageKitUrl(project.file.src)"
-      muted
-      autoplay
-      loop
-    />
     <SmartImg
-      v-else
       class="rounded-t"
       :src="project.file.src"
       width="3454"
       height="1924"
+      :type="project.file.type"
       :alt="project.title"
     />
     <div class="flex grow flex-col justify-between px-4 py-2">
@@ -46,7 +38,7 @@ const { project } = toRefs(props);
             :src="
               buildTagUrl({
                 text: tag.title,
-                backgroundColor: '333',
+                backgroundColor: '121923',
                 logo: tag.logoName,
               })
             "
