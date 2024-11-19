@@ -1,7 +1,7 @@
 <script setup>
 import { useHead } from '@unhead/vue';
 import FeaturedProject from './-FeaturedProject.vue';
-import { onMounted, ref } from 'vue';
+import { inject, onMounted, ref } from 'vue';
 import { useSmartFetch } from '@/composables/smart-fetch';
 import SmartImg from '@/components/smart/SmartImg.vue';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
@@ -65,14 +65,27 @@ async function fetchProjects() {
   }
 }
 
-onMounted(() => {
-  fetchFeaturedProjects();
-  fetchProjects();
+const isLoading = ref(true);
+const startOverlay = inject('start-overlay', () => {});
+const stopOverlay = inject('stop-overlay', () => {});
+
+onMounted(async () => {
+  startOverlay();
+
+  const promises = [];
+  promises.push(fetchFeaturedProjects());
+  promises.push(fetchProjects());
+
+  await Promise.all(promises);
+
+  stopOverlay();
+  isLoading.value = false;
 });
 </script>
 
 <template>
-  <div>
+  <div v-if="isLoading" class="h-svh" />
+  <div v-else>
     <div class="px-5 py-10">
       <swiper-container
         :slides-per-view="1"
