@@ -42,6 +42,9 @@ class Project extends BaseEntity
     #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'projects')]
     protected Collection $tags;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $priority = null;
+
     public function __construct()
     {
         $this->tags = new ArrayCollection();
@@ -156,6 +159,18 @@ class Project extends BaseEntity
     public function removeTag(Tag $tag): static
     {
         $this->tags->removeElement($tag);
+
+        return $this;
+    }
+
+    public function getPriority(): ?int
+    {
+        return $this->priority;
+    }
+
+    public function setPriority(?int $priority): static
+    {
+        $this->priority = $priority;
 
         return $this;
     }
