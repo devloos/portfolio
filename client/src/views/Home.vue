@@ -32,6 +32,9 @@ async function fetchFeaturedProjects() {
     method: 'GET',
     params: {
       featured: true,
+      orderBy: {
+        priority: 'ASC',
+      },
       include: {
         tags: true,
       },
