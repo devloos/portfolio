@@ -46,7 +46,7 @@ onMounted(() => {
     >
       <RouterLink to="/">
         <SmartImg
-          src="/tplos/portfolio/stud-123.jpg"
+          src="/tplos/portfolio/stud-1733607141581.jpeg"
           width="916"
           height="916"
           alt="goat"
@@ -61,7 +61,7 @@ onMounted(() => {
           :key="i"
           :to="link"
           class="transition-all hover:text-gray-500"
-          @click="navOpened = false"
+          @click="(navOpened = false)"
         >
           <span
             :class="{
@@ -75,7 +75,7 @@ onMounted(() => {
       <button
         class="group hidden h-[29px] w-[58px] items-center rounded-full bg-slate-300 pl-[2px] transition-all hover:ring-1 hover:ring-primary-800 dark:bg-primary-400 hover:dark:ring-primary-200 md:flex"
         type="button"
-        @click="isDark = !isDark"
+        @click="(isDark = !isDark)"
       >
         <div
           class="flex h-[26px] w-[26px] items-center justify-center rounded-full bg-slate-400 !transition-all dark:bg-primary"
@@ -92,7 +92,7 @@ onMounted(() => {
         :class="{ 'is-active': navOpened }"
         type="button"
         aria-label="Nav Menu"
-        @click="navOpened = !navOpened"
+        @click="(navOpened = !navOpened)"
       >
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
@@ -104,7 +104,7 @@ onMounted(() => {
         <div
           v-if="navOpened"
           class="fixed inset-0 top-[59.2px] z-30 bg-black/[.5] backdrop-blur-sm"
-          @click.self="navOpened = false"
+          @click.self="(navOpened = false)"
         />
       </SmartTransition>
       <SmartTransition name="slide-from-right">
@@ -118,7 +118,7 @@ onMounted(() => {
               :key="i"
               :to="link"
               class="transition-all hover:text-gray-500"
-              @click="navOpened = false"
+              @click="(navOpened = false)"
             >
               <span
                 :class="{
@@ -159,7 +159,7 @@ onMounted(() => {
               <hr class="mb-3 bg-neutral-300 dark:bg-coal" />
               <button
                 class="flex w-full items-center justify-center gap-5 rounded bg-alternate-400 py-3 transition-all dark:bg-alternate-600"
-                @click="isDark = !isDark"
+                @click="(isDark = !isDark)"
               >
                 <i class="fa-solid" :class="isDark ? 'fa-sun' : 'fa-moon'"></i>
                 <span>Switch to {{ isDark ? 'light' : 'dark' }} theme</span>
