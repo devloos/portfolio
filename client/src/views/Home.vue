@@ -173,7 +173,7 @@ function isHoveredIndex(i) {
           <div class="mb-10">
             <h1 class="mb-2 text-3xl font-bold">Carlos Aguilera</h1>
             <p class="font-light text-coal-400 dark:text-slate-400">
-              Junior Web Developer at Ethika Inc.
+              Web Developer at Ethika Inc.
             </p>
           </div>
           <div class="mb-10 text-sm leading-relaxed">
@@ -247,8 +247,8 @@ function isHoveredIndex(i) {
                     'lg:opacity-50': !isHoveredIndex(i) && hoveredIndex !== null,
                   }"
                   :experience="ex"
-                  @mouseenter="hoveredIndex = i"
-                  @mouseleave="hoveredIndex = null"
+                  @mouseenter="(hoveredIndex = i)"
+                  @mouseleave="(hoveredIndex = null)"
                 />
               </div>
             </div>
