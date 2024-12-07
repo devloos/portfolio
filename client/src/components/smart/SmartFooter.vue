@@ -48,8 +48,8 @@ const year = new Date().getFullYear();
           <SmartImg
             class="max-w-20 self-center rounded-full border border-slate-700"
             src="/tplos/portfolio/stud-1733607141581.jpeg"
-            width="916"
-            height="916"
+            width="868"
+            height="1060"
             alt="stud"
           />
         </div>
