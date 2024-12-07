@@ -46,9 +46,9 @@ onMounted(() => {
     >
       <RouterLink to="/">
         <SmartImg
-          src="/tplos/portfolio/stud-1733607141581.jpeg"
-          width="868"
-          height="1060"
+          src="/tplos/portfolio/stud-1733607141582.jpeg"
+          width="830"
+          height="830"
           alt="goat"
           class="max-w-[44px] rounded-3xl"
           aria-label="Home"
