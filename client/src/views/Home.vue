@@ -124,7 +124,7 @@ function isHoveredIndex(i) {
             >
               Carlos
             </span>
-            <span>. I work as a Full Stack Developer at Ethika Inc.</span>
+            <span>. I work as a Web Developer at Ethika Inc.</span>
           </p>
           <div class="px-2">
             <RouterLink class="mr-6" to="/resume">
@@ -176,7 +176,7 @@ function isHoveredIndex(i) {
           <div class="mb-10">
             <h1 class="mb-2 text-3xl font-bold">Carlos Aguilera</h1>
             <p class="font-light text-coal-400 dark:text-slate-400">
-              Full Stack Developer at Ethika Inc.
+              Web Developer at Ethika Inc.
             </p>
           </div>
           <div class="mb-10 text-sm leading-relaxed">
@@ -250,8 +250,8 @@ function isHoveredIndex(i) {
                     'lg:opacity-50': !isHoveredIndex(i) && hoveredIndex !== null,
                   }"
                   :experience="ex"
-                  @mouseenter="(hoveredIndex = i)"
-                  @mouseleave="(hoveredIndex = null)"
+                  @mouseenter="hoveredIndex = i"
+                  @mouseleave="hoveredIndex = null"
                 />
               </div>
             </div>
