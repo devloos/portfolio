@@ -219,7 +219,7 @@ function isHoveredIndex(i) {
             <p class="mb-3">
               While working as a supervisor at Ethika, my interest in tech really took
               off. I started sharing what I was learning, and that led to landing my first
-              software development job—a huge moment for me.
+              software development job, a huge moment for me.
             </p>
             <p>
               I'm all about learning new things and trying out different tools. Outside of
