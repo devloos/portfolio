@@ -124,7 +124,7 @@ function isHoveredIndex(i) {
             >
               Carlos
             </span>
-            <span>. I work as a Web Developer at Ethika Inc.</span>
+            <span>. I work as a Full Stack Developer at Ethika Inc.</span>
           </p>
           <div class="px-2">
             <RouterLink class="mr-6" to="/resume">
@@ -176,36 +176,32 @@ function isHoveredIndex(i) {
           <div class="mb-10">
             <h1 class="mb-2 text-3xl font-bold">Carlos Aguilera</h1>
             <p class="font-light text-coal-400 dark:text-slate-400">
-              Web Developer at Ethika Inc.
+              Full Stack Developer at Ethika Inc.
             </p>
           </div>
           <div class="mb-10 text-sm leading-relaxed">
             <p class="mb-3 text-base font-bold">About</p>
             <p class="mb-3">
-              I'm an enthusiastic software engineer with a deep passion for Computer
-              Science. My journey into this field started in 2020, but it wasn't until
-              November 2021 that I could actively pursue it due to conflicting priorities.
-              Once I began, I quickly fell in love with various Computer Science concepts.
-              I focused on understanding C++ through online tutorials and built projects
-              like the
+              I'm a software engineer with a big passion for Computer Science. My journey
+              started back in 2020, but it wasn't until late 2021 that I could fully focus
+              on it. Once I got started, I dove into learning C++ through online tutorials
+              and built projects like a
               <a
                 href="https://github.com/devloos/Snake-Game"
                 class="font-semibold hover:opacity-50 dark:text-white"
                 target="_blank"
               >
                 <span class="underline underline-offset-2">Snake Game</span>
-                <span>,</span>
               </a>
-              a
+              , a
               <a
                 href="https://github.com/devloos/Pokemon-Clone"
                 class="font-semibold hover:opacity-50 dark:text-white"
                 target="_blank"
               >
-                <span class="underline underline-offset-2">Pokemon Clone</span>
-                <span>,</span>
+                <span class="underline underline-offset-2">Pokemon-inspired RPG</span>
               </a>
-              and a
+              , and a
               <a
                 href="https://github.com/devloos/Sales-System"
                 class="font-semibold hover:opacity-50 dark:text-white"
@@ -213,25 +209,23 @@ function isHoveredIndex(i) {
               >
                 <span class="underline underline-offset-2">Sales System</span>
               </a>
-              using libraries like ncurses, RayLib, and mongocxx.
+              using tools like ncurses, RayLib, and mongocxx.
             </p>
             <p class="mb-3">
-              Later, I enrolled in college and have been excelling, maintaining an
-              impressive 3.85 GPA while pursuing Computer Science. My goal is to get
-              accepted into the University of California for fall semester of 2024, a
-              significant achievement as I'd be the first in my family to attend a
-              university.
+              Now, I'm studying Computer Science at Long Beach State University and
+              keeping up a 3.85 GPA. Being the first in my family to go to university
+              makes it all the more rewarding.
             </p>
             <p class="mb-3">
-              In 2021, while working as a supervisor at Ethika, my passion for computers
-              grew, and I started demonstrating my knowledge. This led to my first
-              software development job, marking a pivotal moment in my career.
+              While working as a supervisor at Ethika, my interest in tech really took
+              off. I started sharing what I was learning, and that led to landing my first
+              software development job—a huge moment for me.
             </p>
             <p>
-              I'm dedicated to continuous learning and adoption of many new tools.
-              Alongside my passion for the field, I enjoy fishing, playing soccer, and
-              spending time with my family. A life goal of mine is to create something
-              that leaves a meaningful impact, regardless of its scale.
+              I'm all about learning new things and trying out different tools. Outside of
+              coding, I love fishing, playing soccer, and spending time with my family. My
+              dream is to create something meaningful that makes a difference, no matter
+              how big or small.
             </p>
           </div>
         </div>
