@@ -105,8 +105,8 @@ function isHoveredIndex(i) {
 }
 </script>
 <template>
-  <main>
-    <div v-if="isLoading" class="h-svh" />
+  <main v-if="isLoading" class="h-svh" />
+  <main v-else>
     <section class="mb-16 pt-4 md:px-3 md:pt-20">
       <div
         class="container mx-auto flex flex-col items-center justify-center gap-4 md:max-w-[44rem] md:flex-row-reverse lg:max-w-4xl xl:max-w-[60rem]"
