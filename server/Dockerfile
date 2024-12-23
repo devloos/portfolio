@@ -121,8 +121,8 @@ WORKDIR "/var/www/app"
 
 COPY . .
 
-RUN chmod 755 docker/scripts/startup.sh
+RUN chmod 755 docker/startup.sh
 
 EXPOSE 8080 443
 
-CMD ["/var/www/app/docker/scripts/startup.sh"]
+CMD ["/var/www/app/docker/startup.sh"]
