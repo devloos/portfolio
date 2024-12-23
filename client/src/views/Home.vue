@@ -9,7 +9,7 @@ import ExperienceCard from '@/components/cards/ExperienceCard.vue';
 import { useHead } from '@unhead/vue';
 import StyledButton from '@/components/styled/StyledButton.vue';
 import SmartImg from '@/components/smart/SmartImg.vue';
-import { onMounted, ref } from 'vue';
+import { inject, onMounted, ref } from 'vue';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 import { useSmartFetch } from '@/composables/smart-fetch';
 
@@ -25,6 +25,10 @@ useHead({
 
 const isDark = useDark();
 const featuredProjects = ref([]);
+
+const isLoading = ref(true);
+const startOverlay = inject('start-overlay', () => {});
+const stopOverlay = inject('stop-overlay', () => {});
 
 async function fetchFeaturedProjects() {
   const response = await useSmartFetch({
@@ -80,10 +84,18 @@ async function fetchExperiences() {
   }
 }
 
-onMounted(() => {
-  fetchFeaturedProjects();
-  fetchFeaturedTags();
-  fetchExperiences();
+onMounted(async () => {
+  startOverlay();
+
+  const promises = [];
+  promises.push(fetchFeaturedProjects());
+  promises.push(fetchFeaturedTags());
+  promises.push(fetchExperiences());
+
+  await Promise.all(promises);
+
+  stopOverlay();
+  isLoading.value = false;
 });
 
 const hoveredIndex = ref(null);
@@ -94,6 +106,7 @@ function isHoveredIndex(i) {
 </script>
 <template>
   <main>
+    <div v-if="isLoading" class="h-svh" />
     <section class="mb-16 pt-4 md:px-3 md:pt-20">
       <div
         class="container mx-auto flex flex-col items-center justify-center gap-4 md:max-w-[44rem] md:flex-row-reverse lg:max-w-4xl xl:max-w-[60rem]"
