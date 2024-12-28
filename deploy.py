@@ -30,31 +30,36 @@ def update_client_version():
             print('Not valid semver semantics.')
             exit(1)
 
-    os.system(f'npm version {ver} -m "New Version {ver}"')
+    subprocess.call(['npm', 'version', str(ver), '-m', f'"New Version {ver}"'])
 
 
 def build_client():
     os.chdir(PORTFOLIO_PATH + '/client')
 
-    try:
-        subprocess.call(['npm', 'run', 'lint'])
-        subprocess.call(['npm', 'run', 'build'])
-        os.system('rm -rf dist')
-    except subprocess.CalledProcessError as e:
-        print('Error building Client! [FAILED]')
-        print(e.output)
+    code = subprocess.call(['npm', 'run', 'lint'])
+
+    if code != 0:
+        print('Error linting Client! [FAILED]')
         exit(1)
+
+    code = subprocess.call(['npm', 'run', 'build'])
+
+    if code != 0:
+        print('Error building Client! [FAILED]')
+        exit(1)
+
+    subprocess.call(['rm', '-rf', 'dist'])
 
 
 def push_changes():
     # check for latest changes
     os.chdir(PORTFOLIO_PATH)
-    os.system(f"git pull origin {BRANCH}")
+    subprocess.call(['git', 'pull', 'origin', BRANCH])
 
     # push any pending changes
-    os.system('git add .')
-    os.system('git commit -m "deploy"')
-    os.system('git push')
+    subprocess.call(['git', 'add', '.'])
+    subprocess.call(['git', 'commit', '-m', '"deploy"'])
+    subprocess.call(['git', 'push'])
 
 
 def main():
@@ -76,11 +81,11 @@ def main():
 
     if (answer == '' or answer == 'client'):
         os.chdir(PORTFOLIO_PATH + '/client')
-        os.system('railway up --detach')
+        subprocess.call(['railway', 'up', '--detach'])
 
     if (answer == '' or answer == 'server'):
         os.chdir(PORTFOLIO_PATH + '/server')
-        os.system('railway up --detach')
+        subprocess.call(['railway', 'up', '--detach'])
 
 
 if __name__ == '__main__':
