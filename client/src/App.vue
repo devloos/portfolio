@@ -6,7 +6,6 @@ import { useRoute } from 'vue-router';
 import { useDark } from '@vueuse/core';
 
 const route = useRoute();
-const hello = ref('');
 
 const layout = computed(() => route.meta.layout || 'DefaultLayout');
 const isLoading = ref(false);

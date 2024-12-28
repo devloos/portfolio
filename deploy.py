@@ -1,4 +1,5 @@
 import os
+import subprocess
 import semver
 from git import Repo
 
@@ -35,22 +36,14 @@ def update_client_version():
 def build_client():
     os.chdir(PORTFOLIO_PATH + '/client')
 
-    os.system('npm run lint')
-    print(int(os.popen('echo $?').read()))
-
-    # check if run build errored out
-    if int(os.popen('echo $?').read()) != 0:
-        print('Error linting Client! [FAILED]')
-        exit(1)
-
-    os.system('npm run build')
-
-    # check if run build errored out
-    if int(os.popen('echo $?').read()) != 0:
+    try:
+        subprocess.check_output(['npm', 'run', 'lint'], text=True)
+        subprocess.check_output(['npm', 'run', 'build'], text=True)
+        os.system('rm -rf dist')
+    except subprocess.CalledProcessError as e:
         print('Error building Client! [FAILED]')
+        print(e.output)
         exit(1)
-
-    os.system('rm -rf dist')
 
 
 def push_changes():
