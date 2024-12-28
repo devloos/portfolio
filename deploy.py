@@ -35,7 +35,7 @@ def update_client_version():
 def build_client():
     os.chdir(PORTFOLIO_PATH + '/client')
 
-    os.system('npm run lint')
+    print(os.system('npm run lint'))
 
     # check if run build errored out
     if int(os.popen('echo $?').read()) != 0:
