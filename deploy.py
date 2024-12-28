@@ -71,12 +71,19 @@ def main():
     build_client()
     push_changes()
 
-    # deploy
-    os.chdir(PORTFOLIO_VUE_PATH + '/client')
-    os.system('railway up --detach')
+    answer = input("Client or Server? (client/server) [both]: ")
 
-    os.chdir(PORTFOLIO_VUE_PATH + '/server')
-    os.system('railway up --detach')
+    # anything but yes
+    if (answer != 'yes'):
+        exit(0)
+
+    if (answer == '' or answer == 'client'):
+        os.chdir(PORTFOLIO_VUE_PATH + '/client')
+        os.system('railway up --detach')
+
+    if (answer == '' or answer == 'server'):
+        os.chdir(PORTFOLIO_VUE_PATH + '/server')
+        os.system('railway up --detach')
 
 
 if __name__ == '__main__':
