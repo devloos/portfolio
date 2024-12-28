@@ -18,6 +18,8 @@ import TwitterSvg from '@/components/svgs/TwitterSvg.vue';
 import LaptopSvg from '@/components/svgs/LaptopSvg.vue';
 import SquareArrowSvg from '@/components/svgs/SquareArrowSvg.vue';
 import FolderSvg from '@/components/svgs/FolderSvg.vue';
+import ChevronRightSvg from '@/components/svgs/ChevronRightSvg.vue';
+import ChevronLeftSvg from '@/components/svgs/ChevronLeftSvg.vue';
 
 import '@/assets/hamburger.scss';
 import '@/assets/index.css';
@@ -44,6 +46,8 @@ app
   .component('TwitterSvg', TwitterSvg)
   .component('SquareArrowSvg', SquareArrowSvg)
   .component('LaptopSvg', LaptopSvg)
+  .component('ChevronRightSvg', ChevronRightSvg)
+  .component('ChevronLeftSvg', ChevronLeftSvg)
   .component('FolderSvg', FolderSvg);
 
 router.isReady().then(() => {

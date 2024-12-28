@@ -12,6 +12,12 @@ export default {
         'spin-once': 'spin 1s ease-in-out',
       },
       colors: {
+        'dark-text': {
+          DEFAULT: '#e2e8f0',
+        },
+        'light-text': {
+          DEFAULT: '#18212f',
+        },
         primary: {
           100: '#d2d4d8',
           200: '#a5a9b1',

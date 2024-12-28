@@ -46,7 +46,7 @@ async function fetchFeaturedProjects() {
   });
 
   if (response.success) {
-    featuredProjects.value = response.data;
+    featuredProjects.value = response.data.projects;
   }
 }
 

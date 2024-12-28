@@ -1,7 +1,7 @@
 <script setup>
 import { useHead } from '@unhead/vue';
 import FeaturedProject from './-FeaturedProject.vue';
-import { inject, onMounted, ref } from 'vue';
+import { inject, onMounted, ref, useTemplateRef, watch } from 'vue';
 import { useSmartFetch } from '@/composables/smart-fetch';
 import SmartImg from '@/components/smart/SmartImg.vue';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
@@ -41,9 +41,14 @@ async function fetchFeaturedProjects() {
 
   if (response.success) {
     [projectOne.value, projectTwo.value, projectThree.value, projectFour.value] =
-      response.data;
+      response.data.projects;
   }
 }
+
+const LIMIT = 6;
+const refOtherProjects = useTemplateRef('other-projects');
+const currentPage = ref(0);
+const numberOfPages = ref(0);
 
 async function fetchProjects() {
   const response = await useSmartFetch({
@@ -51,6 +56,8 @@ async function fetchProjects() {
     method: 'GET',
     params: {
       featured: false,
+      limit: LIMIT,
+      offset: currentPage.value * LIMIT,
       orderBy: {
         priority: 'ASC',
       },
@@ -61,9 +68,22 @@ async function fetchProjects() {
   });
 
   if (response.success) {
-    projects.value = response.data;
+    projects.value = response.data.projects;
+    numberOfPages.value = Math.floor(response.data.count / LIMIT) + 1;
   }
 }
+
+watch(currentPage, async () => {
+  startOverlay();
+
+  await fetchProjects();
+
+  stopOverlay();
+
+  refOtherProjects.value.scrollIntoView({
+    behavior: 'smooth',
+  });
+});
 
 const isLoading = ref(true);
 const startOverlay = inject('start-overlay', () => {});
@@ -206,11 +226,11 @@ onMounted(async () => {
       </swiper-container>
     </div>
 
-    <div class="mx-auto max-w-6xl px-3 pb-14 pt-28 sm:px-10 xl:px-0">
+    <div ref="other-projects" class="mx-auto max-w-6xl px-3 pb-14 pt-28 sm:px-10 xl:px-0">
       <h3 class="pb-14 text-center text-lg font-bold tracking-wider">
         Other Noteworthy Projects
       </h3>
-      <div class="grid auto-rows-fr gap-3 md:grid-cols-2 xl:grid-cols-3">
+      <div class="grid auto-rows-fr gap-3 pb-8 md:grid-cols-2 xl:grid-cols-3">
         <a
           v-for="project in projects"
           :key="project.id"
@@ -270,6 +290,45 @@ onMounted(async () => {
             </div>
           </div>
         </a>
+      </div>
+
+      <div class="flex justify-center gap-3">
+        <button
+          class="mr-2 rounded px-3 py-2 transition-all hover:bg-alternate-100 disabled:opacity-25 disabled:hover:cursor-not-allowed dark:hover:bg-slate-700"
+          type="button"
+          :disabled="currentPage === 0"
+          @click="currentPage -= 1"
+        >
+          <SmartSvg
+            name="ChevronLeftSvg"
+            class="fill-light-text dark:fill-dark-text h-5 w-5"
+          />
+        </button>
+
+        <button
+          v-for="page in numberOfPages"
+          :key="page"
+          class="w-10 rounded border border-slate-500 transition-all"
+          :class="{
+            'bg-alternate-300 dark:bg-primary-700': currentPage === page - 1,
+            'hover:bg-alternate-100 dark:hover:bg-slate-700': currentPage !== page - 1,
+          }"
+          @click="currentPage = page - 1"
+        >
+          {{ page }}
+        </button>
+
+        <button
+          class="ml-2 rounded px-3 py-2 transition-all hover:bg-alternate-100 disabled:opacity-25 disabled:hover:cursor-not-allowed dark:hover:bg-slate-700"
+          type="button"
+          :disabled="currentPage === numberOfPages - 1"
+          @click="currentPage += 1"
+        >
+          <SmartSvg
+            name="ChevronRightSvg"
+            class="fill-light-text dark:fill-dark-text h-5 w-5"
+          />
+        </button>
       </div>
     </div>
   </div>
