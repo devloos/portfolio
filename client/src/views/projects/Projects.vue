@@ -246,7 +246,7 @@ onMounted(async () => {
             {{ project.description }}
           </p>
 
-          <div class="flex flex-wrap gap-1">
+          <div class="flex grow flex-wrap items-end gap-1">
             <div v-for="tag in project?.tags" :key="tag.id">
               <a
                 :href="tag.url"
