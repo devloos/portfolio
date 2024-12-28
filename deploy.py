@@ -35,11 +35,18 @@ def update_client_version():
 def build_client():
     os.chdir(PORTFOLIO_VUE_PATH + '/client')
 
+    os.system('npm run lint')
+
+    # check if run build errored out
+    if int(os.popen('echo $?').read()) != 0:
+        print('Error linting Client! [FAILED]')
+        exit(1)
+
     os.system('npm run build')
 
     # check if run build errored out
     if int(os.popen('echo $?').read()) != 0:
-        print('Error building Portfolio Vue! [FAILED]')
+        print('Error building Client! [FAILED]')
         exit(1)
 
     os.system('rm -rf dist')
