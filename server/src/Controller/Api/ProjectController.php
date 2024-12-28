@@ -2,7 +2,6 @@
 
 namespace App\Controller\Api;
 
-use App\Exception\PublicException;
 use App\Service\ProjectService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -45,9 +44,13 @@ class ProjectController extends AbstractController
         }
 
         $projects = $projectService->getProjects($include, $criteria, $orderBy, $limit, $offset);
+        $count = $projectService->getCount($criteria);
 
         $response->setData([
-            'data' => $projects,
+            'data' => [
+                'projects' => $projects,
+                'count' => $count,
+            ],
             'message' => 'Query was successful.',
             'success' => true,
         ]);

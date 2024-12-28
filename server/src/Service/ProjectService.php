@@ -8,8 +8,7 @@ class ProjectService
 {
     public function __construct(
         private ProjectRepository $projectRepository
-    ) {
-    }
+    ) {}
 
     public function getProjects(array $include, array $criteria, ?array $orderBy, ?int $limit, ?int $offset): array
     {
@@ -33,5 +32,10 @@ class ProjectService
         }
 
         return $data;
+    }
+
+    public function getCount(array $criteria = [])
+    {
+        return $this->projectRepository->count($criteria);
     }
 }
