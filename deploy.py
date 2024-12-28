@@ -2,12 +2,12 @@ import os
 import semver
 from git import Repo
 
-PORTFOLIO_VUE_PATH = '/Users/ca/Developer/Projects/Portfolio'
+PORTFOLIO_PATH = '/Users/ca/Developer/Projects/Portfolio'
 BRANCH = 'main'
 
 
 def update_client_version():
-    os.chdir(PORTFOLIO_VUE_PATH + '/client')
+    os.chdir(PORTFOLIO_PATH + '/client')
 
     # output project version and capture it in client_version
     client_version = os.popen(
@@ -33,7 +33,7 @@ def update_client_version():
 
 
 def build_client():
-    os.chdir(PORTFOLIO_VUE_PATH + '/client')
+    os.chdir(PORTFOLIO_PATH + '/client')
 
     os.system('npm run lint')
 
@@ -54,7 +54,7 @@ def build_client():
 
 def push_changes():
     # check for latest changes
-    os.chdir(PORTFOLIO_VUE_PATH)
+    os.chdir(PORTFOLIO_PATH)
     os.system(f"git pull origin {BRANCH}")
 
     # push any pending changes
@@ -70,7 +70,7 @@ def main():
     if (answer != 'yes'):
         exit(0)
 
-    if Repo(PORTFOLIO_VUE_PATH).active_branch.name != BRANCH:
+    if Repo(PORTFOLIO_PATH).active_branch.name != BRANCH:
         print(f"Not in {BRANCH} branch! [FAILED]")
         exit(1)
 
@@ -81,11 +81,11 @@ def main():
     answer = input("Client or Server? (client/server) [both]: ")
 
     if (answer == '' or answer == 'client'):
-        os.chdir(PORTFOLIO_VUE_PATH + '/client')
+        os.chdir(PORTFOLIO_PATH + '/client')
         os.system('railway up --detach')
 
     if (answer == '' or answer == 'server'):
-        os.chdir(PORTFOLIO_VUE_PATH + '/server')
+        os.chdir(PORTFOLIO_PATH + '/server')
         os.system('railway up --detach')
 
 
