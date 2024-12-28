@@ -37,8 +37,8 @@ def build_client():
     os.chdir(PORTFOLIO_PATH + '/client')
 
     try:
-        subprocess.check_output(['npm', 'run', 'lint'], text=True)
-        subprocess.check_output(['npm', 'run', 'build'], text=True)
+        subprocess.call(['npm', 'run', 'lint'])
+        subprocess.call(['npm', 'run', 'build'])
         os.system('rm -rf dist')
     except subprocess.CalledProcessError as e:
         print('Error building Client! [FAILED]')
