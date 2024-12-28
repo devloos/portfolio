@@ -73,10 +73,6 @@ def main():
 
     answer = input("Client or Server? (client/server) [both]: ")
 
-    # anything but yes
-    if (answer != 'yes'):
-        exit(0)
-
     if (answer == '' or answer == 'client'):
         os.chdir(PORTFOLIO_VUE_PATH + '/client')
         os.system('railway up --detach')
