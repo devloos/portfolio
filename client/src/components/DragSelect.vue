@@ -25,6 +25,11 @@ class DOMVector {
       Math.abs(this.magnitudeY),
     );
   }
+
+  getDiagonalLength(): number {
+    // pythagorean theorem
+    return Math.sqrt(Math.pow(this.magnitudeX, 2) + Math.pow(this.magnitudeY, 2));
+  }
 }
 
 defineOptions({
@@ -43,38 +48,52 @@ const props = withDefaults(
 
 const selectedItems = defineModel<any[]>({ required: true });
 
-const selectionVector = ref<DOMVector | null>(null);
+const selectorVector = ref<DOMVector | null>(null);
 
-function initSelectionVector(e: any) {
+const isDragging = computed(() => {
+  if (!selectorVector.value) {
+    return false;
+  }
+
+  return selectorVector.value.getDiagonalLength() > 10;
+});
+
+function initSelectorVector(e: any) {
   // only start pointer events from left mouse click
   if (e.button !== 0) {
     return;
   }
 
-  const containerRect = e.currentTarget.getBoundingClientRect();
-  const relativeX = e.clientX - containerRect.x;
-  const relativeY = e.clientY - containerRect.y;
+  e.currentTarget.focus();
 
-  selectionVector.value = new DOMVector(relativeX, relativeY, 0, 0);
+  const containerRect = e.currentTarget?.getBoundingClientRect();
+
+  const relativeX = e.clientX - containerRect?.x;
+  const relativeY = e.clientY - containerRect?.y;
+
+  selectorVector.value = new DOMVector(relativeX, relativeY, 0, 0);
+
+  // until this pointer cycle is complete only trigger pointer events from this element.
+  e.currentTarget.setPointerCapture(e.pointerId);
 }
 
-function setSelectionVector(e: any) {
+function setSelectorVector(e: any) {
   // shouldnt happen
-  if (!selectionVector.value) {
+  if (!selectorVector.value) {
     return;
   }
 
   const containerRect = e.currentTarget.getBoundingClientRect();
 
   // starting point
-  const originX = selectionVector.value.x;
-  const originY = selectionVector.value.y;
+  const originX = selectorVector.value.x;
+  const originY = selectorVector.value.y;
 
   // new point
   const relativeX = e.clientX - containerRect.x;
   const relativeY = e.clientY - containerRect.y;
 
-  selectionVector.value = new DOMVector(
+  selectorVector.value = new DOMVector(
     originX,
     originY,
     relativeX - originX,
@@ -100,8 +119,8 @@ function collides(a: Element, b: Element) {
   return true;
 }
 
-watch(selectionVector, () => {
-  if (!selectionVector.value || !refItems.value) {
+watch(selectorVector, () => {
+  if (!selectorVector.value || !refItems.value) {
     return;
   }
 
@@ -124,7 +143,7 @@ watch(selectionVector, () => {
 });
 
 const selectionStyle = computed(() => {
-  const selectionRect = selectionVector.value?.toDOMRect();
+  const selectionRect = selectorVector.value?.toDOMRect();
 
   if (!selectionRect) {
     return;
@@ -141,10 +160,17 @@ const selectionStyle = computed(() => {
 
 <template>
   <div
-    class="relative select-none"
-    @pointerdown="initSelectionVector"
-    @pointermove="setSelectionVector"
-    @pointerup="selectionVector = null"
+    class="relative select-none focus:outline-none"
+    tabIndex="-1"
+    @pointerdown="initSelectorVector"
+    @pointermove="setSelectorVector"
+    @pointerup="selectorVector = null"
+    @keydown.esc.prevent="
+      () => {
+        selectorVector = null;
+        selectedItems = [];
+      }
+    "
   >
     <div :class="containerClass">
       <div
@@ -165,7 +191,7 @@ const selectionStyle = computed(() => {
 
       <div
         ref="ref-selection"
-        v-if="selectionVector"
+        v-if="isDragging"
         class="selector absolute border-2"
         :style="selectionStyle"
       />
