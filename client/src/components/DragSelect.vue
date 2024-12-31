@@ -2,6 +2,8 @@
 <script setup lang="ts">
 import { computed, ref, useTemplateRef, watch } from 'vue';
 
+const TEAL_HEX = '#008080';
+
 class DOMVector {
   constructor(
     readonly x: number,
@@ -34,8 +36,9 @@ const props = withDefaults(
     items: any[];
     containerClass?: string;
     backgroundColor?: string;
+    selectorColor?: string;
   }>(),
-  { backgroundColor: '#B0B0B0' },
+  { backgroundColor: TEAL_HEX, selectorColor: `${TEAL_HEX}50` },
 );
 
 const selectedItems = defineModel<any[]>({ required: true });
@@ -71,7 +74,12 @@ function setSelectionVector(e: any) {
   const relativeX = e.clientX - containerRect.x;
   const relativeY = e.clientY - containerRect.y;
 
-  selectionVector.value = new DOMVector(originX, originY, relativeX - originX, relativeY - originY);
+  selectionVector.value = new DOMVector(
+    originX,
+    originY,
+    relativeX - originX,
+    relativeY - originY,
+  );
 }
 
 const refItems = useTemplateRef('ref-items');
@@ -158,7 +166,7 @@ const selectionStyle = computed(() => {
       <div
         ref="ref-selection"
         v-if="selectionVector"
-        class="absolute border-2 border-white bg-white/50"
+        class="selector absolute border-2"
         :style="selectionStyle"
       />
     </div>
@@ -169,5 +177,10 @@ const selectionStyle = computed(() => {
 .item::after {
   background-color: v-bind(backgroundColor);
   opacity: 25%;
+}
+
+.selector {
+  background-color: v-bind(selectorColor);
+  border-color: v-bind(selectorColor);
 }
 </style>
