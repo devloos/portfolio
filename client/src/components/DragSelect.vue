@@ -42,7 +42,6 @@ defineOptions({
 const props = withDefaults(
   defineProps<{
     items: any[];
-    containerClass?: string;
     backgroundColor?: string;
     selectorColor?: string;
     disableSelectedStyles?: boolean;
@@ -180,7 +179,7 @@ const selectorStyle = computed(() => {
     top: selectionRect.y + 'px',
     left: selectionRect.x + 'px',
     width: selectionRect.width + 'px',
-    height: selectionRect?.height + 'px',
+    height: selectionRect.height + 'px',
   };
 });
 </script>
@@ -212,7 +211,7 @@ const selectorStyle = computed(() => {
     <slot name="header" />
 
     <div
-      :class="containerClass"
+      :class="$attrs.class"
       tabindex="-1"
       @pointerdown="(e: any) => e.currentTarget.focus()"
     >
