@@ -18,6 +18,9 @@ class DOMVector {
   }
 
   toDOMRect(): DOMRect {
+    // this allows us to store a negative magnitude
+    // but gives us the option to transform it to a positive
+    // width and height
     return new DOMRect(
       Math.min(this.x, this.x + this.magnitudeX),
       Math.min(this.y, this.y + this.magnitudeY),
@@ -43,11 +46,13 @@ const props = withDefaults(
     backgroundColor?: string;
     selectorColor?: string;
     disableSelectedStyles?: boolean;
+    enableEscapeReset?: boolean;
   }>(),
   {
     backgroundColor: TEAL_HEX,
     selectorColor: `${TEAL_HEX}50`,
     disableSelectedStyles: false,
+    enableEscapeReset: false,
   },
 );
 
@@ -69,8 +74,6 @@ function initSelectorVector(e: any) {
   if (e.button !== 0 || e.pointerType === 'touch') {
     return;
   }
-
-  e.currentTarget.focus();
 
   const containerRect = e.currentTarget?.getBoundingClientRect();
 
@@ -144,6 +147,7 @@ watch(selectorVector, () => {
     const itemIndex = Number(refItem.id);
     const item = props.items[itemIndex];
 
+    // only allow single add when meta key is pressed
     if (!selectedItems.value.includes(item) && isMetaKeyDown.value) {
       selectedItems.value.push(item);
     }
@@ -151,13 +155,14 @@ watch(selectorVector, () => {
     tempSelectedItems.push(item);
   });
 
+  // if meta key is not pressed then replace selectedItems
   if (!isMetaKeyDown.value) {
     selectedItems.value = tempSelectedItems;
   }
 });
 
-function addSelectedItem(index: number, allowAdd: boolean) {
-  if (!allowAdd) {
+function addSelectedItem(index: number) {
+  if (!isMetaKeyDown.value) {
     return;
   }
 
@@ -182,14 +187,13 @@ const selectorStyle = computed(() => {
 
 <template>
   <div
-    class="relative select-none focus:outline-none"
-    tabIndex="-1"
+    class="relative select-none"
     @pointerdown="initSelectorVector"
     @pointermove="setSelectorVector"
     @pointerup="selectorVector = null"
     @keydown="
       (e) => {
-        if (e.key === 'Escape') {
+        if (e.key === 'Escape' && enableEscapeReset) {
           selectorVector = null;
           selectedItems = [];
         } else if (e.key === 'Meta') {
@@ -207,7 +211,11 @@ const selectorStyle = computed(() => {
   >
     <slot name="header" />
 
-    <div :class="containerClass">
+    <div
+      :class="containerClass"
+      tabindex="-1"
+      @pointerdown="(e: any) => e.currentTarget.focus()"
+    >
       <div
         ref="ref-items"
         v-for="(item, index) in items"
@@ -217,7 +225,7 @@ const selectorStyle = computed(() => {
           'item relative after:absolute after:inset-0 after:content-[\'\']':
             selectedItems.includes(item) && !disableSelectedStyles,
         }"
-        @pointerdown="addSelectedItem(index, isMetaKeyDown)"
+        @pointerdown="addSelectedItem(index)"
       >
         <slot name="item" :item :index :isSelected="selectedItems.includes(item)">
           {{ index }}
