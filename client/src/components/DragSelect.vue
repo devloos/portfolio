@@ -42,13 +42,19 @@ const props = withDefaults(
     containerClass?: string;
     backgroundColor?: string;
     selectorColor?: string;
+    disableSelectedStyles?: boolean;
   }>(),
-  { backgroundColor: TEAL_HEX, selectorColor: `${TEAL_HEX}50` },
+  {
+    backgroundColor: TEAL_HEX,
+    selectorColor: `${TEAL_HEX}50`,
+    disableSelectedStyles: false,
+  },
 );
 
 const selectedItems = defineModel<any[]>({ required: true });
 
 const selectorVector = ref<DOMVector | null>(null);
+const isMetaKeyDown = ref<boolean>(false);
 
 const isDragging = computed(() => {
   if (!selectorVector.value) {
@@ -60,7 +66,7 @@ const isDragging = computed(() => {
 
 function initSelectorVector(e: any) {
   // only start pointer events from left mouse click
-  if (e.button !== 0) {
+  if (e.button !== 0 || e.pointerType === 'touch') {
     return;
   }
 
@@ -131,18 +137,34 @@ watch(selectorVector, () => {
       return;
     }
 
+    if (!collides(refSelection.value, refItem)) {
+      return;
+    }
+
     const itemIndex = Number(refItem.id);
     const item = props.items[itemIndex];
 
-    if (collides(refSelection.value, refItem)) {
-      tempSelectedItems.push(item);
+    if (!selectedItems.value.includes(item) && isMetaKeyDown.value) {
+      selectedItems.value.push(item);
     }
+
+    tempSelectedItems.push(item);
   });
 
-  selectedItems.value = tempSelectedItems;
+  if (!isMetaKeyDown.value) {
+    selectedItems.value = tempSelectedItems;
+  }
 });
 
-const selectionStyle = computed(() => {
+function addSelectedItem(index: number, allowAdd: boolean) {
+  if (!allowAdd) {
+    return;
+  }
+
+  selectedItems.value.push(props.items[index]);
+}
+
+const selectorStyle = computed(() => {
   const selectionRect = selectorVector.value?.toDOMRect();
 
   if (!selectionRect) {
@@ -165,26 +187,39 @@ const selectionStyle = computed(() => {
     @pointerdown="initSelectorVector"
     @pointermove="setSelectorVector"
     @pointerup="selectorVector = null"
-    @keydown.esc.prevent="
-      () => {
-        selectorVector = null;
-        selectedItems = [];
+    @keydown="
+      (e) => {
+        if (e.key === 'Escape') {
+          selectorVector = null;
+          selectedItems = [];
+        } else if (e.key === 'Meta') {
+          isMetaKeyDown = true;
+        }
+      }
+    "
+    @keyup="
+      (e) => {
+        if (e.key === 'Meta') {
+          isMetaKeyDown = false;
+        }
       }
     "
   >
+    <slot name="header" />
+
     <div :class="containerClass">
       <div
         ref="ref-items"
         v-for="(item, index) in items"
         :key="index"
         :id="String(index)"
-        class="item"
         :class="{
-          'relative after:absolute after:inset-0 after:content-[\'\']':
-            selectedItems.includes(item),
+          'item relative after:absolute after:inset-0 after:content-[\'\']':
+            selectedItems.includes(item) && !disableSelectedStyles,
         }"
+        @pointerdown="addSelectedItem(index, isMetaKeyDown)"
       >
-        <slot name="item" :item :index>
+        <slot name="item" :item :index :isSelected="selectedItems.includes(item)">
           {{ index }}
         </slot>
       </div>
@@ -193,9 +228,11 @@ const selectionStyle = computed(() => {
         ref="ref-selection"
         v-if="isDragging"
         class="selector absolute border-2"
-        :style="selectionStyle"
+        :style="selectorStyle"
       />
     </div>
+
+    <slot name="footer" />
   </div>
 </template>
 
