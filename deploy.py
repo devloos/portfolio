@@ -3,7 +3,7 @@ import subprocess
 import semver
 from git import Repo
 
-PORTFOLIO_PATH = '/Users/ca/Developer/Projects/Portfolio'
+PORTFOLIO_PATH = '/Users/ca/development/projects/portfolio'
 BRANCH = 'main'
 
 
