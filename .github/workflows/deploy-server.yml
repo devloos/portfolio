@@ -1,0 +1,39 @@
+name: Deploy Server
+env:
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  APP_SECRET: ${{ secrets.APP_SECRET }}
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - server/**
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
+    steps:
+
+      - name: "Set env variables"
+        run: |
+          touch .env.local
+          echo APP_ENV=production >> .env.local
+          echo APP_SECRET=$APP_SECRET >> .env
+          echo APP_DEBUG=0 >> .env
+          echo CORS_ALLOW_ORIGIN=https://www.caguilera.dev >> .env
+          echo DATABASE_URL=$DATABASE_URL >> .env
+
+      - name: Get SSH key and set permissions
+        run: mkdir -p ~/.ssh && echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+
+      - name: Copy server code to EC2
+        run: scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./* .env.local ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/portfolio
+
+      - name: SSH, setup, and restart server
+        run:
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+          "cd ~/portfolio && composer install"
