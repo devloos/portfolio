@@ -32,7 +32,7 @@ jobs:
         run: mkdir -p ~/.ssh && echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
 
       - name: Copy server code to EC2
-        run: scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./* .env.local ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/portfolio
+        run: scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./* .env .env.local ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/portfolio
 
       - name: SSH, setup, and restart server
         run:
