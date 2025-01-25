@@ -22,10 +22,10 @@ jobs:
         run: |
           touch .env.local
           echo APP_ENV=production >> .env.local
-          echo APP_SECRET=$APP_SECRET >> .env
-          echo APP_DEBUG=0 >> .env
-          echo CORS_ALLOW_ORIGIN=https://www.caguilera.dev >> .env
-          echo DATABASE_URL=$DATABASE_URL >> .env
+          echo APP_SECRET=$APP_SECRET >> .env.local
+          echo APP_DEBUG=0 >> .env.local
+          echo CORS_ALLOW_ORIGIN=https://www.caguilera.dev >> .env.local
+          echo DATABASE_URL=$DATABASE_URL >> .env.local
 
       - name: Get SSH key and set permissions
         run: mkdir -p ~/.ssh && echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
