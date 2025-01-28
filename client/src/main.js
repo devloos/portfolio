@@ -20,8 +20,9 @@ import SquareArrowSvg from '@/components/svgs/SquareArrowSvg.vue';
 import FolderSvg from '@/components/svgs/FolderSvg.vue';
 import ChevronRightSvg from '@/components/svgs/ChevronRightSvg.vue';
 import ChevronLeftSvg from '@/components/svgs/ChevronLeftSvg.vue';
+import BarsSvg from '@/components/svgs/BarsSvg.vue';
+import XSvg from '@/components/svgs/XSvg.vue';
 
-import '@/assets/hamburger.scss';
 import '@/assets/index.css';
 
 localStorage.setItem('version', __VITE_APP_VERSION__);
@@ -48,6 +49,8 @@ app
   .component('LaptopSvg', LaptopSvg)
   .component('ChevronRightSvg', ChevronRightSvg)
   .component('ChevronLeftSvg', ChevronLeftSvg)
+  .component('BarsSvg', BarsSvg)
+  .component('XSvg', XSvg)
   .component('FolderSvg', FolderSvg);
 
 router.isReady().then(() => {

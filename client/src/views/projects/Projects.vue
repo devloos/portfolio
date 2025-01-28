@@ -128,7 +128,7 @@ onMounted(async () => {
                 <div class="relative mb-6 sm:mb-10 lg:mb-0">
                   <div class="shadow-xl" data-swiper-parallax="-50">
                     <SmartImg
-                      class="rounded"
+                      class="rounded-sm"
                       :src="projectOne.file.src"
                       width="3454"
                       height="1924"
@@ -160,7 +160,7 @@ onMounted(async () => {
                 <div class="relative mb-6 sm:mb-10 lg:mb-0">
                   <div class="shadow-xl" data-swiper-parallax="-50">
                     <SmartImg
-                      class="rounded"
+                      class="rounded-sm"
                       :src="projectTwo.file.src"
                       width="3454"
                       height="1924"
@@ -187,7 +187,7 @@ onMounted(async () => {
                 <div class="mb-6 sm:mb-10 lg:mb-0">
                   <div class="shadow-xl" data-swiper-parallax="-50">
                     <SmartImg
-                      class="rounded"
+                      class="rounded-sm"
                       :src="projectThree.file.src"
                       width="3454"
                       height="1924"
@@ -209,7 +209,7 @@ onMounted(async () => {
                 <div class="mb-6 sm:mb-10 lg:mb-0">
                   <div class="shadow-xl" data-swiper-parallax="-50">
                     <SmartImg
-                      class="rounded"
+                      class="rounded-sm"
                       :src="projectFour.file.src"
                       width="3454"
                       height="1924"
@@ -235,7 +235,7 @@ onMounted(async () => {
           v-for="project in projects"
           :key="project.id"
           :href="project.source"
-          class="group flex flex-col rounded bg-alternate-100 p-8 transition-all hover:-translate-y-2 dark:bg-primary-700"
+          class="group flex flex-col rounded-sm bg-alternate-100 p-8 transition-all hover:-translate-y-2 dark:bg-primary-700"
         >
           <div class="flex justify-between">
             <SmartSvg class="h-9 w-9 fill-alternate" name="FolderSvg" />
@@ -243,7 +243,7 @@ onMounted(async () => {
             <div class="flex items-center gap-4 lg:justify-end">
               <a v-if="project.source" :href="project.source" target="_blank">
                 <SmartSvg
-                  class="h-5 w-5 hover:stroke-alternate dark:stroke-slate-200 hover:dark:stroke-alternate"
+                  class="h-5 w-5 hover:stroke-alternate dark:stroke-slate-200 dark:hover:stroke-alternate"
                   name="GithubOutlineSvg"
                 />
               </a>
@@ -294,7 +294,7 @@ onMounted(async () => {
 
       <div class="flex justify-center gap-3">
         <button
-          class="mr-2 rounded px-3 py-2 transition-all hover:bg-alternate-100 disabled:opacity-25 disabled:hover:cursor-not-allowed dark:hover:bg-slate-700"
+          class="mr-2 rounded-sm px-3 py-2 transition-all hover:bg-alternate-100 disabled:opacity-25 disabled:hover:cursor-not-allowed dark:hover:bg-slate-700"
           type="button"
           :disabled="currentPage === 0"
           @click="currentPage -= 1"
@@ -308,7 +308,7 @@ onMounted(async () => {
         <button
           v-for="page in numberOfPages"
           :key="page"
-          class="w-10 rounded border border-slate-500 transition-all"
+          class="w-10 rounded-sm border border-slate-500 transition-all"
           :class="{
             'bg-alternate-300 dark:bg-primary-700': currentPage === page - 1,
             'hover:bg-alternate-100 dark:hover:bg-slate-700': currentPage !== page - 1,
@@ -319,7 +319,7 @@ onMounted(async () => {
         </button>
 
         <button
-          class="ml-2 rounded px-3 py-2 transition-all hover:bg-alternate-100 disabled:opacity-25 disabled:hover:cursor-not-allowed dark:hover:bg-slate-700"
+          class="ml-2 rounded-sm px-3 py-2 transition-all hover:bg-alternate-100 disabled:opacity-25 disabled:hover:cursor-not-allowed dark:hover:bg-slate-700"
           type="button"
           :disabled="currentPage === numberOfPages - 1"
           @click="currentPage += 1"

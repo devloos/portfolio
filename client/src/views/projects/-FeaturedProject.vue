@@ -37,7 +37,7 @@ defineProps({
         </p>
       </h5>
       <div
-        class="mb-3 rounded lg:mb-10 lg:bg-primary-700 lg:p-6 lg:text-slate-200 lg:shadow-xl"
+        class="mb-3 rounded-sm lg:mb-10 lg:bg-primary-700 lg:p-6 lg:text-slate-200 lg:shadow-xl"
       >
         <p>
           {{ project.description }}
@@ -71,7 +71,7 @@ defineProps({
       <div class="flex items-center gap-4 lg:justify-end">
         <a v-if="project.source" :href="project.source" target="_blank">
           <SmartSvg
-            class="h-5 w-5 hover:stroke-alternate dark:stroke-slate-200 hover:dark:stroke-alternate"
+            class="h-5 w-5 hover:stroke-alternate dark:stroke-slate-200 dark:hover:stroke-alternate"
             name="GithubOutlineSvg"
           />
         </a>
