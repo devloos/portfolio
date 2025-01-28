@@ -87,7 +87,7 @@ onMounted(() => {
           ></i>
         </div>
       </button>
-      <button class="md:!hidden" type="button" @click="navOpened = !navOpened">
+      <button class="md:hidden" type="button" @click="navOpened = !navOpened">
         <SmartTransition mode="out-in" :duration="150">
           <SmartSvg
             v-if="navOpened"
