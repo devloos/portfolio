@@ -39,7 +39,7 @@ const normalizedDate = computed(() => {
   <a
     :href="experience.url"
     target="_blank"
-    class="group/card mb-14 flex flex-col gap-1 rounded transition-all lg:mb-8 lg:cursor-pointer lg:p-6"
+    class="group/card mb-14 flex flex-col gap-1 rounded-sm transition-all lg:mb-8 lg:cursor-pointer lg:p-6"
   >
     <div>
       <p class="text-xs font-semibold uppercase tracking-wide">

@@ -14,7 +14,7 @@ const { project } = toRefs(props);
 </script>
 
 <template>
-  <div class="group flex h-full max-w-xl flex-col rounded shadow-lg dark:shadow-2xl">
+  <div class="group flex h-full max-w-xl flex-col rounded-sm shadow-lg dark:shadow-2xl">
     <SmartImg
       class="rounded-t"
       :src="project.file.src"

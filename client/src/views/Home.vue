@@ -121,7 +121,7 @@ function isHoveredIndex(i) {
             is-transparent
           />
           <SmartImg
-            class="animate-vertical absolute -bottom-16 -right-10 min-w-56 md:-bottom-14 md:-right-8 md:min-w-48 lg:-bottom-16 lg:-right-10 lg:min-w-52"
+            class="animate-vertical absolute -right-10 -bottom-16 md:-right-8 md:-bottom-14 md:min-w-48 lg:-right-10 lg:-bottom-16 lg:min-w-52"
             src="/tplos/portfolio/nimbus.png"
             width="683"
             height="365"
@@ -133,7 +133,7 @@ function isHoveredIndex(i) {
           <p class="mb-7 max-w-xl px-1 text-2xl font-semibold lg:text-3xl">
             <span>Hey! My name is&nbsp;</span>
             <span
-              class="inline-block bg-gradient-to-r from-[#38AECC] to-[#022F40] bg-clip-text font-extrabold text-transparent dark:from-[#0846DA] dark:to-[#25F9F5]"
+              class="inline-block bg-linear-to-r from-[#38AECC] to-[#022F40] bg-clip-text font-extrabold text-transparent dark:from-[#0846DA] dark:to-[#25F9F5]"
             >
               Carlos
             </span>
@@ -142,14 +142,14 @@ function isHoveredIndex(i) {
           <div class="px-2">
             <RouterLink class="mr-6" to="/resume">
               <StyledButton
-                class="bg-alternate-200 ring-1 ring-primary-400 dark:bg-primary-600 dark:ring-slate-400"
+                class="bg-alternate-200 ring-primary-400 dark:bg-primary-600 ring-1 dark:ring-slate-400"
               >
                 Resume
               </StyledButton>
             </RouterLink>
             <RouterLink to="/projects" class="group inline-block">
               <StyledButton
-                class="bg-primary-100 ring-1 ring-primary-400 dark:bg-alternate-700 dark:ring-slate-400"
+                class="bg-primary-100 ring-primary-400 dark:bg-alternate-700 ring-1 dark:ring-slate-400"
               >
                 <div class="flex items-center justify-center gap-3">
                   <p>Projects</p>
@@ -165,7 +165,7 @@ function isHoveredIndex(i) {
     </section>
     <section class="relative py-12">
       <TopWave class="fill-alternate-100 dark:fill-primary-700" />
-      <div class="min-h-36 bg-alternate-100 dark:bg-primary-700">
+      <div class="bg-alternate-100 dark:bg-primary-700 min-h-36">
         <SmartTransition name="fade" mode="out-in">
           <div v-if="featuredProjects.length > 0">
             <h4 class="mb-6 text-center text-lg font-semibold">Featured Projects</h4>
@@ -184,11 +184,11 @@ function isHoveredIndex(i) {
       <BottomWave class="fill-alternate-100 dark:fill-primary-700" />
     </section>
     <section id="about" class="mt-16">
-      <div class="container relative flex max-w-7xl flex-col lg:flex-row">
+      <div class="relative container flex max-w-7xl flex-col lg:flex-row">
         <div class="mx-auto max-w-2xl self-start px-4 lg:sticky lg:top-[78px]">
           <div class="mb-10">
             <h1 class="mb-2 text-3xl font-bold">Carlos Aguilera</h1>
-            <p class="font-light text-coal-400 dark:text-slate-400">
+            <p class="text-coal-400 font-light dark:text-slate-400">
               Full Stack Developer at Ethika Inc.
             </p>
           </div>

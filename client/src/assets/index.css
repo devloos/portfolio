@@ -1,23 +1,96 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'reset.css';
+@import 'tailwindcss';
 
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --animate-spin-once: spin 1s ease-in-out;
+
+  --color-dark-text: #e2e8f0;
+
+  --color-light-text: #18212f;
+
+  --color-primary-100: #d2d4d8;
+  --color-primary-200: #a5a9b1;
+  --color-primary-300: #787f89;
+  --color-primary-400: #4b5462;
+  --color-primary-600: #18212f;
+  --color-primary-700: #121923;
+  --color-primary-800: #0c1018;
+  --color-primary-900: #06080c;
+  --color-primary: #1e293b;
+
+  --color-alternate-100: #d9e6f5;
+  --color-alternate-200: #b4cdea;
+  --color-alternate-300: #8eb5e0;
+  --color-alternate-400: #699cd5;
+  --color-alternate-600: #3669a2;
+  --color-alternate-700: #284f7a;
+  --color-alternate-800: #1b3451;
+  --color-alternate-900: #0d1a29;
+  --color-alternate: #4383cb;
+
+  --color-coal-100: #d6d6d6;
+  --color-coal-200: #adadad;
+  --color-coal-300: #858585;
+  --color-coal-400: #5c5c5c;
+  --color-coal-600: #292929;
+  --color-coal-700: #1f1f1f;
+  --color-coal-800: #141414;
+  --color-coal-900: #0a0a0a;
+  --color-coal: #333333;
+}
+
+@utility container {
+  margin-inline: auto;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility light-conic-border {
+  background-image: conic-gradient(
+      from var(--border-angle),
+      #f1f5f9,
+      #f1f5f9 50%,
+      #f1f5f9
+    ),
+    conic-gradient(from var(--border-angle), transparent 20%, rgb(26, 76, 120), #f1f5f9);
+}
+
+@utility dark-conic-border {
+  background-image: conic-gradient(
+      from var(--border-angle),
+      #1e293b,
+      #1e293b 50%,
+      #1e293b
+    ),
+    conic-gradient(from var(--border-angle), transparent 20%, rgb(26, 76, 120), #1e293b);
 }
 
 body {
-  box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
   transition: color 300ms ease !important;
   transition: background-color 300ms ease !important;
-  @apply bg-slate-100 text-primary-600 dark:bg-primary dark:text-slate-200;
+  @apply text-primary-600 dark:bg-primary bg-slate-100 dark:text-slate-200;
 }
 
+/* background grid */
 body::before {
   content: ' ';
   display: block;
@@ -32,35 +105,4 @@ body::before {
   background-size: 80px 80px;
   background-image: linear-gradient(to right, grey 1px, transparent 1px),
     linear-gradient(to bottom, grey 1px, transparent 1px);
-}
-
-.hamburger-inner,
-.hamburger-inner::before,
-.hamburger-inner::after,
-.hamburger.is-active .hamburger-inner,
-.hamburger.is-active .hamburger-inner::before,
-.hamburger.is-active .hamburger-inner::after {
-  @apply bg-primary dark:bg-alternate-600;
-}
-
-@layer components {
-  .light-conic-border {
-    background-image: conic-gradient(
-        from var(--border-angle),
-        #f1f5f9,
-        #f1f5f9 50%,
-        #f1f5f9
-      ),
-      conic-gradient(from var(--border-angle), transparent 20%, rgb(26, 76, 120), #f1f5f9);
-  }
-
-  .dark-conic-border {
-    background-image: conic-gradient(
-        from var(--border-angle),
-        #1e293b,
-        #1e293b 50%,
-        #1e293b
-      ),
-      conic-gradient(from var(--border-angle), transparent 20%, rgb(26, 76, 120), #1e293b);
-  }
 }

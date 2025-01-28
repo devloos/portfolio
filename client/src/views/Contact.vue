@@ -53,7 +53,7 @@ async function sendEmail() {
           <input
             v-model.trim="name"
             type="text"
-            class="rounded bg-inherit px-2 py-3 text-primary-600 shadow-sm ring-1 ring-primary-100 transition-all focus:outline-none focus:ring-2 focus:ring-primary-400 dark:text-slate-200 dark:ring-primary-200"
+            class="rounded-sm bg-inherit px-2 py-3 text-primary-600 shadow-xs ring-1 ring-primary-100 transition-all focus:outline-hidden focus:ring-2 focus:ring-primary-400 dark:text-slate-200 dark:ring-primary-200"
             required
           />
         </div>
@@ -65,7 +65,7 @@ async function sendEmail() {
           <input
             v-model.trim="email"
             type="email"
-            class="rounded bg-inherit px-2 py-3 text-primary-600 shadow-sm ring-1 ring-primary-100 transition-all focus:outline-none focus:ring-2 focus:ring-primary-400 dark:text-slate-200 dark:ring-primary-200"
+            class="rounded-sm bg-inherit px-2 py-3 text-primary-600 shadow-xs ring-1 ring-primary-100 transition-all focus:outline-hidden focus:ring-2 focus:ring-primary-400 dark:text-slate-200 dark:ring-primary-200"
             required
           />
         </div>
@@ -77,7 +77,7 @@ async function sendEmail() {
           <input
             v-model.trim="subject"
             type="text"
-            class="rounded bg-inherit px-2 py-3 text-primary-600 shadow-sm ring-1 ring-primary-100 transition-all focus:outline-none focus:ring-2 focus:ring-primary-400 dark:text-slate-200 dark:ring-primary-200"
+            class="rounded-sm bg-inherit px-2 py-3 text-primary-600 shadow-xs ring-1 ring-primary-100 transition-all focus:outline-hidden focus:ring-2 focus:ring-primary-400 dark:text-slate-200 dark:ring-primary-200"
             required
           />
         </div>
@@ -90,7 +90,7 @@ async function sendEmail() {
             v-model.trim="message"
             rows="8"
             cols="70"
-            class="rounded bg-inherit px-2 py-3 text-primary-600 shadow-sm ring-1 ring-primary-100 transition-all focus:outline-none focus:ring-2 focus:ring-primary-400 dark:text-slate-200 dark:ring-primary-200"
+            class="rounded-sm bg-inherit px-2 py-3 text-primary-600 shadow-xs ring-1 ring-primary-100 transition-all focus:outline-hidden focus:ring-2 focus:ring-primary-400 dark:text-slate-200 dark:ring-primary-200"
             required
           />
         </div>
@@ -98,7 +98,7 @@ async function sendEmail() {
 
       <div class="flex justify-center">
         <StyledButton
-          class="mx-auto bg-slate-300 !px-14 tracking-wide ring-1 ring-primary-400 dark:bg-primary-600 dark:ring-slate-400"
+          class="mx-auto bg-slate-300 px-14! tracking-wide ring-1 ring-primary-400 dark:bg-primary-600 dark:ring-slate-400"
         >
           Send Email
         </StyledButton>

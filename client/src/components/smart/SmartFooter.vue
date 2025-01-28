@@ -12,7 +12,7 @@ const year = new Date().getFullYear();
     <TopWave class="fill-alternate-100 dark:fill-primary-700" />
     <div class="absolute -top-10 w-full px-3">
       <div
-        class="border-animated dark:dark-conic-border light-conic-border mx-auto w-fit rounded bg-slate-500 p-8 shadow-lg dark:bg-gray-600 md:px-10 md:py-12 lg:px-12 lg:py-14"
+        class="border-animated dark:dark-conic-border light-conic-border mx-auto w-fit rounded-sm bg-slate-500 p-8 shadow-lg dark:bg-gray-600 md:px-10 md:py-12 lg:px-12 lg:py-14"
       >
         <div class="flex flex-col items-center justify-center gap-10 md:flex-row">
           <div class="text-nowrap">
@@ -60,12 +60,12 @@ const year = new Date().getFullYear();
         </blockquote>
         <div class="flex items-center justify-around gap-6 md:gap-16">
           <a
-            class="group rounded transition-all hover:bg-slate-700 dark:hover:bg-slate-200"
+            class="group rounded-sm transition-all hover:bg-slate-700 dark:hover:bg-slate-200"
             href="https://www.linkedin.com/in/aguilerac"
             aria-label="Linkedin"
             target="_blank"
           >
-            <div class="rounded border border-slate-700 p-2 px-3 dark:border-slate-200">
+            <div class="rounded-sm border border-slate-700 p-2 px-3 dark:border-slate-200">
               <SmartSvg
                 class="h-7 w-7 fill-slate-700 transition-all group-hover:fill-alternate-100 dark:fill-slate-200 dark:group-hover:fill-slate-700"
                 name="LinkedinSvg"
@@ -73,12 +73,12 @@ const year = new Date().getFullYear();
             </div>
           </a>
           <a
-            class="group rounded transition-all hover:bg-slate-700 dark:hover:bg-slate-200"
+            class="group rounded-sm transition-all hover:bg-slate-700 dark:hover:bg-slate-200"
             href="https://www.instagram.com/devloos"
             aria-label="Instagram"
             target="_blank"
           >
-            <div class="rounded border border-slate-700 p-2 px-3 dark:border-slate-200">
+            <div class="rounded-sm border border-slate-700 p-2 px-3 dark:border-slate-200">
               <SmartSvg
                 class="h-7 w-7 fill-slate-700 transition-all group-hover:fill-alternate-100 dark:fill-slate-200 dark:group-hover:fill-slate-700"
                 name="InstagramSvg"
@@ -86,12 +86,12 @@ const year = new Date().getFullYear();
             </div>
           </a>
           <a
-            class="group rounded transition-all hover:bg-slate-700 dark:hover:bg-slate-200"
+            class="group rounded-sm transition-all hover:bg-slate-700 dark:hover:bg-slate-200"
             href="https://github.com/devloos"
             aria-label="Github"
             target="_blank"
           >
-            <div class="rounded border border-slate-700 p-2 px-3 dark:border-slate-200">
+            <div class="rounded-sm border border-slate-700 p-2 px-3 dark:border-slate-200">
               <SmartSvg
                 class="h-7 w-7 fill-slate-700 transition-all group-hover:fill-alternate-100 dark:fill-slate-200 dark:group-hover:fill-slate-700"
                 name="GithubSvg"
@@ -99,12 +99,12 @@ const year = new Date().getFullYear();
             </div>
           </a>
           <a
-            class="group rounded transition-all hover:bg-slate-700 dark:hover:bg-slate-200"
+            class="group rounded-sm transition-all hover:bg-slate-700 dark:hover:bg-slate-200"
             href="https://twitter.com/18aguilerac"
             aria-label="Twitter"
             target="_blank"
           >
-            <div class="rounded border border-slate-700 p-2 px-3 dark:border-slate-200">
+            <div class="rounded-sm border border-slate-700 p-2 px-3 dark:border-slate-200">
               <SmartSvg
                 class="h-7 w-7 fill-slate-700 transition-all group-hover:fill-alternate-100 dark:fill-slate-200 dark:group-hover:fill-slate-700"
                 name="TwitterSvg"
@@ -112,12 +112,12 @@ const year = new Date().getFullYear();
             </div>
           </a>
           <a
-            class="group rounded transition-all hover:bg-slate-700 dark:hover:bg-slate-200"
+            class="group rounded-sm transition-all hover:bg-slate-700 dark:hover:bg-slate-200"
             href="https://leetcode.com/devlos/"
             aria-label="Leetcode"
             target="_blank"
           >
-            <div class="rounded border border-slate-700 p-2 px-3 dark:border-slate-200">
+            <div class="rounded-sm border border-slate-700 p-2 px-3 dark:border-slate-200">
               <SmartSvg
                 class="h-7 w-7 fill-slate-700 transition-all group-hover:fill-alternate-100 dark:fill-slate-200 dark:group-hover:fill-slate-700"
                 name="LaptopSvg"
