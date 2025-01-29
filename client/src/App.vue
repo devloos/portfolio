@@ -4,10 +4,11 @@ import SmartTransition from '@/components/smart/SmartTransition.vue';
 import LoadingOverlay from '@/components/LoadingOverlay.vue';
 import { useRoute } from 'vue-router';
 import { useDark } from '@vueuse/core';
+import DefaultLayout from './layouts/DefaultLayout.vue';
 
 const route = useRoute();
 
-const layout = computed(() => route.meta.layout || 'DefaultLayout');
+const layoutComponent = computed(() => route.meta.layout || DefaultLayout);
 const isLoading = ref(false);
 
 provide('start-overlay', () => (isLoading.value = true));
@@ -19,7 +20,7 @@ useDark();
 <template>
   <LoadingOverlay :loading="isLoading" />
   <SmartTransition name="fade" mode="out-in">
-    <component :is="layout">
+    <component :is="layoutComponent">
       <RouterView v-slot="{ Component }" class="router-view">
         <SmartTransition name="fade-up" mode="out-in" duration="500">
           <component :is="Component" />

@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import NavLayout from '@/layouts/NavLayout.vue';
+import BlankLayout from '@/layouts/BlankLayout.vue';
 
 const Home = () => import('@/views/Home.vue');
 const Projects = () => import('@/views/projects/Projects.vue');
@@ -22,7 +24,7 @@ const routes = [
     name: 'Contact',
     component: Contact,
     meta: {
-      layout: 'NavLayout',
+      layout: NavLayout,
     },
   },
   {
@@ -34,7 +36,7 @@ const routes = [
     path: '/:pathMatch(.*)*',
     name: 'PageNotFound',
     meta: {
-      layout: 'BlankLayout',
+      layout: BlankLayout,
     },
     component: PageNotFound,
   },
