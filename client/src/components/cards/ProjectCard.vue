@@ -25,7 +25,7 @@ const { project } = toRefs(props);
     />
     <div class="flex grow flex-col justify-between px-4 py-2">
       <div>
-        <h5 class="mb-1 font-semibold text-alternate dark:text-alternate-200">
+        <h5 class="text-alternate dark:text-alternate-200 mb-1 font-semibold">
           {{ project.title }}
         </h5>
         <p class="mb-2 text-sm">
@@ -50,7 +50,7 @@ const { project } = toRefs(props);
       <div>
         <a
           v-if="project?.site"
-          class="mr-4 text-sm text-primary-400 underline underline-offset-2 transition-colors hover:text-primary-600 dark:text-slate-400 dark:hover:text-slate-500"
+          class="text-primary-400 hover:text-primary-600 mr-4 text-sm underline underline-offset-2 transition-colors dark:text-slate-400 dark:hover:text-slate-500"
           :href="project.site"
           target="_blank"
         >
@@ -58,7 +58,7 @@ const { project } = toRefs(props);
         </a>
         <a
           v-if="project?.source"
-          class="text-sm text-primary-400 underline underline-offset-2 transition-colors hover:text-primary-600 dark:text-slate-400 dark:hover:text-slate-500"
+          class="text-primary-400 hover:text-primary-600 text-sm underline underline-offset-2 transition-colors dark:text-slate-400 dark:hover:text-slate-500"
           :href="project.source"
           target="_blank"
         >

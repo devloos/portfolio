@@ -5,7 +5,7 @@ import SmartImg from '@/components/smart/SmartImg.vue';
 <template>
   <div>
     <SmartImg
-      class="absolute -top-28 left-0 right-0 -z-40 mx-auto sm:-top-48 md:-top-96"
+      class="absolute -top-28 right-0 left-0 -z-40 mx-auto sm:-top-48 md:-top-96"
       src="/tplos/portfolio/rays.png"
       width="927"
       height="807"

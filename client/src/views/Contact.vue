@@ -38,7 +38,7 @@ async function sendEmail() {
 </script>
 
 <template>
-  <div class="container mb-28 mt-10 px-2 md:mt-16">
+  <div class="container mt-10 mb-28 px-2 md:mt-16">
     <div class="mb-12 text-center">
       <p class="mx-auto max-w-xl font-mono text-4xl tracking-wide dark:text-slate-200">
         Let's discuss project ideas or share knowledge with each other.
@@ -47,50 +47,50 @@ async function sendEmail() {
     <form ref="form" @submit.prevent="sendEmail">
       <div class="mx-auto mb-8 grid max-w-2xl grid-cols-1 gap-5 sm:grid-cols-2">
         <div class="flex flex-col gap-2">
-          <label class="text-sm font-semibold tracking-wide dark:text-alternate-100">
+          <label class="dark:text-alternate-100 text-sm font-semibold tracking-wide">
             Name
           </label>
           <input
             v-model.trim="name"
             type="text"
-            class="rounded-sm bg-inherit px-2 py-3 text-primary-600 shadow-xs ring-1 ring-primary-100 transition-all focus:outline-hidden focus:ring-2 focus:ring-primary-400 dark:text-slate-200 dark:ring-primary-200"
+            class="text-primary-600 ring-primary-100 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 ring-1 shadow-xs transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
             required
           />
         </div>
 
         <div class="flex flex-col gap-2">
-          <label class="text-sm font-semibold tracking-wide dark:text-alternate-100">
+          <label class="dark:text-alternate-100 text-sm font-semibold tracking-wide">
             Email
           </label>
           <input
             v-model.trim="email"
             type="email"
-            class="rounded-sm bg-inherit px-2 py-3 text-primary-600 shadow-xs ring-1 ring-primary-100 transition-all focus:outline-hidden focus:ring-2 focus:ring-primary-400 dark:text-slate-200 dark:ring-primary-200"
+            class="text-primary-600 ring-primary-100 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 ring-1 shadow-xs transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
             required
           />
         </div>
 
         <div class="flex flex-col gap-2 sm:col-span-2">
-          <label class="text-sm font-semibold tracking-wide dark:text-alternate-100">
+          <label class="dark:text-alternate-100 text-sm font-semibold tracking-wide">
             Subject
           </label>
           <input
             v-model.trim="subject"
             type="text"
-            class="rounded-sm bg-inherit px-2 py-3 text-primary-600 shadow-xs ring-1 ring-primary-100 transition-all focus:outline-hidden focus:ring-2 focus:ring-primary-400 dark:text-slate-200 dark:ring-primary-200"
+            class="text-primary-600 ring-primary-100 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 ring-1 shadow-xs transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
             required
           />
         </div>
 
         <div class="flex flex-col gap-2 sm:col-span-2">
-          <label class="text-sm font-semibold tracking-wide dark:text-alternate-100">
+          <label class="dark:text-alternate-100 text-sm font-semibold tracking-wide">
             Message
           </label>
           <textarea
             v-model.trim="message"
             rows="8"
             cols="70"
-            class="rounded-sm bg-inherit px-2 py-3 text-primary-600 shadow-xs ring-1 ring-primary-100 transition-all focus:outline-hidden focus:ring-2 focus:ring-primary-400 dark:text-slate-200 dark:ring-primary-200"
+            class="text-primary-600 ring-primary-100 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 ring-1 shadow-xs transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
             required
           />
         </div>
@@ -98,7 +98,7 @@ async function sendEmail() {
 
       <div class="flex justify-center">
         <StyledButton
-          class="mx-auto bg-slate-300 px-14! tracking-wide ring-1 ring-primary-400 dark:bg-primary-600 dark:ring-slate-400"
+          class="ring-primary-400 dark:bg-primary-600 mx-auto bg-slate-300 px-14! tracking-wide ring-1 dark:ring-slate-400"
         >
           Send Email
         </StyledButton>

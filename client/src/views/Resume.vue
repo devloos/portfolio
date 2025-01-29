@@ -4,7 +4,7 @@ import StyledButton from '@/components/styled/StyledButton.vue';
 
 <template>
   <div>
-    <h3 class="py-6 text-center font-sans text-3xl font-bold uppercase tracking-widest">
+    <h3 class="py-6 text-center font-sans text-3xl font-bold tracking-widest uppercase">
       Resume
     </h3>
     <div class="relative">
@@ -15,11 +15,11 @@ import StyledButton from '@/components/styled/StyledButton.vue';
       />
 
       <a
-        class="absolute bottom-16 left-1/2 inline-block -translate-x-1/2 transform opacity-0 transition-all hover:opacity-90 peer-hover:opacity-90 peer-focus:opacity-90"
+        class="absolute bottom-16 left-1/2 inline-block -translate-x-1/2 transform opacity-0 transition-all peer-hover:opacity-90 peer-focus:opacity-90 hover:opacity-90"
         href="/resume.pdf"
         download
       >
-        <StyledButton class="flex items-center gap-2 bg-coal text-white">
+        <StyledButton class="bg-coal flex items-center gap-2 text-white">
           <p>Download</p>
           <i class="fa-solid fa-download"></i>
         </StyledButton>
