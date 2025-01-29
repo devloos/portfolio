@@ -3,7 +3,7 @@ import { useDark, useWindowSize } from '@vueuse/core';
 import { onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
-import SmartImg from '@/components/smart/SmartImg.vue';
+import MediaKit from '@/components/MediaKit.vue';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
 import navLinks from '@/assets/constants/nav-links';
 
@@ -45,14 +45,13 @@ onMounted(() => {
       class="dark:bg-primary/[.8] flex items-center justify-between border-b border-neutral-300 bg-slate-100/[.8] px-5 py-2 backdrop-blur-xs md:justify-center md:gap-24 xl:gap-36 dark:border-neutral-500"
     >
       <RouterLink to="/">
-        <SmartImg
-          src="/tplos/portfolio/stud-1733607141582.jpeg"
-          width="830"
-          height="830"
+        <MediaKit
+          src="/portfolio/stud-1733607141582.jpeg"
+          :width="830"
+          :height="830"
           alt="goat"
           class="max-w-12 rounded-3xl"
           aria-label="Home"
-          is-transparent
         />
       </RouterLink>
       <div class="hidden gap-6 font-semibold md:flex md:gap-12 md:text-xl lg:gap-16">

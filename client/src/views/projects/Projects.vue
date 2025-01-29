@@ -3,7 +3,7 @@ import { useHead } from '@unhead/vue';
 import FeaturedProject from './-FeaturedProject.vue';
 import { inject, onMounted, ref, useTemplateRef, watch } from 'vue';
 import { smartFetch } from '@/assets/utility/smart-fetch';
-import SmartImg from '@/components/smart/SmartImg.vue';
+import MediaKit from '@/components/MediaKit.vue';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
 import { buildTagUrl } from '@/assets/utility';
 
@@ -127,13 +127,16 @@ onMounted(async () => {
               <template #image>
                 <div class="relative mb-6 sm:mb-10 lg:mb-0">
                   <div class="shadow-xl" data-swiper-parallax="-50">
-                    <SmartImg
+                    <MediaKit
                       class="rounded-sm"
                       :src="projectOne.file.src"
-                      width="3454"
-                      height="1924"
-                      :type="projectOne.file.type"
+                      :width="3454"
+                      :height="1924"
+                      :media-type="projectOne.file.type"
                       :alt="projectOne.title"
+                      muted
+                      autoplay
+                      loop
                     />
                   </div>
                   <img
@@ -159,13 +162,16 @@ onMounted(async () => {
               <template #image>
                 <div class="relative mb-6 sm:mb-10 lg:mb-0">
                   <div class="shadow-xl" data-swiper-parallax="-50">
-                    <SmartImg
+                    <MediaKit
                       class="rounded-sm"
                       :src="projectTwo.file.src"
-                      width="3454"
-                      height="1924"
-                      :type="projectTwo.file.type"
+                      :width="3454"
+                      :height="1924"
+                      :media-type="projectTwo.file.type"
                       :alt="projectTwo.title"
+                      muted
+                      autoplay
+                      loop
                     />
                   </div>
                   <img
@@ -186,13 +192,16 @@ onMounted(async () => {
               <template #image>
                 <div class="mb-6 sm:mb-10 lg:mb-0">
                   <div class="shadow-xl" data-swiper-parallax="-50">
-                    <SmartImg
+                    <MediaKit
                       class="rounded-sm"
                       :src="projectThree.file.src"
-                      width="3454"
-                      height="1924"
-                      :type="projectThree.file.type"
+                      :width="3454"
+                      :height="1924"
+                      :media-type="projectThree.file.type"
                       :alt="projectThree.title"
+                      muted
+                      autoplay
+                      loop
                     />
                   </div>
                 </div>
@@ -208,13 +217,16 @@ onMounted(async () => {
               <template #image>
                 <div class="mb-6 sm:mb-10 lg:mb-0">
                   <div class="shadow-xl" data-swiper-parallax="-50">
-                    <SmartImg
+                    <MediaKit
                       class="rounded-sm"
                       :src="projectFour.file.src"
-                      width="3454"
-                      height="1924"
-                      :type="projectFour.file.type"
+                      :width="3454"
+                      :height="1924"
+                      :media-type="projectFour.file.type"
                       :alt="projectFour.title"
+                      muted
+                      autoplay
+                      loop
                     />
                   </div>
                 </div>

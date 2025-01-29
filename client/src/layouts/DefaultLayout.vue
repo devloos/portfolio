@@ -1,18 +1,17 @@
 <script setup>
 import SmartNav from '@/components/smart/SmartNav.vue';
 import SmartFooter from '@/components/smart/SmartFooter.vue';
-import SmartImg from '@/components/smart/SmartImg.vue';
+import MediaKit from '@/components/MediaKit.vue';
 </script>
 
 <template>
   <div>
-    <SmartImg
+    <MediaKit
       class="absolute -top-28 right-0 left-0 -z-40 mx-auto sm:-top-48 md:-top-96"
-      src="/tplos/portfolio/rays.png"
-      width="927"
-      height="807"
+      src="/portfolio/rays.png"
+      :width="927"
+      :height="807"
       alt="rays"
-      is-transparent
     />
     <div>
       <SmartNav />

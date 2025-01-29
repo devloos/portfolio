@@ -1,7 +1,7 @@
 <script setup>
 import { buildTagUrl } from '@/assets/utility';
 import { toRefs } from 'vue';
-import SmartImg from '@/components/smart/SmartImg.vue';
+import MediaKit from '@/components/MediaKit.vue';
 
 const props = defineProps({
   project: {
@@ -15,13 +15,16 @@ const { project } = toRefs(props);
 
 <template>
   <div class="group flex h-full max-w-xl flex-col rounded-sm shadow-lg dark:shadow-2xl">
-    <SmartImg
+    <MediaKit
       class="rounded-t"
       :src="project.file.src"
-      width="3454"
-      height="1924"
-      :type="project.file.type"
+      :width="3454"
+      :height="1924"
+      :media-type="project.file.type"
       :alt="project.title"
+      muted
+      autoplay
+      loop
     />
     <div class="flex grow flex-col justify-between px-4 py-2">
       <div>

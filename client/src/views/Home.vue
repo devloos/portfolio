@@ -8,7 +8,7 @@ import { useDark } from '@vueuse/core';
 import ExperienceCard from '@/components/cards/ExperienceCard.vue';
 import { useHead } from '@unhead/vue';
 import StyledButton from '@/components/styled/StyledButton.vue';
-import SmartImg from '@/components/smart/SmartImg.vue';
+import MediaKit from '@/components/MediaKit.vue';
 import { inject, onMounted, ref } from 'vue';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 import { smartFetch } from '@/assets/utility/smart-fetch';
@@ -112,21 +112,19 @@ function isHoveredIndex(i) {
         class="container mx-auto flex flex-col items-center justify-center gap-4 md:max-w-[44rem] md:flex-row-reverse lg:max-w-4xl xl:max-w-[60rem]"
       >
         <div class="relative mb-14">
-          <SmartImg
+          <MediaKit
             class="animate-vertical max-w-48 md:max-w-44"
-            src="/tplos/portfolio/avatar.png"
-            width="450"
-            height="450"
+            src="/portfolio/avatar.png"
+            :width="450"
+            :height="450"
             alt="avatar"
-            is-transparent
           />
-          <SmartImg
+          <MediaKit
             class="animate-vertical absolute -right-10 -bottom-16 md:-right-8 md:-bottom-14 md:min-w-48 lg:-right-10 lg:-bottom-16 lg:min-w-52"
-            src="/tplos/portfolio/nimbus.png"
-            width="683"
-            height="365"
+            src="/portfolio/nimbus.png"
+            :width="683"
+            :height="365"
             alt="nimbus"
-            is-transparent
           />
         </div>
         <div class="grow px-2 text-center md:text-start">

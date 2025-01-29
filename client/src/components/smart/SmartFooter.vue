@@ -1,7 +1,7 @@
 <script setup>
 import TopWave from '@/components/wave-svgs/TopWave.vue';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
-import SmartImg from '@/components/smart/SmartImg.vue';
+import MediaKit from '@/components/MediaKit.vue';
 import StyledButton from '@/components/styled/StyledButton.vue';
 import { RouterLink } from 'vue-router';
 
@@ -45,11 +45,11 @@ const year = new Date().getFullYear();
     <div class="bg-alternate-100 dark:bg-primary-700 pt-72 md:pt-40">
       <div class="flex flex-col items-center justify-center gap-10">
         <div>
-          <SmartImg
+          <MediaKit
             class="max-w-20 self-center rounded-full border border-slate-700"
-            src="/tplos/portfolio/stud-1733607141582.jpeg"
-            width="830"
-            height="830"
+            src="/portfolio/stud-1733607141582.jpeg"
+            :width="830"
+            :height="830"
             alt="stud"
           />
         </div>
@@ -143,13 +143,12 @@ const year = new Date().getFullYear();
 
         <div class="flex justify-end pe-5 pb-5 md:pe-9 md:pb-8">
           <a href="https://v1.caguilera.dev/#/" target="_blank">
-            <SmartImg
-              src="/tplos/portfolio/nether-portal.webp"
-              width="250"
-              height="432"
+            <MediaKit
+              src="/portfolio/nether-portal.webp"
+              :width="250"
+              :height="432"
               class="max-w-12 transition-all hover:-translate-y-2"
               alt="nether-portal"
-              is-transparent
             />
           </a>
         </div>
