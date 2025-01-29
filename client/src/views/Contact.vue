@@ -1,7 +1,7 @@
 <script setup>
 import { inject, ref } from 'vue';
 import StyledButton from '@/components/styled/StyledButton.vue';
-import { useSmartFetch } from '@/composables/smart-fetch';
+import { smartFetch } from '@/assets/utility/smart-fetch';
 
 const startOverlay = inject('start-overlay');
 const stopOverlay = inject('stop-overlay');
@@ -23,7 +23,7 @@ async function sendEmail() {
     message: message.value,
   };
 
-  const response = await useSmartFetch({
+  const response = await smartFetch({
     url: '/api/email/create',
     method: 'POST',
     data: body,

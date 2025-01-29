@@ -11,7 +11,7 @@ import StyledButton from '@/components/styled/StyledButton.vue';
 import SmartImg from '@/components/smart/SmartImg.vue';
 import { inject, onMounted, ref } from 'vue';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
-import { useSmartFetch } from '@/composables/smart-fetch';
+import { smartFetch } from '@/assets/utility/smart-fetch';
 
 useHead({
   title: 'Devlos',
@@ -31,7 +31,7 @@ const startOverlay = inject('start-overlay', () => {});
 const stopOverlay = inject('stop-overlay', () => {});
 
 async function fetchFeaturedProjects() {
-  const response = await useSmartFetch({
+  const response = await smartFetch({
     url: '/api/project/list',
     method: 'GET',
     params: {
@@ -53,7 +53,7 @@ async function fetchFeaturedProjects() {
 const featuredTags = ref([]);
 
 async function fetchFeaturedTags() {
-  const response = await useSmartFetch({
+  const response = await smartFetch({
     url: '/api/tag/list',
     method: 'GET',
     params: {
@@ -69,7 +69,7 @@ async function fetchFeaturedTags() {
 const experiences = ref([]);
 
 async function fetchExperiences() {
-  const response = await useSmartFetch({
+  const response = await smartFetch({
     url: '/api/experience/list',
     method: 'GET',
     params: {

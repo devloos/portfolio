@@ -1,6 +1,6 @@
 import * as qs from 'qs';
 
-export async function useSmartFetch({
+export async function smartFetch({
   url = null,
   method = 'GET',
   params = null,

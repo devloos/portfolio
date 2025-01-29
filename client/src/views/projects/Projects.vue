@@ -2,7 +2,7 @@
 import { useHead } from '@unhead/vue';
 import FeaturedProject from './-FeaturedProject.vue';
 import { inject, onMounted, ref, useTemplateRef, watch } from 'vue';
-import { useSmartFetch } from '@/composables/smart-fetch';
+import { smartFetch } from '@/assets/utility/smart-fetch';
 import SmartImg from '@/components/smart/SmartImg.vue';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
 import { buildTagUrl } from '@/assets/utility';
@@ -25,7 +25,7 @@ const projectFour = ref(null);
 const projects = ref([]);
 
 async function fetchFeaturedProjects() {
-  const response = await useSmartFetch({
+  const response = await smartFetch({
     url: '/api/project/list',
     method: 'GET',
     params: {
@@ -51,7 +51,7 @@ const currentPage = ref(0);
 const numberOfPages = ref(0);
 
 async function fetchProjects() {
-  const response = await useSmartFetch({
+  const response = await smartFetch({
     url: '/api/project/list',
     method: 'GET',
     params: {

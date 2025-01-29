@@ -78,7 +78,7 @@ defineProps({
         <a v-if="project.site" :href="project.site" target="_blank">
           <SmartSvg
             class="hover:stroke-alternate h-6 w-6 -translate-y-[1px]"
-            name="square-arrow"
+            src="square-arrow"
           />
         </a>
       </div>
