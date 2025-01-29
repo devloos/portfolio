@@ -42,7 +42,7 @@ const normalizedDate = computed(() => {
     class="group/card mb-14 flex flex-col gap-1 rounded-sm transition-all lg:mb-8 lg:cursor-pointer lg:p-6"
   >
     <div>
-      <p class="text-xs font-semibold uppercase tracking-wide">
+      <p class="text-xs font-semibold tracking-wide uppercase">
         {{ normalizedDate }}
       </p>
     </div>
@@ -51,7 +51,7 @@ const normalizedDate = computed(() => {
         {{ experience.title }} - {{ experience.company }}
         <SmartSvg
           class="mb-1 ml-1 inline w-5 transition-all group-hover/card:-translate-y-1 group-hover/card:translate-x-1"
-          name="SquareArrowSvg"
+          src="square-arrow"
         />
       </div>
       <p class="mb-4 text-sm leading-relaxed tracking-wide">

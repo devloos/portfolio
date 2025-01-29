@@ -122,7 +122,7 @@ onMounted(async () => {
         :speed="1600"
       >
         <swiper-slide>
-          <div class="pb-8 pt-10">
+          <div class="pt-10 pb-8">
             <FeaturedProject v-if="projectOne" class="mx-auto" :project="projectOne">
               <template #image>
                 <div class="relative mb-6 sm:mb-10 lg:mb-0">
@@ -154,7 +154,7 @@ onMounted(async () => {
           </div>
         </swiper-slide>
         <swiper-slide>
-          <div class="pb-8 pt-10">
+          <div class="pt-10 pb-8">
             <FeaturedProject v-if="projectTwo" class="mx-auto" :project="projectTwo">
               <template #image>
                 <div class="relative mb-6 sm:mb-10 lg:mb-0">
@@ -181,7 +181,7 @@ onMounted(async () => {
         </swiper-slide>
 
         <swiper-slide>
-          <div class="relative pb-8 pt-10">
+          <div class="relative pt-10 pb-8">
             <FeaturedProject v-if="projectThree" class="mx-auto" :project="projectThree">
               <template #image>
                 <div class="mb-6 sm:mb-10 lg:mb-0">
@@ -203,7 +203,7 @@ onMounted(async () => {
         </swiper-slide>
 
         <swiper-slide>
-          <div class="relative pb-8 pt-10">
+          <div class="relative pt-10 pb-8">
             <FeaturedProject v-if="projectFour" class="mx-auto" :project="projectFour">
               <template #image>
                 <div class="mb-6 sm:mb-10 lg:mb-0">
@@ -226,7 +226,7 @@ onMounted(async () => {
       </swiper-container>
     </div>
 
-    <div ref="other-projects" class="mx-auto max-w-6xl px-3 pb-14 pt-28 sm:px-10 xl:px-0">
+    <div ref="other-projects" class="mx-auto max-w-6xl px-3 pt-28 pb-14 sm:px-10 xl:px-0">
       <h3 class="pb-14 text-center text-lg font-bold tracking-wider">
         Other Noteworthy Projects
       </h3>
@@ -235,29 +235,29 @@ onMounted(async () => {
           v-for="project in projects"
           :key="project.id"
           :href="project.source"
-          class="group flex flex-col rounded-sm bg-alternate-100 p-8 transition-all hover:-translate-y-2 dark:bg-primary-700"
+          class="group bg-alternate-100 dark:bg-primary-700 flex flex-col rounded-sm p-8 transition-all hover:-translate-y-2"
         >
           <div class="flex justify-between">
-            <SmartSvg class="h-9 w-9 fill-alternate" name="FolderSvg" />
+            <SmartSvg class="fill-alternate h-9 w-9" src="folder" />
 
             <div class="flex items-center gap-4 lg:justify-end">
               <a v-if="project.source" :href="project.source" target="_blank">
                 <SmartSvg
-                  class="h-5 w-5 hover:stroke-alternate dark:stroke-slate-200 dark:hover:stroke-alternate"
-                  name="GithubOutlineSvg"
+                  class="hover:stroke-alternate dark:hover:stroke-alternate h-5 w-5 dark:stroke-slate-200"
+                  src="github-outline"
                 />
               </a>
               <a v-if="project.site" :href="project.site" target="_blank">
                 <SmartSvg
-                  class="h-6 w-6 -translate-y-[1px] hover:stroke-alternate"
-                  name="SquareArrowSvg"
+                  class="hover:stroke-alternate h-6 w-6 -translate-y-[1px]"
+                  src="square-arrow"
                 />
               </a>
             </div>
           </div>
 
           <h4
-            class="py-3 text-xl font-bold transition-all group-hover:text-alternate-300"
+            class="group-hover:text-alternate-300 py-3 text-xl font-bold transition-all"
           >
             {{ project.title }}
           </h4>
@@ -294,13 +294,13 @@ onMounted(async () => {
 
       <div class="flex justify-center gap-3">
         <button
-          class="mr-2 rounded-sm px-3 py-2 transition-all hover:bg-alternate-100 disabled:opacity-25 disabled:hover:cursor-not-allowed dark:hover:bg-slate-700"
+          class="hover:bg-alternate-100 mr-2 rounded-sm px-3 py-2 transition-all disabled:opacity-25 disabled:hover:cursor-not-allowed dark:hover:bg-slate-700"
           type="button"
           :disabled="currentPage === 0"
           @click="currentPage -= 1"
         >
           <SmartSvg
-            name="ChevronLeftSvg"
+            src="chevron-left"
             class="fill-light-text dark:fill-dark-text h-5 w-5"
           />
         </button>
@@ -319,13 +319,13 @@ onMounted(async () => {
         </button>
 
         <button
-          class="ml-2 rounded-sm px-3 py-2 transition-all hover:bg-alternate-100 disabled:opacity-25 disabled:hover:cursor-not-allowed dark:hover:bg-slate-700"
+          class="hover:bg-alternate-100 ml-2 rounded-sm px-3 py-2 transition-all disabled:opacity-25 disabled:hover:cursor-not-allowed dark:hover:bg-slate-700"
           type="button"
           :disabled="currentPage === numberOfPages - 1"
           @click="currentPage += 1"
         >
           <SmartSvg
-            name="ChevronRightSvg"
+            src="chevron-right"
             class="fill-light-text dark:fill-dark-text h-5 w-5"
           />
         </button>

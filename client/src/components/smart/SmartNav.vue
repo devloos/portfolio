@@ -91,12 +91,12 @@ onMounted(() => {
         <SmartTransition mode="out-in" :duration="150">
           <SmartSvg
             v-if="navOpened"
-            name="XSvg"
+            src="x"
             class="fill-primary dark:fill-alternate-600 h-7 w-7"
           />
           <SmartSvg
             v-else
-            name="BarsSvg"
+            src="bars"
             class="fill-primary dark:fill-alternate-600 h-8 w-8"
           />
         </SmartTransition>
@@ -136,25 +136,22 @@ onMounted(() => {
               <a href="https://www.linkedin.com/in/aguilerac" target="_blank">
                 <SmartSvg
                   class="fill-primary-600 w-5 dark:fill-slate-200"
-                  name="LinkedinSvg"
+                  src="linkedin"
                 />
               </a>
               <a href="https://www.instagram.com/devloos" target="_blank">
                 <SmartSvg
                   class="fill-primary-600 w-5 dark:fill-slate-200"
-                  name="InstagramSvg"
+                  src="instagram"
                 />
               </a>
               <a href="https://github.com/devloos" target="_blank">
-                <SmartSvg
-                  class="fill-primary-600 w-5 dark:fill-slate-200"
-                  name="GithubSvg"
-                />
+                <SmartSvg class="fill-primary-600 w-5 dark:fill-slate-200" src="github" />
               </a>
               <a href="https://twitter.com/18aguilerac" target="_blank">
                 <SmartSvg
                   class="fill-primary-600 w-5 dark:fill-slate-200"
-                  name="TwitterSvg"
+                  src="twitter"
                 />
               </a>
             </div>
