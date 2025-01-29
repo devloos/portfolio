@@ -5,10 +5,6 @@ import router from './router';
 import { createHead } from '@unhead/vue';
 import { register } from 'swiper/element/bundle';
 
-import DefaultLayout from '@/layouts/DefaultLayout.vue';
-import BlankLayout from '@/layouts/BlankLayout.vue';
-import NavLayout from '@/layouts/NavLayout.vue';
-
 import '@/assets/index.css';
 
 localStorage.setItem('version', __VITE_APP_VERSION__);
@@ -20,11 +16,6 @@ register();
 
 app.use(router);
 app.use(head);
-
-app
-  .component('DefaultLayout', DefaultLayout)
-  .component('BlankLayout', BlankLayout)
-  .component('NavLayout', NavLayout);
 
 router.isReady().then(() => {
   app.mount('#app');
