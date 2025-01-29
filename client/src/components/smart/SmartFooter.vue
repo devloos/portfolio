@@ -12,7 +12,7 @@ const year = new Date().getFullYear();
     <TopWave class="fill-alternate-100 dark:fill-primary-700" />
     <div class="absolute -top-10 w-full px-3">
       <div
-        class="border-animated dark:dark-conic-border light-conic-border mx-auto w-fit rounded-sm bg-slate-500 p-8 shadow-lg dark:bg-gray-600 md:px-10 md:py-12 lg:px-12 lg:py-14"
+        class="border-animated dark:dark-conic-border light-conic-border mx-auto w-fit rounded-sm bg-slate-500 p-8 shadow-lg md:px-10 md:py-12 lg:px-12 lg:py-14 dark:bg-gray-600"
       >
         <div class="flex flex-col items-center justify-center gap-10 md:flex-row">
           <div class="text-nowrap">
@@ -27,11 +27,11 @@ const year = new Date().getFullYear();
           <div>
             <RouterLink class="group inline-block text-slate-200" to="/contact">
               <StyledButton
-                class="bg-primary ring-1 ring-primary-100 dark:bg-slate-700 dark:ring-slate-400"
+                class="bg-primary ring-primary-100 ring-1 dark:bg-slate-700 dark:ring-slate-400"
               >
                 <div class="flex items-center gap-3 text-nowrap">
                   <SmartSvg
-                    name="MessageSvg"
+                    src="message"
                     class="h-6 w-6 transition-all group-hover:-translate-y-1"
                   />
                   <span>Let Me Know!</span>
@@ -42,7 +42,7 @@ const year = new Date().getFullYear();
         </div>
       </div>
     </div>
-    <div class="bg-alternate-100 pt-72 dark:bg-primary-700 md:pt-40">
+    <div class="bg-alternate-100 dark:bg-primary-700 pt-72 md:pt-40">
       <div class="flex flex-col items-center justify-center gap-10">
         <div>
           <SmartImg
@@ -65,10 +65,12 @@ const year = new Date().getFullYear();
             aria-label="Linkedin"
             target="_blank"
           >
-            <div class="rounded-sm border border-slate-700 p-2 px-3 dark:border-slate-200">
+            <div
+              class="rounded-sm border border-slate-700 p-2 px-3 dark:border-slate-200"
+            >
               <SmartSvg
-                class="h-7 w-7 fill-slate-700 transition-all group-hover:fill-alternate-100 dark:fill-slate-200 dark:group-hover:fill-slate-700"
-                name="LinkedinSvg"
+                class="group-hover:fill-alternate-100 h-7 w-7 fill-slate-700 transition-all dark:fill-slate-200 dark:group-hover:fill-slate-700"
+                src="linkedin"
               />
             </div>
           </a>
@@ -78,10 +80,12 @@ const year = new Date().getFullYear();
             aria-label="Instagram"
             target="_blank"
           >
-            <div class="rounded-sm border border-slate-700 p-2 px-3 dark:border-slate-200">
+            <div
+              class="rounded-sm border border-slate-700 p-2 px-3 dark:border-slate-200"
+            >
               <SmartSvg
-                class="h-7 w-7 fill-slate-700 transition-all group-hover:fill-alternate-100 dark:fill-slate-200 dark:group-hover:fill-slate-700"
-                name="InstagramSvg"
+                class="group-hover:fill-alternate-100 h-7 w-7 fill-slate-700 transition-all dark:fill-slate-200 dark:group-hover:fill-slate-700"
+                src="instagram"
               />
             </div>
           </a>
@@ -91,10 +95,12 @@ const year = new Date().getFullYear();
             aria-label="Github"
             target="_blank"
           >
-            <div class="rounded-sm border border-slate-700 p-2 px-3 dark:border-slate-200">
+            <div
+              class="rounded-sm border border-slate-700 p-2 px-3 dark:border-slate-200"
+            >
               <SmartSvg
-                class="h-7 w-7 fill-slate-700 transition-all group-hover:fill-alternate-100 dark:fill-slate-200 dark:group-hover:fill-slate-700"
-                name="GithubSvg"
+                class="group-hover:fill-alternate-100 h-7 w-7 fill-slate-700 transition-all dark:fill-slate-200 dark:group-hover:fill-slate-700"
+                src="github"
               />
             </div>
           </a>
@@ -104,10 +110,12 @@ const year = new Date().getFullYear();
             aria-label="Twitter"
             target="_blank"
           >
-            <div class="rounded-sm border border-slate-700 p-2 px-3 dark:border-slate-200">
+            <div
+              class="rounded-sm border border-slate-700 p-2 px-3 dark:border-slate-200"
+            >
               <SmartSvg
-                class="h-7 w-7 fill-slate-700 transition-all group-hover:fill-alternate-100 dark:fill-slate-200 dark:group-hover:fill-slate-700"
-                name="TwitterSvg"
+                class="group-hover:fill-alternate-100 h-7 w-7 fill-slate-700 transition-all dark:fill-slate-200 dark:group-hover:fill-slate-700"
+                src="twitter"
               />
             </div>
           </a>
@@ -117,21 +125,23 @@ const year = new Date().getFullYear();
             aria-label="Leetcode"
             target="_blank"
           >
-            <div class="rounded-sm border border-slate-700 p-2 px-3 dark:border-slate-200">
+            <div
+              class="rounded-sm border border-slate-700 p-2 px-3 dark:border-slate-200"
+            >
               <SmartSvg
-                class="h-7 w-7 fill-slate-700 transition-all group-hover:fill-alternate-100 dark:fill-slate-200 dark:group-hover:fill-slate-700"
-                name="LaptopSvg"
+                class="group-hover:fill-alternate-100 h-7 w-7 fill-slate-700 transition-all dark:fill-slate-200 dark:group-hover:fill-slate-700"
+                src="laptop"
               />
             </div>
           </a>
         </div>
       </div>
       <div>
-        <p class="pb-2 pt-16 text-center text-gray-500 dark:text-gray-400">
+        <p class="pt-16 pb-2 text-center text-gray-500 dark:text-gray-400">
           &copy; {{ year }} Carlos Aguilera
         </p>
 
-        <div class="flex justify-end pb-5 pe-5 md:pb-8 md:pe-9">
+        <div class="flex justify-end pe-5 pb-5 md:pe-9 md:pb-8">
           <a href="https://v1.caguilera.dev/#/" target="_blank">
             <SmartImg
               src="/tplos/portfolio/nether-portal.webp"

@@ -21,23 +21,23 @@ defineProps({
       data-swiper-parallax="-200"
     >
       <h4
-        class="pb-2 text-lg font-semibold text-alternate dark:text-alternate-300 lg:text-xl"
+        class="text-alternate dark:text-alternate-300 pb-2 text-lg font-semibold lg:text-xl"
       >
         Featured Project
       </h4>
       <h5
-        class="flex whitespace-pre pb-3 text-2xl font-bold lg:justify-end lg:pb-10 lg:text-3xl"
+        class="flex pb-3 text-2xl font-bold whitespace-pre lg:justify-end lg:pb-10 lg:text-3xl"
       >
         <p
           v-for="(letter, i) in project.title"
           :key="i"
-          class="animate-rubberband cursor-default transition-all hover:text-alternate"
+          class="animate-rubberband hover:text-alternate cursor-default transition-all"
         >
           {{ letter }}
         </p>
       </h5>
       <div
-        class="mb-3 rounded-sm lg:mb-10 lg:bg-primary-700 lg:p-6 lg:text-slate-200 lg:shadow-xl"
+        class="lg:bg-primary-700 mb-3 rounded-sm lg:mb-10 lg:p-6 lg:text-slate-200 lg:shadow-xl"
       >
         <p>
           {{ project.description }}
@@ -71,14 +71,14 @@ defineProps({
       <div class="flex items-center gap-4 lg:justify-end">
         <a v-if="project.source" :href="project.source" target="_blank">
           <SmartSvg
-            class="h-5 w-5 hover:stroke-alternate dark:stroke-slate-200 dark:hover:stroke-alternate"
-            name="GithubOutlineSvg"
+            class="hover:stroke-alternate dark:hover:stroke-alternate h-5 w-5 dark:stroke-slate-200"
+            src="github-outline"
           />
         </a>
         <a v-if="project.site" :href="project.site" target="_blank">
           <SmartSvg
-            class="h-6 w-6 -translate-y-[1px] hover:stroke-alternate"
-            name="SquareArrowSvg"
+            class="hover:stroke-alternate h-6 w-6 -translate-y-[1px]"
+            name="square-arrow"
           />
         </a>
       </div>
