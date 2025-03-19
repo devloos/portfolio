@@ -13,7 +13,7 @@
   "dependencies": {
     "@unhead/vue": "^1.11.20",
     "@vueuse/core": "^12.8.2",
-    "axios": "^1.8.2",
+    "axios": "^1.8.3",
     "imagekit-javascript": "^3.0.2",
     "qs": "^6.14.0",
     "swiper": "^11.2.5",
@@ -22,18 +22,18 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.10.5",
-    "@tailwindcss/postcss": "^4.0.12",
-    "@vitejs/plugin-vue": "^5.2.1",
+    "@rushstack/eslint-patch": "^1.11.0",
+    "@tailwindcss/postcss": "^4.0.14",
+    "@vitejs/plugin-vue": "^5.2.3",
     "@vue/eslint-config-prettier": "^10.2.0",
     "eslint": "^9.22.0",
     "eslint-plugin-vue": "^9.32.0",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "sass": "^1.85.1",
-    "tailwindcss": "^4.0.12",
-    "vite": "^6.2.1",
+    "sass": "^1.86.0",
+    "tailwindcss": "^4.0.14",
+    "vite": "^6.2.2",
     "vite-plugin-eslint": "^1.8.1"
   }
 }
