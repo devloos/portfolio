@@ -6,12 +6,12 @@ import ProjectCard from '@/components/cards/ProjectCard.vue';
 import StatCard from '@/components/cards/StatCard.vue';
 import { useDark } from '@vueuse/core';
 import ExperienceCard from '@/components/cards/ExperienceCard.vue';
-import { useHead } from '@unhead/vue';
 import StyledButton from '@/components/styled/StyledButton.vue';
 import MediaKit from '@/components/MediaKit.vue';
 import { inject, onMounted, ref } from 'vue';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 import { smartFetch } from '@/assets/utility/smart-fetch';
+import { useHead } from '@unhead/vue';
 
 useHead({
   title: 'Devlos',

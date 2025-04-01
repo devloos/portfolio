@@ -2,7 +2,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
-import { createHead } from '@unhead/vue';
+import { createHead } from '@unhead/vue/client';
 import { register } from 'swiper/element/bundle';
 
 import '@/assets/index.css';

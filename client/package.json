@@ -11,7 +11,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@unhead/vue": "^1.11.20",
+    "@unhead/vue": "^2.0.2",
     "@vueuse/core": "^12.8.2",
     "axios": "^1.8.4",
     "imagekit-javascript": "^3.0.2",
