@@ -1,4 +1,5 @@
-@import 'reset.css';
+@import '@/assets/reset.css';
+
 @import 'tailwindcss';
 
 @custom-variant dark (&:is(.dark *));
@@ -69,22 +70,14 @@
 }
 
 @utility light-conic-border {
-  background-image: conic-gradient(
-      from var(--border-angle),
-      #f1f5f9,
-      #f1f5f9 50%,
-      #f1f5f9
-    ),
+  background-image:
+    conic-gradient(from var(--border-angle), #f1f5f9, #f1f5f9 50%, #f1f5f9),
     conic-gradient(from var(--border-angle), transparent 20%, rgb(26, 76, 120), #f1f5f9);
 }
 
 @utility dark-conic-border {
-  background-image: conic-gradient(
-      from var(--border-angle),
-      #1e293b,
-      #1e293b 50%,
-      #1e293b
-    ),
+  background-image:
+    conic-gradient(from var(--border-angle), #1e293b, #1e293b 50%, #1e293b),
     conic-gradient(from var(--border-angle), transparent 20%, rgb(26, 76, 120), #1e293b);
 }
 
@@ -108,6 +101,7 @@ body::before {
   z-index: -100;
 
   background-size: 80px 80px;
-  background-image: linear-gradient(to right, grey 1px, transparent 1px),
+  background-image:
+    linear-gradient(to right, grey 1px, transparent 1px),
     linear-gradient(to bottom, grey 1px, transparent 1px);
 }
