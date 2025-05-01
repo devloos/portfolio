@@ -15,7 +15,6 @@
     "tailwindcss": "^4.1.5",
     "@unhead/vue": "^2.0.8",
     "@vueuse/core": "^13.1.0",
-    "axios": "^1.9.0",
     "imagekit-javascript": "^4.0.1",
     "qs": "^6.14.0",
     "swiper": "^11.2.6",
