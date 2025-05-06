@@ -33,6 +33,9 @@ useDark();
 <style scoped>
 .router-view {
   min-height: calc(100vh - 460px);
-}
 
+  & {
+    background-color: blue;
+  }
+}
 </style>
