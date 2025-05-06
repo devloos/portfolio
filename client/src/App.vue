@@ -28,6 +28,7 @@ useDark();
       </RouterView>
     </component>
   </SmartTransition>
+  <div>Footer</div>
 </template>
 
 <style scoped lang="scss">

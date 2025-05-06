@@ -7,6 +7,8 @@ const imageKitSDK = new ImageKit({
   urlEndpoint: 'https://ik.imagekit.io/tplos',
 });
 
+console.log('hello');
+
 const props = defineProps({
   src: {
     type: String,
