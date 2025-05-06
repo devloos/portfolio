@@ -35,6 +35,4 @@ useDark();
   min-height: calc(100vh - 460px);
 }
 
-.router-link {
-}
 </style>
