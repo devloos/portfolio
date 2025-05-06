@@ -34,4 +34,8 @@ useDark();
 .router-view {
   min-height: calc(100vh - 460px);
 }
+
+a:hover {
+  color: blue;
+}
 </style>
