@@ -30,8 +30,11 @@ useDark();
   </SmartTransition>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 .router-view {
   min-height: calc(100vh - 460px);
+}
+
+.router-link {
 }
 </style>
