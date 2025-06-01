@@ -1,10 +1,10 @@
 <script setup>
-import { inject, ref } from 'vue';
+import { ref } from 'vue';
 import StyledButton from '@/components/styled/StyledButton.vue';
 import { smartFetch } from '@/assets/utility/smart-fetch';
+import { injectAppContext } from '@/App.vue';
 
-const startOverlay = inject('start-overlay');
-const stopOverlay = inject('stop-overlay');
+const appContext = injectAppContext();
 
 const form = ref(null);
 
@@ -14,7 +14,7 @@ const subject = ref('');
 const message = ref('');
 
 async function sendEmail() {
-  startOverlay();
+  appContext.overlay.start();
 
   const body = {
     name: name.value,
@@ -33,7 +33,7 @@ async function sendEmail() {
     form.value.reset();
   }
 
-  stopOverlay();
+  appContext.overlay.stop();
 }
 </script>
 
@@ -53,7 +53,7 @@ async function sendEmail() {
           <input
             v-model.trim="name"
             type="text"
-            class="text-primary-600 ring-primary-100 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 ring-1 shadow-xs transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
+            class="text-primary-600 ring-primary-100 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 shadow-xs ring-1 transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
             required
           />
         </div>
@@ -65,7 +65,7 @@ async function sendEmail() {
           <input
             v-model.trim="email"
             type="email"
-            class="text-primary-600 ring-primary-100 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 ring-1 shadow-xs transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
+            class="text-primary-600 ring-primary-100 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 shadow-xs ring-1 transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
             required
           />
         </div>
@@ -77,7 +77,7 @@ async function sendEmail() {
           <input
             v-model.trim="subject"
             type="text"
-            class="text-primary-600 ring-primary-100 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 ring-1 shadow-xs transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
+            class="text-primary-600 ring-primary-100 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 shadow-xs ring-1 transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
             required
           />
         </div>
@@ -90,7 +90,7 @@ async function sendEmail() {
             v-model.trim="message"
             rows="8"
             cols="70"
-            class="text-primary-600 ring-primary-100 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 ring-1 shadow-xs transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
+            class="text-primary-600 ring-primary-100 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 shadow-xs ring-1 transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
             required
           />
         </div>

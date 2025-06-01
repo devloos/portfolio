@@ -1,18 +1,28 @@
+<script>
+export const { provideContext: provideAppContext, injectContext: injectAppContext } =
+  useCreateContext('app');
+</script>
+
 <script setup>
-import { computed, provide, ref } from 'vue';
+import { computed, ref } from 'vue';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 import LoadingOverlay from '@/components/LoadingOverlay.vue';
 import { useRoute } from 'vue-router';
 import { useDark } from '@vueuse/core';
 import DefaultLayout from './layouts/DefaultLayout.vue';
+import { useCreateContext } from './composables/create-context';
 
 const route = useRoute();
 
 const layoutComponent = computed(() => route.meta.layout || DefaultLayout);
 const isLoading = ref(false);
 
-provide('start-overlay', () => (isLoading.value = true));
-provide('stop-overlay', () => (isLoading.value = false));
+provideAppContext({
+  overlay: {
+    start: () => (isLoading.value = true),
+    stop: () => (isLoading.value = false),
+  },
+});
 
 useDark();
 </script>

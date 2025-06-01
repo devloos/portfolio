@@ -1,11 +1,12 @@
 <script setup>
 import { useHead } from '@unhead/vue';
 import FeaturedProject from './-FeaturedProject.vue';
-import { inject, onMounted, ref, useTemplateRef, watch } from 'vue';
+import { onMounted, ref, useTemplateRef, watch } from 'vue';
 import { smartFetch } from '@/assets/utility/smart-fetch';
 import MediaKit from '@/components/MediaKit.vue';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
 import { buildTagUrl } from '@/assets/utility';
+import { injectAppContext } from '@/App.vue';
 
 useHead({
   title: 'Devlos | Projects',
@@ -73,24 +74,23 @@ async function fetchProjects() {
   }
 }
 
+const isLoading = ref(true);
+const appContext = injectAppContext();
+
 watch(currentPage, async () => {
-  startOverlay();
+  appContext.overlay.start();
 
   await fetchProjects();
 
-  stopOverlay();
+  appContext.overlay.stop();
 
   refOtherProjects.value.scrollIntoView({
     behavior: 'smooth',
   });
 });
 
-const isLoading = ref(true);
-const startOverlay = inject('start-overlay', () => {});
-const stopOverlay = inject('stop-overlay', () => {});
-
 onMounted(async () => {
-  startOverlay();
+  appContext.overlay.start();
 
   const promises = [];
   promises.push(fetchFeaturedProjects());
@@ -98,7 +98,7 @@ onMounted(async () => {
 
   await Promise.all(promises);
 
-  stopOverlay();
+  appContext.overlay.stop();
   isLoading.value = false;
 });
 </script>

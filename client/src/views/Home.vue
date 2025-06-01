@@ -8,10 +8,11 @@ import { useDark } from '@vueuse/core';
 import ExperienceCard from '@/components/cards/ExperienceCard.vue';
 import StyledButton from '@/components/styled/StyledButton.vue';
 import MediaKit from '@/components/MediaKit.vue';
-import { inject, onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 import { smartFetch } from '@/assets/utility/smart-fetch';
 import { useHead } from '@unhead/vue';
+import { injectAppContext } from '@/App.vue';
 
 useHead({
   title: 'Devlos',
@@ -27,8 +28,8 @@ const isDark = useDark();
 const featuredProjects = ref([]);
 
 const isLoading = ref(true);
-const startOverlay = inject('start-overlay', () => {});
-const stopOverlay = inject('stop-overlay', () => {});
+
+const appContext = injectAppContext();
 
 async function fetchFeaturedProjects() {
   const response = await smartFetch({
@@ -85,7 +86,7 @@ async function fetchExperiences() {
 }
 
 onMounted(async () => {
-  startOverlay();
+  appContext.overlay.start();
 
   const promises = [];
   promises.push(fetchFeaturedProjects());
@@ -94,7 +95,7 @@ onMounted(async () => {
 
   await Promise.all(promises);
 
-  stopOverlay();
+  appContext.overlay.stop();
   isLoading.value = false;
 });
 
