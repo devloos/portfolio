@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="js">
 import { log } from '@/assets/utils/log';
 import { computed, defineAsyncComponent } from 'vue';
 

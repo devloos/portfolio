@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="js">
 import { buildTagUrl } from '@/assets/utils/helpers';
 import TopWave from '@/components/wave-svgs/TopWave.vue';
 import BottomWave from '@/components/wave-svgs/BottomWave.vue';

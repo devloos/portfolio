@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="js">
 import { computed, ref } from 'vue';
 import { usePerspective } from '@/composables/perspective.js';
 import { useDark } from '@vueuse/core';

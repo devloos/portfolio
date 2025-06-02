@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="js">
 import { computed, ref } from 'vue';
 import ImageKit from 'imagekit-javascript';
 import SmartMedia from './smart/SmartMedia.vue';

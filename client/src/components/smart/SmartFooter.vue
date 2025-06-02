@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="js">
 import TopWave from '@/components/wave-svgs/TopWave.vue';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
 import MediaKit from '@/components/MediaKit.vue';

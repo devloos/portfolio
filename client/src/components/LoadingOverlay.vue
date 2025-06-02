@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="js">
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 import { watch } from 'vue';
 import LoadingIndicator from '@/components/LoadingIndicator.vue';

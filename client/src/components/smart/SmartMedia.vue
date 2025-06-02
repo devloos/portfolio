@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="js">
 import { computed, onMounted, useTemplateRef } from 'vue';
 
 const props = defineProps({

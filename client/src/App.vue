@@ -1,16 +1,17 @@
-<script>
+<script lang="ts">
+import { useCreateContext } from '@/composables/create-context';
+
 export const { provideContext: provideAppContext, injectContext: injectAppContext } =
   useCreateContext('app');
 </script>
 
-<script setup>
+<script setup lang="ts">
 import { computed, ref } from 'vue';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 import LoadingOverlay from '@/components/LoadingOverlay.vue';
 import { useRoute } from 'vue-router';
 import { useDark } from '@vueuse/core';
 import DefaultLayout from './layouts/DefaultLayout.vue';
-import { useCreateContext } from './composables/create-context';
 
 const route = useRoute();
 

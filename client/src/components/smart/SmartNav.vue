@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="js">
 import { useDark, useWindowSize } from '@vueuse/core';
 import { onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
