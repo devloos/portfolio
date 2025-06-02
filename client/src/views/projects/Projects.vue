@@ -5,7 +5,7 @@ import { onMounted, ref, useTemplateRef, watch } from 'vue';
 import { smartFetch } from '@/assets/utility/smart-fetch';
 import MediaKit from '@/components/MediaKit.vue';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
-import { buildTagUrl } from '@/assets/utility';
+import { buildTagUrl } from '@/assets/utility/index';
 import { injectAppContext } from '@/App.vue';
 
 useHead({

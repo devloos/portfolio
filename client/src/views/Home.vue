@@ -1,5 +1,5 @@
 <script setup>
-import { buildTagUrl } from '@/assets/utility';
+import { buildTagUrl } from '@/assets/utility/index';
 import TopWave from '@/components/wave-svgs/TopWave.vue';
 import BottomWave from '@/components/wave-svgs/BottomWave.vue';
 import ProjectCard from '@/components/cards/ProjectCard.vue';

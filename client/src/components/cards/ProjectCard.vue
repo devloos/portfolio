@@ -1,5 +1,5 @@
 <script setup>
-import { buildTagUrl } from '@/assets/utility';
+import { buildTagUrl } from '@/assets/utility/index';
 import { toRefs } from 'vue';
 import MediaKit from '@/components/MediaKit.vue';
 

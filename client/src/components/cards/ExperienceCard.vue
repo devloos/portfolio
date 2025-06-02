@@ -1,5 +1,5 @@
 <script setup>
-import { buildTagUrl } from '@/assets/utility';
+import { buildTagUrl } from '@/assets/utility/index';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
 import { computed } from 'vue';
 
@@ -50,7 +50,7 @@ const normalizedDate = computed(() => {
       <div class="mb-3 font-bold dark:text-slate-400">
         {{ experience.title }} - {{ experience.company }}
         <SmartSvg
-          class="mb-1 ml-1 inline w-5 transition-all group-hover/card:-translate-y-1 group-hover/card:translate-x-1"
+          class="mb-1 ml-1 inline w-5 transition-all group-hover/card:translate-x-1 group-hover/card:-translate-y-1"
           src="square-arrow"
         />
       </div>

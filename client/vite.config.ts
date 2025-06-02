@@ -2,7 +2,6 @@ import { fileURLToPath, URL } from 'node:url';
 
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import eslintPlugin from 'vite-plugin-eslint';
 import svgLoader from 'vite-svg-loader';
 import tailwindcss from '@tailwindcss/vite';
 
@@ -18,7 +17,6 @@ export default defineConfig({
         },
       },
     }),
-    eslintPlugin(),
     svgLoader({
       defaultImport: 'component',
     }),
