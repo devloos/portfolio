@@ -23,9 +23,3 @@ export function buildTagUrl(opt: TagOptions) {
 export function getImageKitUrl(src: string) {
   return new URL(src, 'https://ik.imagekit.io');
 }
-
-export function log(message: string) {
-  if (import.meta.env.VITE_ENV === 'development') {
-    console.log(message);
-  }
-}

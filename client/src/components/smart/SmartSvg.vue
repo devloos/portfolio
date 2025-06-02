@@ -1,5 +1,5 @@
 <script setup>
-import { log } from '@/assets/utility';
+import { log } from '@/assets/utils/log';
 import { computed, defineAsyncComponent } from 'vue';
 
 const SVGS = import.meta.glob('@/assets/svgs/**/*.svg');

@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import StyledButton from '@/components/styled/StyledButton.vue';
-import { smartFetch } from '@/assets/utility/smart-fetch';
+import { smartFetch } from '@/assets/utils/smart-fetch';
 import { injectAppContext } from '@/App.vue';
 
 const appContext = injectAppContext();
