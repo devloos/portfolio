@@ -1,7 +1,8 @@
-<script setup>
+<script setup lang="ts">
 import SmartNav from '@/components/smart/SmartNav.vue';
 import MediaKit from '@/components/MediaKit.vue';
 </script>
+
 <template>
   <div>
     <MediaKit

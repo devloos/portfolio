@@ -1,5 +1,5 @@
 <script setup>
-import { buildTagUrl } from '@/assets/utility';
+import { buildTagUrl } from '@/assets/utils/helpers';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
 
 defineProps({
