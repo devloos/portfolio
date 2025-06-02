@@ -41,7 +41,7 @@ export default defineConfig({
     },
   },
   define: {
-    // eslint-disable-next-line no-undef
+     
     __VITE_APP_VERSION__: JSON.stringify(process.env.npm_package_version),
   },
 });

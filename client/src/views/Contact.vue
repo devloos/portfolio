@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="js">
 import { ref } from 'vue';
 import StyledButton from '@/components/styled/StyledButton.vue';
 import { smartFetch } from '@/assets/utils/smart-fetch';

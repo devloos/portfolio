@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="js">
 import { buildTagUrl } from '@/assets/utils/helpers';
 import { toRefs } from 'vue';
 import MediaKit from '@/components/MediaKit.vue';

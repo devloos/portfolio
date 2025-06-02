@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="js">
 import { useHead } from '@unhead/vue';
 import FeaturedProject from './-FeaturedProject.vue';
 import { onMounted, ref, useTemplateRef, watch } from 'vue';

@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
 export const { provideContext: provideAppContext, injectContext: injectAppContext } =
   useCreateContext('app');
 </script>
 
-<script setup>
+<script setup lang="ts">
 import { computed, ref } from 'vue';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 import LoadingOverlay from '@/components/LoadingOverlay.vue';
