@@ -1,8 +1,14 @@
 <script lang="ts">
 import { useCreateContext } from '@/composables/create-context';
 
-export const { provideContext: provideAppContext, injectContext: injectAppContext } =
-  useCreateContext('app');
+interface AppContext {
+  overlay: {
+    start: () => void;
+    stop: () => void;
+  };
+}
+
+export const [provideAppContext, injectAppContext] = useCreateContext<AppContext>('App');
 </script>
 
 <script setup lang="ts">

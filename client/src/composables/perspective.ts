@@ -1,7 +1,7 @@
 import { computed } from 'vue';
-import { useMouseInElement } from '@vueuse/core';
+import { useMouseInElement, type MaybeElementRef } from '@vueuse/core';
 
-export function usePerspective(refValue = null) {
+export function usePerspective(refValue?: MaybeElementRef) {
   const { elementX, elementY, elementHeight, elementWidth, isOutside } =
     useMouseInElement(refValue);
 
