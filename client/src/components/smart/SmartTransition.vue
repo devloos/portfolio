@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
+type Name = 'fade' | 'fade-up' | 'slide-from-right';
+type Mode = 'in-out' | 'out-in' | 'default';
+
 const {
   name = 'fade',
   mode = 'default',
   duration = 300,
 } = defineProps<{
-  name?: 'fade' | 'fade-up' | 'slide-from-right';
-  mode?: 'in-out' | 'out-in' | 'default';
+  name?: Name;
+  mode?: Mode;
   duration?: string | number;
 }>();
 
