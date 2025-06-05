@@ -1,7 +1,7 @@
 /* global  __VITE_APP_VERSION__ */
 import { createApp } from 'vue';
 import App from './App.vue';
-import router from './router';
+import router from './router/index';
 import { createHead } from '@unhead/vue/client';
 import { register } from 'swiper/element/bundle';
 

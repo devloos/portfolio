@@ -1,4 +1,4 @@
-<script setup lang="js">
+<script setup lang="ts">
 import SmartNav from '@/components/smart/SmartNav.vue';
 import SmartFooter from '@/components/smart/SmartFooter.vue';
 import MediaKit from '@/components/MediaKit.vue';

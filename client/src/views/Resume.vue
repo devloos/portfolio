@@ -1,4 +1,4 @@
-<script setup lang="js">
+<script setup lang="ts">
 import StyledButton from '@/components/styled/StyledButton.vue';
 </script>
 

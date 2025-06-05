@@ -1,17 +1,12 @@
-<script setup lang="js">
+<script setup lang="ts">
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 import { watch } from 'vue';
 import LoadingIndicator from '@/components/LoadingIndicator.vue';
 
-const props = defineProps({
-  loading: {
-    type: Boolean,
-    default: false,
-  },
-});
+const { loading = false } = defineProps<{ loading: boolean }>();
 
 watch(
-  () => props.loading,
+  () => loading,
   (newValue) => {
     document.body.style.overflow = newValue ? 'hidden' : 'visible';
   },
@@ -20,7 +15,7 @@ watch(
 
 <template>
   <Teleport to="body">
-    <SmartTransition name="fade">
+    <SmartTransition>
       <div
         v-if="loading"
         class="fixed inset-0 z-50 bg-gray-700/[.5] text-center backdrop:blur-sm"

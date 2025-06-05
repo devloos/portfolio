@@ -1,15 +1,10 @@
-<script setup lang="js">
+<script setup lang="ts">
 import { log } from '@/assets/utils/log';
 import { computed, defineAsyncComponent } from 'vue';
 
 const SVGS = import.meta.glob('@/assets/svgs/**/*.svg');
 
-const props = defineProps({
-  src: {
-    type: String,
-    required: true,
-  },
-});
+const props = defineProps<{ src: string }>();
 
 const derivedComponent = computed(() => {
   try {

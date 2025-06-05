@@ -1,11 +1,41 @@
-<script setup lang="js">
+<script setup lang="ts">
 import { useDark, useWindowSize } from '@vueuse/core';
 import { onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 import MediaKit from '@/components/MediaKit.vue';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
-import navLinks from '@/assets/constants/nav-links';
+
+interface Link {
+  displayName: string;
+  name: string;
+  hash?: string;
+  fullPath: string;
+}
+
+const NAV_LINKS: Array<Link> = [
+  {
+    displayName: 'Home',
+    name: 'Home',
+    fullPath: '/',
+  },
+  {
+    displayName: 'Projects',
+    name: 'Projects',
+    fullPath: '/projects',
+  },
+  {
+    displayName: 'About',
+    name: 'Home',
+    hash: '#about',
+    fullPath: '/#about',
+  },
+  {
+    displayName: 'Contact',
+    name: 'Contact',
+    fullPath: '/contact',
+  },
+];
 
 const isDark = useDark();
 
@@ -56,7 +86,7 @@ onMounted(() => {
       </RouterLink>
       <div class="hidden gap-6 font-semibold md:flex md:gap-12 md:text-xl lg:gap-16">
         <RouterLink
-          v-for="(link, i) in navLinks"
+          v-for="(link, i) in NAV_LINKS"
           :key="i"
           :to="link"
           class="transition-all hover:text-gray-500"
@@ -116,7 +146,7 @@ onMounted(() => {
         >
           <div class="grid gap-4 p-5 text-lg font-semibold">
             <RouterLink
-              v-for="(link, i) in navLinks"
+              v-for="(link, i) in NAV_LINKS"
               :key="i"
               :to="link"
               class="transition-all hover:text-gray-500"
