@@ -4,7 +4,7 @@ import { watch } from 'vue';
 import LoadingIndicator from '@/components/LoadingIndicator.vue';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 
-const { loading = false } = defineProps<{ loading: boolean }>();
+const { loading = false } = defineProps<{ loading?: boolean }>();
 
 watch(
   () => loading,
