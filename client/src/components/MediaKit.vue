@@ -1,6 +1,7 @@
 <script setup lang="js">
-import { computed, ref } from 'vue';
 import ImageKit from 'imagekit-javascript';
+import { computed, ref } from 'vue';
+
 import SmartMedia from './smart/SmartMedia.vue';
 
 const imageKitSDK = new ImageKit({

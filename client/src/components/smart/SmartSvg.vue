@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { log } from '@/assets/utils/log';
 import { computed, defineAsyncComponent } from 'vue';
+
+import { log } from '@/assets/utils/log';
 
 const SVGS = import.meta.glob('@/assets/svgs/**/*.svg');
 

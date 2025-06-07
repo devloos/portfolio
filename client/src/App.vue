@@ -12,11 +12,13 @@ export const [provideAppContext, injectAppContext] = useCreateContext<AppContext
 </script>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-import SmartTransition from '@/components/smart/SmartTransition.vue';
-import LoadingOverlay from '@/components/LoadingOverlay.vue';
-import { useRoute } from 'vue-router';
 import { useDark } from '@vueuse/core';
+import { computed, ref } from 'vue';
+import { useRoute } from 'vue-router';
+
+import LoadingOverlay from '@/components/LoadingOverlay.vue';
+import SmartTransition from '@/components/smart/SmartTransition.vue';
+
 import DefaultLayout from './layouts/DefaultLayout.vue';
 
 const route = useRoute();

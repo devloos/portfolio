@@ -2,9 +2,10 @@
 import { useDark, useWindowSize } from '@vueuse/core';
 import { onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
-import SmartTransition from '@/components/smart/SmartTransition.vue';
+
 import MediaKit from '@/components/MediaKit.vue';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
+import SmartTransition from '@/components/smart/SmartTransition.vue';
 
 interface Link {
   displayName: string;

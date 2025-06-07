@@ -1,7 +1,8 @@
 <script setup lang="js">
+import { computed } from 'vue';
+
 import { buildTagUrl } from '@/assets/utils/helpers';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
-import { computed } from 'vue';
 
 const props = defineProps({
   experience: {

@@ -1,12 +1,14 @@
 <script setup lang="js">
 import { useHead } from '@unhead/vue';
-import FeaturedProject from './-FeaturedProject.vue';
 import { onMounted, ref, useTemplateRef, watch } from 'vue';
+
+import { injectAppContext } from '@/App.vue';
+import { buildTagUrl } from '@/assets/utils/helpers';
 import { smartFetch } from '@/assets/utils/smart-fetch';
 import MediaKit from '@/components/MediaKit.vue';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
-import { buildTagUrl } from '@/assets/utils/helpers';
-import { injectAppContext } from '@/App.vue';
+
+import FeaturedProject from './-FeaturedProject.vue';
 
 useHead({
   title: 'Devlos | Projects',

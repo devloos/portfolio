@@ -1,7 +1,8 @@
 <script setup lang="js">
-import { computed, ref } from 'vue';
-import { usePerspective } from '@/composables/perspective.js';
 import { useDark } from '@vueuse/core';
+import { computed, ref } from 'vue';
+
+import { usePerspective } from '@/composables/perspective.js';
 
 const props = defineProps({
   perspective: {

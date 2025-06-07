@@ -1,18 +1,19 @@
 <script setup lang="js">
+import { useHead } from '@unhead/vue';
+import { useDark } from '@vueuse/core';
+import { onMounted, ref } from 'vue';
+
+import { injectAppContext } from '@/App.vue';
 import { buildTagUrl } from '@/assets/utils/helpers';
-import TopWave from '@/components/wave-svgs/TopWave.vue';
-import BottomWave from '@/components/wave-svgs/BottomWave.vue';
+import { smartFetch } from '@/assets/utils/smart-fetch';
+import ExperienceCard from '@/components/cards/ExperienceCard.vue';
 import ProjectCard from '@/components/cards/ProjectCard.vue';
 import StatCard from '@/components/cards/StatCard.vue';
-import { useDark } from '@vueuse/core';
-import ExperienceCard from '@/components/cards/ExperienceCard.vue';
-import StyledButton from '@/components/styled/StyledButton.vue';
 import MediaKit from '@/components/MediaKit.vue';
-import { onMounted, ref } from 'vue';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
-import { smartFetch } from '@/assets/utils/smart-fetch';
-import { useHead } from '@unhead/vue';
-import { injectAppContext } from '@/App.vue';
+import StyledButton from '@/components/styled/StyledButton.vue';
+import BottomWave from '@/components/wave-svgs/BottomWave.vue';
+import TopWave from '@/components/wave-svgs/TopWave.vue';
 
 useHead({
   title: 'Devlos',

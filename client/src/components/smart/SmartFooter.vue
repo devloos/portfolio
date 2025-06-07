@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import TopWave from '@/components/wave-svgs/TopWave.vue';
-import SmartSvg from '@/components/smart/SmartSvg.vue';
-import MediaKit from '@/components/MediaKit.vue';
-import StyledButton from '@/components/styled/StyledButton.vue';
 import { RouterLink } from 'vue-router';
+
+import MediaKit from '@/components/MediaKit.vue';
+import SmartSvg from '@/components/smart/SmartSvg.vue';
+import StyledButton from '@/components/styled/StyledButton.vue';
+import TopWave from '@/components/wave-svgs/TopWave.vue';
 
 const year = new Date().getFullYear();
 </script>

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import NavLayout from '@/layouts/NavLayout.vue';
+
 import BlankLayout from '@/layouts/BlankLayout.vue';
+import NavLayout from '@/layouts/NavLayout.vue';
 
 const Home = () => import('@/views/Home.vue');
 const Projects = () => import('@/views/projects/Projects.vue');
