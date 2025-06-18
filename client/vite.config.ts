@@ -30,9 +30,9 @@ export default defineConfig({
     },
   },
   server: {
-    port: 4502,
+    port: 4550,
     proxy: {
-      '/api': 'http://localhost:4503',
+      '/api': 'http://localhost:4560',
     },
   },
   resolve: {
