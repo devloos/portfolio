@@ -1,4 +1,4 @@
-import { fileURLToPath,URL } from 'node:url';
+import { fileURLToPath, URL } from 'node:url';
 
 import tailwindcss from '@tailwindcss/vite';
 import vue from '@vitejs/plugin-vue';
@@ -30,9 +30,9 @@ export default defineConfig({
     },
   },
   server: {
-    port: 8080,
+    port: 4502,
     proxy: {
-      '/api': 'http://localhost:8000',
+      '/api': 'http://localhost:4503',
     },
   },
   resolve: {
