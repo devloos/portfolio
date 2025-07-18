@@ -22,13 +22,6 @@ export default defineConfig({
     }),
     tailwindcss(),
   ],
-  css: {
-    preprocessorOptions: {
-      scss: {
-        api: 'modern',
-      },
-    },
-  },
   server: {
     port: 4550,
     proxy: {
