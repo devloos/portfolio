@@ -78,6 +78,9 @@ async function fetchExperiences() {
       include: {
         tags: true,
       },
+      orderBy: {
+        start_date: 'DESC',
+      },
     },
   });
 
