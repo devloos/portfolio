@@ -19,7 +19,7 @@ watch(
     <SmartTransition>
       <div
         v-if="loading"
-        class="fixed inset-0 z-50 bg-gray-700/[.5] text-center backdrop:blur-sm"
+        class="bg-primary-900/50 fixed inset-0 z-50 text-center backdrop:blur-sm"
       >
         <LoadingIndicator />
       </div>

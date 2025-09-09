@@ -113,22 +113,25 @@ function isHoveredIndex(i) {
       <div
         class="container mx-auto flex flex-col items-center justify-center gap-4 md:max-w-[44rem] md:flex-row-reverse lg:max-w-4xl xl:max-w-[60rem]"
       >
-        <div class="relative mb-14">
-          <MediaKit
-            class="animate-vertical max-w-48 md:max-w-44"
-            src="/portfolio/avatar.png"
-            :width="450"
-            :height="450"
-            alt="avatar"
-          />
-          <MediaKit
-            class="animate-vertical absolute -right-10 -bottom-16 md:-right-8 md:-bottom-14 md:min-w-48 lg:-right-10 lg:-bottom-16 lg:min-w-52"
-            src="/portfolio/nimbus.png"
-            :width="683"
-            :height="365"
-            alt="nimbus"
-          />
+        <div class="relative">
+          <div class="animate-vertical flex flex-col items-center">
+            <MediaKit
+              class="max-w-48 md:max-w-44"
+              src="/portfolio/avatar.png"
+              :width="450"
+              :height="450"
+              alt="avatar"
+            />
+            <MediaKit
+              class="max-w-64 translate-x-8 -translate-y-10 md:min-w-48 lg:min-w-52"
+              src="/portfolio/nimbus.png"
+              :width="683"
+              :height="365"
+              alt="nimbus"
+            />
+          </div>
         </div>
+
         <div class="grow px-2 text-center md:text-start">
           <p class="mb-7 max-w-xl px-1 text-2xl font-semibold lg:text-3xl">
             <span>Hey! My name is&nbsp;</span>

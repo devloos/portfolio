@@ -18,7 +18,7 @@
   --color-primary-700: oklch(21.1% 0.0225 257deg);
   --color-primary-800: oklch(17.3% 0.0179 264deg);
   --color-primary-900: oklch(13.4% 0.0101 261deg);
-  --color-primary: oklch(27.9% 0.0368 260deg);
+  --color-primary: oklch(15% 0.02 260);
 
   --color-alternate-100: oklch(92% 0.0248 252deg);
   --color-alternate-200: oklch(83.9% 0.0489 252deg);
