@@ -10,7 +10,7 @@ const year = new Date().getFullYear();
 </script>
 <template>
   <div class="relative mt-24 pt-12">
-    <TopWave class="fill-alternate-100 dark:fill-primary-700" />
+    <TopWave class="fill-alternate-200 dark:fill-primary-700" />
     <div class="absolute -top-10 w-full px-3">
       <div
         class="border-animated dark:dark-conic-border light-conic-border mx-auto w-fit rounded-sm bg-slate-500 p-8 shadow-lg md:px-10 md:py-12 lg:px-12 lg:py-14 dark:bg-gray-600"
@@ -43,7 +43,7 @@ const year = new Date().getFullYear();
         </div>
       </div>
     </div>
-    <div class="bg-alternate-100 dark:bg-primary-700 pt-72 md:pt-40">
+    <div class="bg-alternate-200 dark:bg-primary-700 pt-72 md:pt-40">
       <div class="flex flex-col items-center justify-center gap-10">
         <div>
           <MediaKit

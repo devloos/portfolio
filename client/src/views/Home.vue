@@ -167,8 +167,8 @@ function isHoveredIndex(i) {
       </div>
     </section>
     <section class="relative py-12">
-      <TopWave class="fill-alternate-100 dark:fill-primary-700" />
-      <div class="bg-alternate-100 dark:bg-primary-700 min-h-36">
+      <TopWave class="fill-alternate-200 dark:fill-primary-700" />
+      <div class="bg-alternate-200 dark:bg-primary-700 min-h-36">
         <SmartTransition name="fade" mode="out-in">
           <div v-if="featuredProjects.length > 0">
             <h4 class="mb-6 text-center text-lg font-semibold">Featured Projects</h4>
@@ -184,7 +184,7 @@ function isHoveredIndex(i) {
           </div>
         </SmartTransition>
       </div>
-      <BottomWave class="fill-alternate-100 dark:fill-primary-700" />
+      <BottomWave class="fill-alternate-200 dark:fill-primary-700" />
     </section>
     <section id="about" class="mt-16">
       <div class="relative container flex max-w-7xl flex-col lg:flex-row">
@@ -255,7 +255,7 @@ function isHoveredIndex(i) {
                   v-for="(ex, i) in experiences"
                   :key="ex.id"
                   :class="{
-                    'lg:bg-alternate-100 lg:opacity-100 lg:drop-shadow-lg lg:dark:bg-slate-700':
+                    'lg:bg-alternate-200 lg:opacity-100 lg:drop-shadow-lg lg:dark:bg-slate-700':
                       isHoveredIndex(i),
                     'lg:opacity-50': !isHoveredIndex(i) && hoveredIndex !== null,
                   }"
@@ -287,7 +287,7 @@ function isHoveredIndex(i) {
                   :src="
                     buildTagUrl({
                       text: tag.title,
-                      backgroundColor: isDark ? '121923' : 'd9e6f5',
+                      backgroundColor: isDark ? '121923' : 'B4CDEA',
                       style: 'for-the-badge',
                       logo: tag.logoName,
                     })

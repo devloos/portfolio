@@ -73,7 +73,7 @@ onMounted(() => {
 <template>
   <nav class="sticky top-0 z-50">
     <div
-      class="dark:bg-primary/[.8] flex items-center justify-between border-b border-neutral-300 bg-slate-100/[.8] px-5 py-2 backdrop-blur-xs md:justify-center md:gap-24 xl:gap-36 dark:border-neutral-500"
+      class="dark:bg-background/[.8] bg-alternate-background/[.8] flex items-center justify-between border-b border-neutral-300 px-5 py-2 backdrop-blur-xs md:justify-center md:gap-24 xl:gap-36 dark:border-neutral-500"
     >
       <RouterLink to="/">
         <MediaKit

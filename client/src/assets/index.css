@@ -7,38 +7,51 @@
 @theme {
   --animate-spin-once: spin 1s ease-in-out;
 
-  --color-dark-text: oklch(92.9% 0.0126 256deg);
   --color-light-text: oklch(24.6% 0.0299 259deg);
+
+  --color-background: oklch(15% 0.02 260);
+  --color-foreground: oklch(92.9% 0.013 255.508);
+
+  --color-alternate-background: oklch(92% 0.0248 252deg);
+  --color-alternate-foreground: oklch(24.6% 0.0299 259deg);
 
   --color-primary-100: oklch(87% 0.00591 265deg);
   --color-primary-200: oklch(73.4% 0.0124 264deg);
   --color-primary-300: oklch(59.4% 0.0174 257deg);
   --color-primary-400: oklch(44.3% 0.0258 259deg);
+
+  --color-primary: oklch(15% 0.02 260);
+  --color-primary-foreground: oklch(92.9% 0.013 255.508);
+
   --color-primary-600: oklch(24.6% 0.0299 259deg);
   --color-primary-700: oklch(21.1% 0.0225 257deg);
   --color-primary-800: oklch(17.3% 0.0179 264deg);
   --color-primary-900: oklch(13.4% 0.0101 261deg);
-  --color-primary: oklch(15% 0.02 260);
 
   --color-alternate-100: oklch(92% 0.0248 252deg);
   --color-alternate-200: oklch(83.9% 0.0489 252deg);
   --color-alternate-300: oklch(76% 0.0751 251deg);
   --color-alternate-400: oklch(68% 0.101 252deg);
+
+  --color-alternate: oklch(60.1% 0.129 253deg);
+  --color-alternate-foreground: oklch(24.6% 0.0299 259deg);
+
   --color-alternate-600: oklch(51.3% 0.106 253deg);
   --color-alternate-700: oklch(42.1% 0.0847 252deg);
   --color-alternate-800: oklch(32% 0.0607 253deg);
   --color-alternate-900: oklch(21.4% 0.0351 253deg);
-  --color-alternate: oklch(60.1% 0.129 253deg);
 
   --color-coal-100: oklch(87.6% 0.000000000000000508 0deg);
   --color-coal-200: oklch(74.8% 0.000000000000000449 0deg);
   --color-coal-300: oklch(61.7% 0.000000000000000353 0deg);
   --color-coal-400: oklch(47.5% 0.000000000000000269 0deg);
+
+  --color-coal: oklch(32.1% 0.000000000000000262 0deg);
+
   --color-coal-600: oklch(28.1% 0.000000000000000131 0deg);
   --color-coal-700: oklch(23.9% 0.000000000000000174 0deg);
   --color-coal-800: oklch(19.1% 0.000000000000000116 0deg);
   --color-coal-900: oklch(14.5% 0.0000000000000000488 0deg);
-  --color-coal: oklch(32.1% 0.000000000000000262 0deg);
 }
 
 @utility container {
@@ -70,7 +83,7 @@
 
 @utility light-conic-border {
   background-image:
-    conic-gradient(from var(--border-angle), #f1f5f9, #f1f5f9 50%, #f1f5f9),
+    conic-gradient(from var(--border-angle), #8bb2df, #8bb2df 50%, #8bb2df),
     conic-gradient(from var(--border-angle), transparent 20%, rgb(26, 76, 120), #f1f5f9);
 }
 
@@ -84,7 +97,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   transition: color 300ms ease !important;
   transition: background-color 300ms ease !important;
-  @apply text-primary-600 dark:bg-primary bg-slate-100 dark:text-slate-200;
+  @apply text-alternate-foreground dark:bg-background dark:text-foreground bg-alternate-background;
 }
 
 /* background grid */

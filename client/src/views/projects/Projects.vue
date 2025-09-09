@@ -249,7 +249,7 @@ onMounted(async () => {
           v-for="project in projects"
           :key="project.id"
           :href="project.source"
-          class="group bg-alternate-100 dark:bg-primary-700 flex flex-col rounded-sm p-8 transition-all hover:-translate-y-2"
+          class="group bg-alternate-200 dark:bg-primary-700 flex flex-col rounded-sm p-8 transition-all hover:-translate-y-2"
         >
           <div class="flex justify-between">
             <SmartSvg class="fill-alternate h-9 w-9" src="folder" />
@@ -308,14 +308,14 @@ onMounted(async () => {
 
       <div class="flex justify-center gap-3">
         <button
-          class="hover:bg-alternate-100 mr-2 rounded-sm px-3 py-2 transition-all disabled:opacity-25 disabled:hover:cursor-not-allowed dark:hover:bg-slate-700"
+          class="hover:bg-alternate-200 mr-2 rounded-sm px-3 py-2 transition-all disabled:opacity-25 disabled:hover:cursor-not-allowed dark:hover:bg-slate-700"
           type="button"
           :disabled="currentPage === 0"
           @click="currentPage -= 1"
         >
           <SmartSvg
             src="chevron-left"
-            class="fill-light-text dark:fill-dark-text h-5 w-5"
+            class="fill-light-text dark:fill-primary-foreground h-5 w-5"
           />
         </button>
 
@@ -325,7 +325,7 @@ onMounted(async () => {
           class="w-10 rounded-sm border border-slate-500 transition-all"
           :class="{
             'bg-alternate-300 dark:bg-primary-700': currentPage === page - 1,
-            'hover:bg-alternate-100 dark:hover:bg-slate-700': currentPage !== page - 1,
+            'hover:bg-alternate-200 dark:hover:bg-slate-700': currentPage !== page - 1,
           }"
           @click="currentPage = page - 1"
         >
@@ -333,14 +333,14 @@ onMounted(async () => {
         </button>
 
         <button
-          class="hover:bg-alternate-100 ml-2 rounded-sm px-3 py-2 transition-all disabled:opacity-25 disabled:hover:cursor-not-allowed dark:hover:bg-slate-700"
+          class="hover:bg-alternate-200 ml-2 rounded-sm px-3 py-2 transition-all disabled:opacity-25 disabled:hover:cursor-not-allowed dark:hover:bg-slate-700"
           type="button"
           :disabled="currentPage === numberOfPages - 1"
           @click="currentPage += 1"
         >
           <SmartSvg
             src="chevron-right"
-            class="fill-light-text dark:fill-dark-text h-5 w-5"
+            class="fill-light-text dark:fill-primary-foreground h-5 w-5"
           />
         </button>
       </div>

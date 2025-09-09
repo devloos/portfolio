@@ -54,7 +54,7 @@ async function sendEmail() {
           <input
             v-model.trim="name"
             type="text"
-            class="text-primary-600 ring-primary-100 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 shadow-xs ring-1 transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
+            class="text-primary-600 ring-primary-300 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 shadow-xs ring-1 transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
             required
           />
         </div>
@@ -66,7 +66,7 @@ async function sendEmail() {
           <input
             v-model.trim="email"
             type="email"
-            class="text-primary-600 ring-primary-100 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 shadow-xs ring-1 transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
+            class="text-primary-600 ring-primary-300 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 shadow-xs ring-1 transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
             required
           />
         </div>
@@ -78,7 +78,7 @@ async function sendEmail() {
           <input
             v-model.trim="subject"
             type="text"
-            class="text-primary-600 ring-primary-100 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 shadow-xs ring-1 transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
+            class="text-primary-600 ring-primary-300 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 shadow-xs ring-1 transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
             required
           />
         </div>
@@ -91,7 +91,7 @@ async function sendEmail() {
             v-model.trim="message"
             rows="8"
             cols="70"
-            class="text-primary-600 ring-primary-100 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 shadow-xs ring-1 transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
+            class="text-primary-600 ring-primary-300 focus:ring-primary-400 dark:ring-primary-200 rounded-sm bg-inherit px-2 py-3 shadow-xs ring-1 transition-all focus:ring-2 focus:outline-hidden dark:text-slate-200"
             required
           />
         </div>
