@@ -59,7 +59,7 @@ const year = new Date().getFullYear();
             Leave a meaningful impact, regardless of its scale.
           </p>
         </blockquote>
-        <div class="flex items-center justify-around gap-6 md:gap-16">
+        <div class="flex items-center justify-around gap-4 sm:gap-6 md:gap-16">
           <a
             class="group rounded-sm transition-all hover:bg-slate-700 dark:hover:bg-slate-200"
             href="https://www.linkedin.com/in/aguilerac"
