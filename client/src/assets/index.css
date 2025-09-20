@@ -112,7 +112,7 @@ body::before {
   opacity: 0.1;
   z-index: -100;
 
-  background-size: 80px 80px;
+  background-size: 70px 70px;
   background-image:
     linear-gradient(to right, grey 1px, transparent 1px),
     linear-gradient(to bottom, grey 1px, transparent 1px);

@@ -117,14 +117,14 @@ function isHoveredIndex(i) {
           <div class="animate-vertical flex flex-col items-center">
             <MediaKit
               class="max-w-48 md:max-w-44"
-              src="/portfolio/avatar.png"
+              src="/portfolio/bitmoji.png"
               :width="450"
               :height="450"
               alt="avatar"
             />
             <MediaKit
               class="max-w-64 translate-x-8 -translate-y-10 md:min-w-48 lg:min-w-52"
-              src="/portfolio/nimbus.png"
+              src="/portfolio/nimbus-3000.png"
               :width="683"
               :height="365"
               alt="nimbus"
