@@ -12,8 +12,6 @@ import StatCard from '@/components/cards/StatCard.vue';
 import MediaKit from '@/components/MediaKit.vue';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 import StyledButton from '@/components/styled/StyledButton.vue';
-import BottomWave from '@/components/wave-svgs/BottomWave.vue';
-import TopWave from '@/components/wave-svgs/TopWave.vue';
 
 useHead({
   title: 'Devlos',
@@ -166,25 +164,21 @@ function isHoveredIndex(i) {
         </div>
       </div>
     </section>
-    <section class="relative py-12">
-      <TopWave class="fill-alternate-200 dark:fill-primary-700" />
-      <div class="bg-alternate-200 dark:bg-primary-700 min-h-36">
-        <SmartTransition name="fade" mode="out-in">
-          <div v-if="featuredProjects.length > 0">
-            <h4 class="mb-6 text-center text-lg font-semibold">Featured Projects</h4>
-            <div
-              class="container grid max-w-6xl grid-cols-1 place-items-center gap-6 px-3 lg:grid-cols-2"
-            >
-              <ProjectCard
-                v-for="project in featuredProjects"
-                :key="project.id"
-                :project="project"
-              />
-            </div>
+    <section class="pb-5">
+      <SmartTransition name="fade" mode="out-in">
+        <div v-if="featuredProjects.length > 0">
+          <h4 class="mb-6 text-center text-lg font-semibold">Featured Projects</h4>
+          <div
+            class="container grid max-w-6xl grid-cols-1 place-items-center gap-6 px-3 lg:grid-cols-2 lg:gap-16"
+          >
+            <ProjectCard
+              v-for="project in featuredProjects"
+              :key="project.id"
+              :project="project"
+            />
           </div>
-        </SmartTransition>
-      </div>
-      <BottomWave class="fill-alternate-200 dark:fill-primary-700" />
+        </div>
+      </SmartTransition>
     </section>
     <section id="about" class="mt-16">
       <div class="relative container flex max-w-7xl flex-col lg:flex-row">
