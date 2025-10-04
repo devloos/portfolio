@@ -23,8 +23,8 @@
   /* base content */
   --popover-foreground: oklch(19.162% 0 0);
 
-  --primary: oklch(54.367% 0.037 51.902);
-  --primary-foreground: oklch(90.873% 0.007 51.902);
+  --primary: oklch(69.651% 0.059 248.687);
+  --primary-foreground: oklch(13.93% 0.011 248.687);
 
   --secondary: oklch(73.425% 0.094 60.729);
   --secondary-foreground: oklch(14.685% 0.018 60.729);
@@ -75,9 +75,9 @@
   --destructive: oklch(65.287% 0.19149 21.301);
   --destructive-foreground: oklch(0% 0 0);
 
-  --border: oklch(16.203% 0.007 17.911);
+  --border: oklch(25.615% 0.00003 271.152);
   --input: oklch(0.269 0 0);
-  --ring: oklch(16.203% 0.007 17.911);
+  --ring: oklch(25.615% 0.00003 271.152);
 }
 
 @theme inline {
