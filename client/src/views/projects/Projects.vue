@@ -1,10 +1,9 @@
-<script setup lang="js">
+<script setup lang="ts">
 import { useHead } from '@unhead/vue';
-import { onMounted, ref, useTemplateRef, watch } from 'vue';
+import { computed, onMounted, ref, useTemplateRef, watch } from 'vue';
 
-import { injectAppContext } from '@/App.vue';
+import { FEATURED_PROJECTS, PROJECTS } from '@/assets/constants/projects';
 import { buildTagUrl } from '@/assets/utils/helpers';
-import { smartFetch } from '@/assets/utils/smart-fetch';
 import MediaKit from '@/components/MediaKit.vue';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
 
@@ -25,89 +24,36 @@ const projectTwo = ref(null);
 const projectThree = ref(null);
 const projectFour = ref(null);
 
-const projects = ref([]);
+const projects = ref(PROJECTS);
 
-async function fetchFeaturedProjects() {
-  const response = await smartFetch({
-    url: '/api/project/list',
-    method: 'GET',
-    params: {
-      featured: true,
-      orderBy: {
-        priority: 'ASC',
-      },
-      include: {
-        tags: true,
-      },
-    },
-  });
-
-  if (response.success) {
-    [projectOne.value, projectTwo.value, projectThree.value, projectFour.value] =
-      response.data.projects;
-  }
+function fetchFeaturedProjects() {
+  [projectOne.value, projectTwo.value, projectThree.value, projectFour.value] =
+    FEATURED_PROJECTS;
 }
 
 const LIMIT = 6;
+const numberOfPages = Math.floor(projects.value.length / LIMIT) + 1;
 const refOtherProjects = useTemplateRef('other-projects');
 const currentPage = ref(0);
-const numberOfPages = ref(0);
 
-async function fetchProjects() {
-  const response = await smartFetch({
-    url: '/api/project/list',
-    method: 'GET',
-    params: {
-      featured: false,
-      limit: LIMIT,
-      offset: currentPage.value * LIMIT,
-      orderBy: {
-        priority: 'ASC',
-      },
-      include: {
-        tags: true,
-      },
-    },
-  });
+const paginatedProjects = computed(() => {
+  const index = currentPage.value * LIMIT;
+  return projects.value.slice(index, index + LIMIT);
+});
 
-  if (response.success) {
-    projects.value = response.data.projects;
-    numberOfPages.value = Math.floor(response.data.count / LIMIT) + 1;
-  }
-}
-
-const isLoading = ref(true);
-const appContext = injectAppContext();
-
-watch(currentPage, async () => {
-  appContext.overlay.start();
-
-  await fetchProjects();
-
-  appContext.overlay.stop();
-
+watch(paginatedProjects, async () => {
   refOtherProjects.value.scrollIntoView({
     behavior: 'smooth',
   });
 });
 
-onMounted(async () => {
-  appContext.overlay.start();
-
-  const promises = [];
-  promises.push(fetchFeaturedProjects());
-  promises.push(fetchProjects());
-
-  await Promise.all(promises);
-
-  appContext.overlay.stop();
-  isLoading.value = false;
+onMounted(() => {
+  fetchFeaturedProjects();
 });
 </script>
 
 <template>
-  <div v-if="isLoading" class="h-svh" />
-  <div v-else>
+  <div>
     <div class="px-5 py-10">
       <swiper-container
         :slides-per-view="1"
@@ -246,7 +192,7 @@ onMounted(async () => {
       </h3>
       <div class="grid auto-rows-fr gap-3 pb-8 md:grid-cols-2 xl:grid-cols-3">
         <a
-          v-for="project in projects"
+          v-for="project in paginatedProjects"
           :key="project.id"
           :href="project.source"
           class="group bg-alternate-200 dark:bg-primary-700 flex flex-col rounded-sm p-8 transition-all hover:-translate-y-2"

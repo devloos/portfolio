@@ -2,8 +2,8 @@
 import { ref } from 'vue';
 
 import { injectAppContext } from '@/App.vue';
-import { smartFetch } from '@/assets/utils/smart-fetch';
 import StyledButton from '@/components/styled/StyledButton.vue';
+import { sleep } from '@/lib/utils';
 
 const appContext = injectAppContext();
 
@@ -17,22 +17,9 @@ const message = ref('');
 async function sendEmail() {
   appContext.overlay.start();
 
-  const body = {
-    name: name.value,
-    email: email.value,
-    subject: subject.value,
-    message: message.value,
-  };
+  await sleep(500);
 
-  const response = await smartFetch({
-    url: '/api/email/create',
-    method: 'POST',
-    data: body,
-  });
-
-  if (response.success) {
-    form.value.reset();
-  }
+  form.value.reset();
 
   appContext.overlay.stop();
 }

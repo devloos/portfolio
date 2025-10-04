@@ -1,11 +1,12 @@
-<script setup lang="js">
+<script setup lang="ts">
 import { useHead } from '@unhead/vue';
 import { useDark } from '@vueuse/core';
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 
-import { injectAppContext } from '@/App.vue';
+import { FEATURED_EXPERIENCES } from '@/assets/constants/experiences';
+import { FEATURED_PROJECTS } from '@/assets/constants/projects';
+import { FEATURED_TAGS } from '@/assets/constants/tags';
 import { buildTagUrl } from '@/assets/utils/helpers';
-import { smartFetch } from '@/assets/utils/smart-fetch';
 import ExperienceCard from '@/components/cards/ExperienceCard.vue';
 import ProjectCard from '@/components/cards/ProjectCard.vue';
 import StatCard from '@/components/cards/StatCard.vue';
@@ -24,79 +25,6 @@ useHead({
 });
 
 const isDark = useDark();
-const featuredProjects = ref([]);
-
-const isLoading = ref(true);
-
-const appContext = injectAppContext();
-
-async function fetchFeaturedProjects() {
-  const response = await smartFetch({
-    url: '/api/project/list',
-    method: 'GET',
-    params: {
-      featured: true,
-      orderBy: {
-        priority: 'ASC',
-      },
-      include: {
-        tags: true,
-      },
-    },
-  });
-
-  if (response.success) {
-    featuredProjects.value = response.data.projects;
-  }
-}
-
-const featuredTags = ref([]);
-
-async function fetchFeaturedTags() {
-  const response = await smartFetch({
-    url: '/api/tag/list',
-    method: 'GET',
-    params: {
-      featured: true,
-    },
-  });
-
-  if (response.success) {
-    featuredTags.value = response.data;
-  }
-}
-
-const experiences = ref([]);
-
-async function fetchExperiences() {
-  const response = await smartFetch({
-    url: '/api/experience/list',
-    method: 'GET',
-    params: {
-      include: {
-        tags: true,
-      },
-    },
-  });
-
-  if (response.success) {
-    experiences.value = response.data;
-  }
-}
-
-onMounted(async () => {
-  appContext.overlay.start();
-
-  const promises = [];
-  promises.push(fetchFeaturedProjects());
-  promises.push(fetchFeaturedTags());
-  promises.push(fetchExperiences());
-
-  await Promise.all(promises);
-
-  appContext.overlay.stop();
-  isLoading.value = false;
-});
 
 const hoveredIndex = ref(null);
 
@@ -105,8 +33,7 @@ function isHoveredIndex(i) {
 }
 </script>
 <template>
-  <main v-if="isLoading" class="h-svh" />
-  <main v-else>
+  <main>
     <section class="mb-16 pt-4 md:px-3 md:pt-20">
       <div
         class="container mx-auto flex flex-col items-center justify-center gap-4 md:max-w-[44rem] md:flex-row-reverse lg:max-w-4xl xl:max-w-[60rem]"
@@ -166,13 +93,13 @@ function isHoveredIndex(i) {
     </section>
     <section class="pb-5">
       <SmartTransition name="fade" mode="out-in">
-        <div v-if="featuredProjects.length > 0">
+        <div>
           <h4 class="mb-6 text-center text-lg font-semibold">Featured Projects</h4>
           <div
             class="container grid max-w-6xl grid-cols-1 place-items-center gap-6 px-3 lg:grid-cols-2 lg:gap-16"
           >
             <ProjectCard
-              v-for="project in featuredProjects"
+              v-for="project in FEATURED_PROJECTS"
               :key="project.id"
               :project="project"
             />
@@ -242,11 +169,11 @@ function isHoveredIndex(i) {
 
         <div class="mx-auto max-w-2xl px-4">
           <SmartTransition name="slide-from-right" mode="out-in">
-            <div v-if="experiences.length > 0">
+            <div>
               <p class="mb-8 font-bold">Experience</p>
               <div>
                 <ExperienceCard
-                  v-for="(ex, i) in experiences"
+                  v-for="(ex, i) in FEATURED_EXPERIENCES"
                   :key="ex.id"
                   :class="{
                     'lg:bg-alternate-200 lg:opacity-100 lg:drop-shadow-lg lg:dark:bg-slate-700':
@@ -267,11 +194,8 @@ function isHoveredIndex(i) {
       <div class="mx-auto mt-8 max-w-4xl">
         <p class="mb-6 text-center text-lg font-semibold">Technologies</p>
         <SmartTransition name="fade" mode="out-in">
-          <div
-            v-if="featuredTags.length > 0"
-            class="mb-14 flex flex-wrap justify-center gap-3"
-          >
-            <div v-for="tag in featuredTags" :key="tag.id">
+          <div class="mb-14 flex flex-wrap justify-center gap-3">
+            <div v-for="tag in FEATURED_TAGS" :key="tag.id">
               <a
                 :href="tag.url"
                 target="_blank"
