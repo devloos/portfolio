@@ -1,81 +1,75 @@
-## Portfolio
+# Nuxt Minimal Starter
 
-### Preview
-
-![Screenshot 2025-01-27 at 11 07 25 PM](https://github.com/user-attachments/assets/347494e1-a7b5-4a73-93a4-4abb59c99e57)
-
-## Information
-
-### Client
-- Tech Stack: Vite, Vue.js, Vercel
-- Deploy is simple just push to main and vercel will pull latest
-- Vercel takes latest code and builds it using vite (running `npm run build`)
-- It then takes the output directory (dist) and serves it
-- Uses node.js version 22
-- Domain is CNAME record and Vercel gives the record an SSL Certificate (so does cloudflare)
-- Vite prefixed ENV vars are compiled into the dist folder
-
-### Server
-- Tech Stack: Symfony PHP and Doctrine for ORM
-- Server runs on an EC2 instance with installed PHP, Nginx, and Composer.
-- Github action sets up the env file and copies current repo plus env to prod EC2
-- We then run composer install
-- We have a security group on the EC2 side that exposes port 80 and 443 to http traffic
-- Nginx root is pointing to public symfony folder and reroutes traffic to php fpm
-- Any nginx errors are logged here:
-```
-error_log /var/log/nginx/portfolio_error.log;
-access_log /var/log/nginx/portfolio_access.log;
-```
-
-## Deployment
-
-### Client
-1. Create pull request
-2. Review code
-3. Merge to main branch
-4. Github action runs and pushes to vercel
-
-### Server
-1. Create pull request
-2. Review code
-3. Merge to main branch
-4. Github action runs and pushes to prod EC2
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
 
-### Client
-#### Requirements
-- [Node.js](https://nodejs.org/en/download)
-- [nvm](https://github.com/nvm-sh/nvm)
+Make sure to install dependencies:
 
-Install required dependencies
-
-```
+```bash
+# npm
 npm install
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-Run client-server (port: 8080)
+## Development Server
 
-```
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
 npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
 ```
 
-### Server
-#### Requirements
-- [Composer](https://getcomposer.org/download/)
-- [Symfony](https://symfony.com/download)
+## Production
 
-Install required dependencies
+Build the application for production:
 
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
 ```
-composer install
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
 ```
 
-If developing run symfony-server (port: 8000)
-
-```
-symfony server:start
-```
-
-
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
