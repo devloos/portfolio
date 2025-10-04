@@ -209,7 +209,6 @@ function resizeCanvas() {
   if (!renderer || !mesh) return;
 
   renderer.setSize(windowWidth.value, windowHeight.value);
-  console.log(windowWidth.value, windowHeight.value);
 
   // Update ratio uniform
   if (mesh.program && mesh.program.uniforms.u_ratio) {
