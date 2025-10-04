@@ -13,12 +13,20 @@ const bgColor = computed(() => {
 
   return BG_LIGHT_HEX;
 });
+
+const chroma = computed(() => {
+  if (colorMode.preference === 'dark') {
+    return 2;
+  }
+
+  return 0;
+});
 </script>
 
 <template>
   <div class="relative">
     <Teleport to="body">
-      <NeuralBg :backgroundColor="bgColor" :hue="0" :saturation="0" :chroma="0" />
+      <NeuralBg :backgroundColor="bgColor" :hue="0" :saturation="0" :chroma="chroma" />
     </Teleport>
 
     <Theme />
