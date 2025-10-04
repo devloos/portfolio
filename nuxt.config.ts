@@ -8,7 +8,14 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  modules: ["@nuxt/eslint", "@nuxt/fonts", "@nuxt/icon", "@nuxtjs/color-mode"],
+  modules: [
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@nuxt/icon",
+    "@nuxtjs/color-mode",
+    "shadcn-nuxt",
+    "@vueuse/nuxt",
+  ],
   fonts: {
     families: [
       {
@@ -30,5 +37,8 @@ export default defineNuxtConfig({
     fallback: "dark",
     classSuffix: "",
     dataValue: "theme",
+  },
+  shadcn: {
+    componentDir: "./app/components/ui",
   },
 });
