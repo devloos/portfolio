@@ -32,6 +32,8 @@ const sceneRef = ref<Transform | null>(null);
 const meshRef = ref<Mesh | null>(null);
 const cameraRef = ref<Camera | null>(null);
 
+const { width: windowWidth, height: windowHeight } = useWindowSize({ type: 'visual' });
+
 const pointerRef = ref({
   x: 0,
   y: 0,
@@ -150,8 +152,8 @@ function initOGL() {
   try {
     const renderer = new Renderer({
       canvas,
-      width: canvas.clientWidth,
-      height: canvas.clientHeight,
+      width: windowWidth.value,
+      height: windowHeight.value,
       dpr: Math.min(window.devicePixelRatio, 2),
     });
 
@@ -168,7 +170,7 @@ function initOGL() {
       fragment: fragmentShader,
       uniforms: {
         u_time: { value: 0 },
-        u_ratio: { value: window.innerWidth / window.innerHeight },
+        u_ratio: { value: windowWidth.value / windowHeight.value },
         u_pointer_position: { value: [0, 0] },
         u_scroll_progress: { value: 0 },
         u_hue: { value: props.hue },
@@ -206,14 +208,12 @@ function resizeCanvas() {
 
   if (!renderer || !mesh) return;
 
-  const width = canvas.clientWidth;
-  const height = canvas.clientHeight;
-
-  renderer.setSize(width, height);
+  renderer.setSize(windowWidth.value, windowHeight.value);
+  console.log(windowWidth.value, windowHeight.value);
 
   // Update ratio uniform
   if (mesh.program && mesh.program.uniforms.u_ratio) {
-    mesh.program.uniforms.u_ratio.value = width / height;
+    mesh.program.uniforms.u_ratio.value = windowWidth.value / windowHeight.value;
   }
 }
 
@@ -239,12 +239,12 @@ function render() {
     if (uniforms.u_time) uniforms.u_time.value = currentTime;
     if (uniforms.u_pointer_position) {
       uniforms.u_pointer_position.value = [
-        pointer.x / window.innerWidth,
-        1 - pointer.y / window.innerHeight,
+        pointer.x / windowWidth.value,
+        1 - pointer.y / windowHeight.value,
       ];
     }
     if (uniforms.u_scroll_progress) {
-      uniforms.u_scroll_progress.value = window.pageYOffset / (2 * window.innerHeight);
+      uniforms.u_scroll_progress.value = window.pageYOffset / (2 * windowHeight.value);
     }
   }
 
