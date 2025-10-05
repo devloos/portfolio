@@ -2,6 +2,44 @@
 const BG_DARK_HEX = '#1B1717';
 const BG_LIGHT_HEX = '#F1F1F1';
 
+const config = useRuntimeConfig();
+
+useSeoMeta({
+  title: 'Carlos Aguilera',
+  description: "I'm a software engineer with a big passion for Computer Science.",
+
+  ogUrl: config.public.baseUrl,
+  ogType: 'website',
+  ogTitle: 'Carlos Aguilera',
+  ogDescription: "I'm a software engineer with a big passion for Computer Science.",
+  ogImage: '/assets/card.jpg',
+  ogLocale: 'en_US',
+
+  twitterCard: 'summary',
+  twitterSite: config.public.baseUrl,
+  twitterTitle: 'Carlos Aguilera',
+  twitterDescription: "I'm a software engineer with a big passion for Computer Science.",
+  twitterImage: '/assets/card.jpg',
+});
+
+useHead({
+  htmlAttrs: {
+    lang: 'en',
+  },
+  meta: [
+    {
+      name: 'viewport',
+      content:
+        'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover',
+    },
+  ],
+  link: [
+    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    { rel: 'canonical', href: config.public.baseUrl },
+    { rel: 'apple-touch-icon', href: '/assets/card.jpg' },
+  ],
+});
+
 const colorMode = useColorMode();
 
 const bgColor = computed(() => {

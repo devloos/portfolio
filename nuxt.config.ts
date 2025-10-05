@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   css: ['./app/assets/css/main.css'],
   vite: {
     plugins: [tailwindcss()],
@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     public: {
       youtubeApiKey: 'AIzaSyDPAcntd3mvu1iQ46J7ObyIKG8h0bZpGqU',
       channelId: 'UCDAXiYNVkGEZxb6AOgbz14g',
+      baseUrl: process.env.NUXT_BASE_URL,
     },
   },
   modules: [
