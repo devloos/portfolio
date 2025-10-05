@@ -38,3 +38,9 @@ const chroma = computed(() => {
     </NuxtLayout>
   </div>
 </template>
+
+<style>
+.icon {
+  stroke-width: 1.5px;
+}
+</style>

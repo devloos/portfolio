@@ -1,5 +1,12 @@
-<script lang="ts" setup></script>
-
 <template>
-  <div>Resume</div>
+  <div class="w-full">
+    <ClientOnly>
+      <embed
+        src="/assets/resume.pdf"
+        type="application/pdf"
+        width="100%"
+        height="850px"
+      />
+    </ClientOnly>
+  </div>
 </template>

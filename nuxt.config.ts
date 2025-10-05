@@ -8,6 +8,12 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  runtimeConfig: {
+    public: {
+      youtubeApiKey: 'AIzaSyDPAcntd3mvu1iQ46J7ObyIKG8h0bZpGqU',
+      channelId: 'UCDAXiYNVkGEZxb6AOgbz14g',
+    },
+  },
   modules: [
     '@nuxt/eslint',
     '@nuxt/fonts',
@@ -33,6 +39,7 @@ export default defineNuxtConfig({
   icon: {
     mode: 'css',
     cssLayer: 'base',
+    class: 'icon',
     serverBundle: {
       collections: ['lucide'],
     },
