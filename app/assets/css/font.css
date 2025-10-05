@@ -1,3 +1,9 @@
 body {
-  font-family: "Montserrat", "sans-serif";
+  font-family: 'Instrument Sans', 'sans-serif';
+}
+
+@utility font-instrument-serif {
+  font-family: 'Instrument Serif', sans-serif;
+  font-weight: 500;
+  font-style: normal italic;
 }

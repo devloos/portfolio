@@ -33,6 +33,8 @@ const chroma = computed(() => {
       />
     </Teleport>
 
-    <Theme />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
