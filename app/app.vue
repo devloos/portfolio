@@ -39,7 +39,6 @@ useHead({
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     { rel: 'canonical', href: config.public.baseUrl },
-    { rel: 'apple-touch-icon', href: '/assets/card.jpg' },
   ],
 });
 
