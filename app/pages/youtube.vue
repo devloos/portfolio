@@ -3,7 +3,9 @@ const config = useRuntimeConfig();
 
 const URL = `https://www.googleapis.com/youtube/v3/search?key=${config.public.youtubeApiKey}&channelId=${config.public.channelId}&part=snippet,id&order=date&maxResults=10`;
 
-const { data: videos } = await useAsyncData(async () => {
+const videos = ref<any[]>([]);
+
+onMounted(async () => {
   const res = await $fetch<any>(URL);
 
   const data = res.items
@@ -23,7 +25,7 @@ const { data: videos } = await useAsyncData(async () => {
       };
     });
 
-  return data;
+  videos.value = data;
 });
 </script>
 
