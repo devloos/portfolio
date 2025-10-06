@@ -9,28 +9,32 @@ const isLoading = ref(false);
 onMounted(async () => {
   isLoading.value = true;
 
-  const res = await $fetch<any>(URL);
+  try {
+    const res = await $fetch<any>(URL);
 
-  const data = res.items
-    .filter((item: any) => item.id.videoId)
-    .map((item: any) => {
-      const video = item.snippet;
-      const url = `https://www.youtube.com/watch?v=${item.id.videoId}`;
-      const thumbnail = item.snippet.thumbnails.high.url;
-      const title = video.title;
-      const description = video.description;
+    const data = res.items
+      .filter((item: any) => item.id.videoId)
+      .map((item: any) => {
+        const video = item.snippet;
+        const url = `https://www.youtube.com/watch?v=${item.id.videoId}`;
+        const thumbnail = item.snippet.thumbnails.high.url;
+        const title = video.title;
+        const description = video.description;
 
-      return {
-        url,
-        thumbnail,
-        title,
-        description,
-      };
-    });
+        return {
+          url,
+          thumbnail,
+          title,
+          description,
+        };
+      });
 
-  videos.value = data;
-
-  isLoading.value = false;
+    videos.value = data;
+  } catch {
+    // todo: handle error
+  } finally {
+    isLoading.value = false;
+  }
 });
 </script>
 
@@ -39,7 +43,7 @@ onMounted(async () => {
     <div v-if="isLoading" class="py-4 text-center">
       <Icon name="lucide:loader-circle" class="size-8 animate-spin" />
     </div>
-    <div v-else class="flex flex-col gap-5">
+    <div v-else-if="videos.length > 0" class="flex flex-col gap-5">
       <a
         v-for="video in videos"
         :video="video.url"
@@ -52,7 +56,7 @@ onMounted(async () => {
 
           <div>
             <div
-              class="text-secondary/75 mb-2 flex items-center gap-2 font-bold tracking-wide"
+              class="text-foreground-active mb-2 flex items-center gap-2 text-lg font-bold tracking-wide"
             >
               <span>{{ video.title }}</span>
               <Icon
@@ -60,10 +64,24 @@ onMounted(async () => {
                 name="lucide:square-arrow-out-up-right"
               />
             </div>
-            <p>{{ video.description }}</p>
+
+            <p class="text-muted-foreground leading-relaxed tracking-wide">
+              {{ video.description }}
+            </p>
           </div>
         </div>
       </a>
+    </div>
+    <div
+      v-else
+      class="mx-auto flex max-w-xs flex-col items-center gap-3 py-4 text-center"
+    >
+      <Icon name="lucide:camera-off" class="size-8" />
+
+      <h3 class="text-foreground-active">No Youtube Videos</h3>
+      <p class="text-muted-foreground">
+        Looks like we didn't find any youtube videos try again later
+      </p>
     </div>
   </div>
 </template>
