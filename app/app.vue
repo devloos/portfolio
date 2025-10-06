@@ -14,7 +14,7 @@ useSeoMeta({
   ogTitle: 'Carlos Aguilera',
   ogDescription:
     "I'm a software engineer who thrives on building modern, scalable web applications.",
-  ogImage: '/assets/card.jpg',
+  ogImage: '/assets/og.jpg',
   ogLocale: 'en_US',
 
   twitterCard: 'summary_large_image',
@@ -22,7 +22,7 @@ useSeoMeta({
   twitterTitle: 'Carlos Aguilera',
   twitterDescription:
     "I'm a software engineer who thrives on building modern, scalable web applications.",
-  twitterImage: '/assets/card.jpg',
+  twitterImage: '/assets/og.jpg',
 });
 
 useHead({
