@@ -52,7 +52,7 @@ const normalizedDate = computed(() => {
         />
       </a>
 
-      <p class="text-foreground-active mb-4 leading-relaxed tracking-wide">
+      <p class="text-muted-foreground mb-4 leading-relaxed tracking-wide">
         {{ experience.summary }}
       </p>
     </div>
