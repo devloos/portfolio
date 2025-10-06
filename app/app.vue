@@ -17,7 +17,7 @@ useSeoMeta({
   ogImage: '/assets/card.jpg',
   ogLocale: 'en_US',
 
-  twitterCard: 'summary',
+  twitterCard: 'summary_large_image',
   twitterSite: config.public.baseUrl,
   twitterTitle: 'Carlos Aguilera',
   twitterDescription:
