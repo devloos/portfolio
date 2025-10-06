@@ -6,19 +6,22 @@ const config = useRuntimeConfig();
 
 useSeoMeta({
   title: 'Carlos Aguilera',
-  description: "I'm a software engineer with a big passion for Computer Science.",
+  description:
+    "I'm a software engineer who thrives on building modern, scalable web applications.",
 
   ogUrl: config.public.baseUrl,
   ogType: 'website',
   ogTitle: 'Carlos Aguilera',
-  ogDescription: "I'm a software engineer with a big passion for Computer Science.",
+  ogDescription:
+    "I'm a software engineer who thrives on building modern, scalable web applications.",
   ogImage: '/assets/card.jpg',
   ogLocale: 'en_US',
 
   twitterCard: 'summary',
   twitterSite: config.public.baseUrl,
   twitterTitle: 'Carlos Aguilera',
-  twitterDescription: "I'm a software engineer with a big passion for Computer Science.",
+  twitterDescription:
+    "I'm a software engineer who thrives on building modern, scalable web applications.",
   twitterImage: '/assets/card.jpg',
 });
 
