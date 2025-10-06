@@ -5,7 +5,7 @@ export const FEATURED_PROJECTS: Project[] = [
     id: 9,
     title: 'Saddleback Robotics',
     description:
-      "I developed a base station web GUI to enhance control and functionality for the Telecommunications, Autonomy, and Science subsystems. This interface provided essential GPS and heading data for rover navigation and enabled full control of the science platform, including liquid pumps, height adjustments, and drilling. Built with Django and integrated into ROS2, this system improved our team's placement by three ranks in the 2024/2025 competition.",
+      'Built a ROS2-integrated Django GUI controlling rover subsystems (pumps, drill, height), and visualized navigation data (GPS & heading). Helped team climb 3 ranks in competition.',
     featured: true,
     site: 'https://www.youtube.com/watch?v=2kkPbTSSpe0',
     source: 'https://github.com/SaddlebackCollegeRobotics',
@@ -29,27 +29,9 @@ export const FEATURED_PROJECTS: Project[] = [
         url: 'https://docs.ros.org/en/humble/index.html',
         featured: false,
       },
-      {
-        id: 22,
-        title: 'NAV2',
-        logoName: null,
-        url: null,
-        featured: false,
-      },
-      {
-        id: 23,
-        title: 'odrive',
-        logoName: null,
-        url: null,
-        featured: false,
-      },
-      {
-        id: 24,
-        title: 'Robotics',
-        logoName: null,
-        url: null,
-        featured: false,
-      },
+      { id: 22, title: 'NAV2', logoName: null, url: null, featured: false },
+      { id: 23, title: 'odrive', logoName: null, url: null, featured: false },
+      { id: 24, title: 'Robotics', logoName: null, url: null, featured: false },
       {
         id: 25,
         title: 'Autonomous Vehicles',
@@ -70,7 +52,7 @@ export const FEATURED_PROJECTS: Project[] = [
     id: 2,
     title: 'Street Fighter',
     description:
-      'Built a multiplayer Street Fighter-style game using Java. Leveraged multithreading to handle gameplay and rendering smoothly while ensuring players could connect seamlessly over a network. Utilized locks and volatile memory to ensure thread safety and prevent race conditions. Established a client-server architecture for players to communicate over a network. Implemented data serialization for exchanging game state information between clients and the server.',
+      'Built a networked Java multiplayer fighting game using multithreading and a client-server model. Ensured thread safety (locks, volatile), and serialized game state updates across clients.',
     featured: true,
     site: null,
     source: 'https://github.com/devloos/Street-Fighter',
@@ -80,20 +62,8 @@ export const FEATURED_PROJECTS: Project[] = [
     },
     visible: true,
     tags: [
-      {
-        id: 15,
-        title: 'JavaFX',
-        logoName: null,
-        url: null,
-        featured: false,
-      },
-      {
-        id: 16,
-        title: 'Maven',
-        logoName: 'apachemaven',
-        url: null,
-        featured: false,
-      },
+      { id: 15, title: 'JavaFX', logoName: null, url: null, featured: false },
+      { id: 16, title: 'Maven', logoName: 'apachemaven', url: null, featured: false },
       {
         id: 12,
         title: 'Java',
@@ -107,7 +77,7 @@ export const FEATURED_PROJECTS: Project[] = [
     id: 5,
     title: 'Monster Quest',
     description:
-      'Developed a Python RPG inspired by Pokémon and Final Fantasy using pygame-ce, including modular OOP design for scalability, event-driven programming for smooth gameplay, and sprite-based animations for visual appeal. Optimized the game loop for performance and ensured code readability, extensibility, and reusable utilities.',
+      'Created a modular Python RPG (pygame-ce) with event-driven architecture, sprite animations, and optimized game loop for smooth gameplay. Designed for extensibility and reusability.',
     featured: true,
     site: null,
     source: 'https://github.com/devloos/monster-quest',
@@ -144,7 +114,7 @@ export const FEATURED_PROJECTS: Project[] = [
     id: 4,
     title: 'Sales System',
     description:
-      'Developed a terminal-based POS system in C++ featuring auto-complete, employee hierarchy, UUID generation, and receipt creation without external libraries. Utilized RAII for memory safety, move semantics for efficiency, and custom STL containers for robust data handling, optimizing performance and code maintainability.',
+      'Delivered a terminal POS in C++ with auto-complete, employee-level permissions, receipt generation, and custom STL containers. Employed RAII and move semantics to ensure safety and performance.',
     featured: true,
     site: null,
     source: 'https://github.com/devloos/Sales-System',
