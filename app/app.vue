@@ -40,6 +40,8 @@ useHead({
     },
   ],
   link: [
+    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
     { rel: 'canonical', href: config.public.baseUrl },
     { rel: 'icon', href: '/favicon.ico' },
     { rel: 'shortcut icon', href: '/favicon.ico' },
