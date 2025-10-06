@@ -22,6 +22,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'shadcn-nuxt',
     '@vueuse/nuxt',
+    '@nuxtjs/sitemap',
   ],
   fonts: {
     families: [
@@ -53,5 +54,9 @@ export default defineNuxtConfig({
   },
   shadcn: {
     componentDir: './app/components/ui',
+  },
+  site: {
+    url: 'https://www.caguilera.dev',
+    name: 'Carlos Aguilera',
   },
 });
