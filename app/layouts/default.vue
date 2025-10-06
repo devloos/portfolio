@@ -21,40 +21,40 @@
             <div class="flex flex-wrap gap-3 sm:gap-6">
               <NuxtLink
                 to="/"
-                class="hover:text-foreground-active transition-all"
-                active-class="text-foreground-active underline underline-offset-2"
+                class="text-foreground-active transition-all"
+                active-class=" underline underline-offset-2"
               >
                 About
               </NuxtLink>
 
               <NuxtLink
                 to="/experiences"
-                class="hover:text-foreground-active transition-all"
-                active-class="text-foreground-active underline underline-offset-2"
+                class="text-foreground-active transition-all"
+                active-class=" underline underline-offset-2"
               >
                 Experiences
               </NuxtLink>
 
               <NuxtLink
                 to="/projects"
-                class="hover:text-foreground-active transition-all"
-                active-class="text-foreground-active underline underline-offset-2"
+                class="text-foreground-active transition-all"
+                active-class="underline underline-offset-2"
               >
                 Projects
               </NuxtLink>
 
               <NuxtLink
                 to="/youtube"
-                class="hover:text-foreground-active transition-all"
-                active-class="text-foreground-active underline underline-offset-2"
+                class="text-foreground-active transition-all"
+                active-class="underline underline-offset-2"
               >
                 Youtube
               </NuxtLink>
 
               <NuxtLink
                 to="/resume"
-                class="hover:text-foreground-active transition-all"
-                active-class="text-foreground-active underline underline-offset-2"
+                class="text-foreground-active transition-all"
+                active-class="underline underline-offset-2"
               >
                 Resume
               </NuxtLink>
