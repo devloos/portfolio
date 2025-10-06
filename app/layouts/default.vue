@@ -21,6 +21,7 @@
             <div class="flex flex-wrap gap-3 sm:gap-6">
               <NuxtLink
                 to="/"
+                class="hover:text-foreground-active transition-all"
                 active-class="text-foreground-active underline underline-offset-2"
               >
                 About
@@ -28,6 +29,7 @@
 
               <NuxtLink
                 to="/experiences"
+                class="hover:text-foreground-active transition-all"
                 active-class="text-foreground-active underline underline-offset-2"
               >
                 Experiences
@@ -35,6 +37,7 @@
 
               <NuxtLink
                 to="/projects"
+                class="hover:text-foreground-active transition-all"
                 active-class="text-foreground-active underline underline-offset-2"
               >
                 Projects
@@ -42,6 +45,7 @@
 
               <NuxtLink
                 to="/youtube"
+                class="hover:text-foreground-active transition-all"
                 active-class="text-foreground-active underline underline-offset-2"
               >
                 Youtube
@@ -49,6 +53,7 @@
 
               <NuxtLink
                 to="/resume"
+                class="hover:text-foreground-active transition-all"
                 active-class="text-foreground-active underline underline-offset-2"
               >
                 Resume
@@ -66,7 +71,7 @@
         href="https://www.linkedin.com/in/aguilerac"
         aria-label="Linkedin"
         target="_blank"
-        class="hover:text-foreground-active"
+        class="hover:text-foreground-active transition-all"
       >
         <Icon name="lucide:linkedin" class="size-6" />
       </a>
@@ -75,7 +80,7 @@
         href="https://github.com/devloos"
         aria-label="Github"
         target="_blank"
-        class="hover:text-foreground-active"
+        class="hover:text-foreground-active transition-all"
       >
         <Icon name="lucide:github" class="size-6" />
       </a>
@@ -84,7 +89,7 @@
         href="https://www.youtube.com/@devlos-labs"
         aria-label="Youtube"
         target="_blank"
-        class="hover:text-foreground-active"
+        class="hover:text-foreground-active transition-all"
       >
         <Icon name="lucide:youtube" class="size-6" />
       </a>
@@ -93,7 +98,7 @@
         href="https://leetcode.com/devlos/"
         aria-label="Leetcode"
         target="_blank"
-        class="hover:text-foreground-active"
+        class="hover:text-foreground-active transition-all"
       >
         <Icon name="lucide:pyramid" class="size-6" />
       </a>
@@ -103,13 +108,13 @@
           <Icon
             v-if="$colorMode.preference === 'dark'"
             name="lucide:sun"
-            class="hover:text-foreground-active size-6 cursor-pointer"
+            class="hover:text-foreground-active size-6 cursor-pointer transition-all"
             @click="$colorMode.preference = 'light'"
           />
           <Icon
             v-else
             name="lucide:moon"
-            class="hover:text-foreground-active size-6 cursor-pointer"
+            class="hover:text-foreground-active size-6 cursor-pointer transition-all"
             @click="$colorMode.preference = 'dark'"
           />
         </AppTransition>
