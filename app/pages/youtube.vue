@@ -1,8 +1,4 @@
 <script lang="ts" setup>
-const config = useRuntimeConfig();
-
-const URL = `https://www.googleapis.com/youtube/v3/search?key=${config.public.youtubeApiKey}&channelId=${config.public.channelId}&part=snippet,id&order=date&maxResults=10`;
-
 const videos = ref<any[]>([]);
 const isLoading = ref(false);
 
@@ -10,26 +6,9 @@ onMounted(async () => {
   isLoading.value = true;
 
   try {
-    const res = await $fetch<any>(URL);
+    const res = await $fetch<{ items: YtVideo[] }>('/api/youtube');
 
-    const data = res.items
-      .filter((item: any) => item.id.videoId)
-      .map((item: any) => {
-        const video = item.snippet;
-        const url = `https://www.youtube.com/watch?v=${item.id.videoId}`;
-        const thumbnail = item.snippet.thumbnails.high.url;
-        const title = video.title;
-        const description = video.description;
-
-        return {
-          url,
-          thumbnail,
-          title,
-          description,
-        };
-      });
-
-    videos.value = data;
+    videos.value = res.items;
   } catch {
     // todo: handle error
   } finally {

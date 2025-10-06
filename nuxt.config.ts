@@ -9,10 +9,10 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   runtimeConfig: {
+    youtubeApiKey: process.env.YOUTUBE_API_KEY,
     public: {
-      youtubeApiKey: 'AIzaSyDPAcntd3mvu1iQ46J7ObyIKG8h0bZpGqU',
-      channelId: 'UCDAXiYNVkGEZxb6AOgbz14g',
       baseUrl: process.env.NUXT_BASE_URL,
+      channelId: 'UCDAXiYNVkGEZxb6AOgbz14g',
     },
   },
   modules: [
