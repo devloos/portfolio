@@ -3,10 +3,8 @@
 <template>
   <div class="leading-7">
     <p class="mb-3">
-      I'm a software engineer with a big passion for Computer Science. My journey started
-      back in 2020, but it wasn't until late 2021 that I could fully focus on it. Once I
-      got started, I dove into learning C++ through online tutorials and built projects
-      like a
+      I'm a software engineer who thrives on building modern, scalable web applications.
+      My journey started in 2020 with C++ side projects like a
       <a
         href="https://github.com/devloos/Snake-Game"
         class="font-semibold text-nowrap hover:opacity-75"
@@ -14,46 +12,41 @@
       >
         <span class="underline underline-offset-2">Snake Game</span>
       </a>
-      , a
-      <a
-        href="https://github.com/devloos/Pokemon-Clone"
-        class="font-semibold text-nowrap hover:opacity-75"
-        target="_blank"
-      >
-        <span class="underline underline-offset-2">Pokemon-inspired RPG</span>
-      </a>
-      , and a
+      and a
       <a
         href="https://github.com/devloos/Sales-System"
         class="font-semibold text-nowrap hover:opacity-75"
         target="_blank"
       >
-        <span class="underline underline-offset-2">Sales System</span>
+        <span class="underline underline-offset-2">terminal-based POS system</span>
       </a>
-      using tools like ncurses, RayLib, and mongocxx.
+      , which taught me low-level problem solving and memory management early on.
     </p>
 
     <br />
 
     <p class="mb-3">
-      Now, I'm studying Computer Science at Long Beach State University and keeping up a
-      3.85 GPA. Being the first in my family to go to university makes it all the more
-      rewarding.
+      In 2021, I shifted my focus to the web. I immersed myself in Vue.js, Nuxt, Supabase,
+      and TypeScript. Building full-stack apps, shipping features end-to-end, and learning
+      to design for scale. Today, I'm pursuing my B.S. in Computer Science at Long Beach
+      State with a 3.85 GPA, while working professionally as a Full-Stack Developer.
     </p>
 
     <br />
 
     <p class="mb-3">
-      While working as a supervisor at Ethika, my interest in tech really took off. I
-      started sharing what I was learning, and that led to landing my first software
-      development job, a huge moment for me.
+      At Ethika, I moved from operations into engineering, leading projects that improved
+      site performance, cut search costs, and powered large-scale content systems. On the
+      side, I’ve launched a platform called The Inked Network used by 200+ artists,
+      integrating real-time features, AI tools, and secure data policies.
     </p>
 
     <br />
+
     <p>
-      I'm all about learning new things and trying out different tools. Outside of coding,
-      I love fishing, playing soccer, and spending time with my family. My dream is to
-      create something meaningful that makes a difference, no matter how big or small.
+      I enjoy working in all areas from performance tuning to crafting clean UI. I
+      constantly push myself to pick up new technologies and patterns. Outside of tech,
+      you'll find me fishing, playing soccer, or spending time with family.
     </p>
   </div>
 </template>
