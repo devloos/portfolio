@@ -46,7 +46,7 @@ export default defineCachedEventHandler(
   },
   {
     // Cache TTL = 30 minutes
-    maxAge: 60 * 30,
+    maxAge: 60 * 60,
     getKey: (event) => {
       const q = getQuery(event);
       return `yt-videos:${q.channelId}:${q.maxResults}`;
