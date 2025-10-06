@@ -66,19 +66,35 @@
         href="https://www.linkedin.com/in/aguilerac"
         aria-label="Linkedin"
         target="_blank"
+        class="hover:text-foreground-active"
       >
         <Icon name="lucide:linkedin" class="size-6" />
       </a>
 
-      <a href="https://github.com/devloos" aria-label="Github" target="_blank">
+      <a
+        href="https://github.com/devloos"
+        aria-label="Github"
+        target="_blank"
+        class="hover:text-foreground-active"
+      >
         <Icon name="lucide:github" class="size-6" />
       </a>
 
-      <a href="https://www.youtube.com/@devlos-labs" aria-label="Youtube" target="_blank">
+      <a
+        href="https://www.youtube.com/@devlos-labs"
+        aria-label="Youtube"
+        target="_blank"
+        class="hover:text-foreground-active"
+      >
         <Icon name="lucide:youtube" class="size-6" />
       </a>
 
-      <a href="https://leetcode.com/devlos/" aria-label="Leetcode" target="_blank">
+      <a
+        href="https://leetcode.com/devlos/"
+        aria-label="Leetcode"
+        target="_blank"
+        class="hover:text-foreground-active"
+      >
         <Icon name="lucide:pyramid" class="size-6" />
       </a>
 
@@ -87,13 +103,13 @@
           <Icon
             v-if="$colorMode.preference === 'dark'"
             name="lucide:sun"
-            class="size-6 cursor-pointer"
+            class="hover:text-foreground-active size-6 cursor-pointer"
             @click="$colorMode.preference = 'light'"
           />
           <Icon
             v-else
             name="lucide:moon"
-            class="size-6 cursor-pointer"
+            class="hover:text-foreground-active size-6 cursor-pointer"
             @click="$colorMode.preference = 'dark'"
           />
         </AppTransition>
