@@ -2,7 +2,7 @@
   <div class="grid h-dvh grid-cols-1">
     <div class="p-6 sm:p-16 md:ps-24 md:pt-26">
       <div class="flex max-w-3xl flex-col gap-6 lg:flex-row lg:gap-13">
-        <NuxtLink to="/" class="inline-block shrink-0">
+        <NuxtLink to="/" class="inline-block shrink-0" aria-label="About">
           <img
             class="size-18 rounded-full object-cover object-top md:size-22"
             src="/assets/stud-120.jpg"
@@ -12,7 +12,7 @@
 
         <div class="w-full pt-1">
           <div class="pb-10">
-            <NuxtLink to="/" class="mb-3 inline-block">
+            <NuxtLink to="/" class="mb-3 inline-block" aria-label="About">
               <h1 class="font-instrument-serif text-4xl tracking-wider italic">
                 Carlos Aguilera
               </h1>
