@@ -5,7 +5,7 @@
         <NuxtLink to="/" class="inline-block shrink-0">
           <img
             class="size-18 rounded-full object-cover object-top md:size-22"
-            src="/assets/stud.jpeg"
+            src="/assets/stud-120.jpg"
             alt="Carlos Aguilera"
           />
         </NuxtLink>
