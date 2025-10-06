@@ -13,7 +13,7 @@
   --background: oklch(95.814% 0 0);
   /* base content */
   --foreground: oklch(19.162% 0 0);
-  --foreground-active: oklch(27.274% 0.00003 271.152);
+  --foreground-active: oklch(30.519% 0.00003 271.152);
 
   /* base 200 */
   --card: oklch(82.4% 0 0);

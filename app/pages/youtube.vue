@@ -4,8 +4,11 @@ const config = useRuntimeConfig();
 const URL = `https://www.googleapis.com/youtube/v3/search?key=${config.public.youtubeApiKey}&channelId=${config.public.channelId}&part=snippet,id&order=date&maxResults=10`;
 
 const videos = ref<any[]>([]);
+const isLoading = ref(false);
 
 onMounted(async () => {
+  isLoading.value = true;
+
   const res = await $fetch<any>(URL);
 
   const data = res.items
@@ -26,12 +29,17 @@ onMounted(async () => {
     });
 
   videos.value = data;
+
+  isLoading.value = false;
 });
 </script>
 
 <template>
   <div>
-    <div class="flex flex-col gap-5">
+    <div v-if="isLoading" class="py-4 text-center">
+      <Icon name="lucide:loader-circle" class="size-8 animate-spin" />
+    </div>
+    <div v-else class="flex flex-col gap-5">
       <a
         v-for="video in videos"
         :video="video.url"

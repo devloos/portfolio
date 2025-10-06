@@ -19,21 +19,38 @@
             </NuxtLink>
 
             <div class="flex flex-wrap gap-3 sm:gap-6">
-              <NuxtLink to="/" active-class="text-foreground-active">About</NuxtLink>
+              <NuxtLink
+                to="/"
+                active-class="text-foreground-active underline underline-offset-2"
+              >
+                About
+              </NuxtLink>
 
-              <NuxtLink to="/experiences" active-class="text-foreground-active">
+              <NuxtLink
+                to="/experiences"
+                active-class="text-foreground-active underline underline-offset-2"
+              >
                 Experiences
               </NuxtLink>
 
-              <NuxtLink to="/projects" active-class="text-foreground-active">
+              <NuxtLink
+                to="/projects"
+                active-class="text-foreground-active underline underline-offset-2"
+              >
                 Projects
               </NuxtLink>
 
-              <NuxtLink to="/youtube" active-class="text-foreground-active">
+              <NuxtLink
+                to="/youtube"
+                active-class="text-foreground-active underline underline-offset-2"
+              >
                 Youtube
               </NuxtLink>
 
-              <NuxtLink to="/resume" active-class="text-foreground-active">
+              <NuxtLink
+                to="/resume"
+                active-class="text-foreground-active underline underline-offset-2"
+              >
                 Resume
               </NuxtLink>
             </div>
