@@ -61,15 +61,13 @@ const chroma = computed(() => {
 
 <template>
   <div class="relative">
-    <Teleport to="body">
-      <NeuralBg
-        class="-z-10"
-        :backgroundColor="bgColor"
-        :hue="0"
-        :saturation="0"
-        :chroma="chroma"
-      />
-    </Teleport>
+    <NeuralBg
+      class="fixed inset-0 -z-10"
+      :backgroundColor="bgColor"
+      :hue="0"
+      :saturation="0"
+      :chroma="chroma"
+    />
 
     <NuxtLayout>
       <NuxtPage />
