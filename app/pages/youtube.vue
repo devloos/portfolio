@@ -31,17 +31,23 @@ onMounted(async () => {
         class="group/title"
       >
         <div class="flex flex-col gap-3 sm:flex-row">
-          <img :src="video.thumbnail" class="w-[480px] sm:w-[160px]" :alt="video.title" />
+          <img
+            :src="video.thumbnail"
+            class="h-min w-full sm:w-[160px]"
+            :alt="video.title"
+          />
 
           <div>
             <div
-              class="text-foreground-active mb-2 flex items-center gap-2 text-lg font-bold tracking-wide"
+              class="text-foreground-active mb-2 gap-2 text-lg font-bold tracking-wide"
             >
-              <span>{{ video.title }}</span>
-              <Icon
-                class="inline w-5 transition-all group-hover/title:translate-x-1 group-hover/title:-translate-y-1"
-                name="lucide:square-arrow-out-up-right"
-              />
+              <div>
+                {{ video.title }}
+                <Icon
+                  class="w-5 -translate-y-0.5 align-middle transition-all group-hover/title:translate-x-1 group-hover/title:-translate-y-1"
+                  name="lucide:square-arrow-out-up-right"
+                />
+              </div>
             </div>
 
             <p class="text-muted-foreground leading-relaxed tracking-wide">
