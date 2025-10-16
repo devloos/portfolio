@@ -13,9 +13,14 @@
         <div class="w-full pt-1">
           <div class="pb-10">
             <NuxtLink to="/" class="mb-3 inline-block" aria-label="About">
-              <h1 class="font-instrument-serif text-4xl tracking-wider italic">
-                Carlos Aguilera
-              </h1>
+              <RadiantText
+                class="hover:text-foreground inline-flex items-center justify-center transition ease-out hover:duration-300"
+                :duration="5"
+              >
+                <h1 class="font-instrument-serif text-4xl tracking-wider italic">
+                  Carlos Aguilera
+                </h1>
+              </RadiantText>
             </NuxtLink>
 
             <div class="flex flex-wrap gap-3 sm:gap-6">
