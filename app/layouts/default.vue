@@ -1,3 +1,17 @@
+<script setup lang="ts">
+const { lock, unlock } = useBodyScroll();
+const refPortfolioVersions = useTemplateRef('portfolio-versions');
+
+function openPortfolioVersions() {
+  refPortfolioVersions.value?.showModal();
+  lock();
+}
+
+function closePortfolioVersions() {
+  refPortfolioVersions.value?.close();
+  unlock();
+}
+</script>
 <template>
   <div class="grid h-dvh grid-cols-1">
     <div class="p-6 sm:p-16 md:ps-24 md:pt-26">
@@ -110,6 +124,13 @@
         <Icon name="lucide:pyramid" class="size-6" />
       </a>
 
+      <button
+        class="hover:text-foreground-active cursor-pointer transition-all"
+        @click="openPortfolioVersions"
+      >
+        <Icon name="lucide:timer" class="size-6" />
+      </button>
+
       <ClientOnly>
         <AppTransition name="scale" mode="out-in" :duration="150">
           <Icon
@@ -127,5 +148,59 @@
         </AppTransition>
       </ClientOnly>
     </div>
+
+    <dialog
+      ref="portfolio-versions"
+      class="bg-background/25 m-0 h-full max-h-full! w-full max-w-full! backdrop-blur-lg"
+      @close="closePortfolioVersions"
+    >
+      <div class="flex h-full flex-col">
+        <form method="dialog" class="flex justify-end p-2">
+          <button
+            class="hover:text-foreground-active text-foreground cursor-pointer transition-all"
+          >
+            <Icon name="lucide:x" class="size-6" />
+          </button>
+        </form>
+
+        <div
+          class="flex grow translate-y-0 transform items-center justify-center gap-4 px-6 opacity-100 transition-all sm:px-24 starting:translate-y-96 starting:opacity-0"
+        >
+          <div class="flex flex-col items-center justify-center gap-4 lg:flex-row">
+            <a
+              class="cursor-pointer perspective-distant"
+              href="https://v1.caguilera.dev/#/"
+              target="_blank"
+            >
+              <div
+                class="relative transform transition-all hover:rotate-y-0 lg:rotate-y-12"
+              >
+                <SafariMockup
+                  url="v1.caguilera.dev"
+                  src="/assets/v1.jpg"
+                  class="size-full"
+                />
+              </div>
+            </a>
+
+            <a
+              class="cursor-pointer perspective-distant"
+              href="https://v2.caguilera.dev/"
+              target="_blank"
+            >
+              <div
+                class="relative transform transition-all hover:rotate-y-0 lg:-rotate-y-12"
+              >
+                <SafariMockup
+                  url="v2.caguilera.dev"
+                  src="/assets/v2.jpg"
+                  class="size-full"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </dialog>
   </div>
 </template>
