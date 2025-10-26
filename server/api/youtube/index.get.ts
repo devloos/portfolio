@@ -17,6 +17,8 @@ export default defineCachedEventHandler(
           part: 'snippet,id',
           order: 'date',
           maxResults: String(maxResults),
+          type: 'video',
+          videoDuration: 'any',
         },
       });
 
