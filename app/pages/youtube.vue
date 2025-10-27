@@ -1,20 +1,33 @@
 <script lang="ts" setup>
 const videos = ref<any[]>([]);
 const isLoading = ref(false);
+const nextPageToken = ref<string | null>(null);
+const prevPageToken = ref<string | null>(null);
+const currentPage = ref(1);
+const totalResults = ref(0);
 
 onMounted(async () => {
+  await fetchVideos();
+});
+
+const fetchVideos = async (pageToken: string | null = null) => {
   isLoading.value = true;
 
   try {
-    const res = await $fetch<{ items: YtVideo[] }>('/api/youtube');
+    const res = await $fetch<YoutubeResponse>('/api/youtube', {
+      ...(pageToken && { query: { pageToken } }),
+    });
 
     videos.value = res.items;
+    nextPageToken.value = res.nextPageToken;
+    prevPageToken.value = res.prevPageToken;
+    totalResults.value = res.totalResults;
   } catch {
     // todo: handle error
   } finally {
     isLoading.value = false;
   }
-});
+};
 </script>
 
 <template>
@@ -56,6 +69,52 @@ onMounted(async () => {
           </div>
         </div>
       </a>
+
+      <div class="flex items-center justify-center gap-5">
+        <Icon
+          class="size-6"
+          :class="{
+            'cursor-not-allowed opacity-50': prevPageToken === null,
+            'cursor-pointer': prevPageToken !== null,
+          }"
+          name="lucide:chevron-left"
+          @click="
+            () => {
+              if (prevPageToken !== null) {
+                currentPage--;
+                fetchVideos(prevPageToken);
+              }
+            }
+          "
+        />
+
+        <span class="text-foreground-active space-x-2">
+          <span>
+            {{ currentPage }}
+          </span>
+          <span>of</span>
+          <span>
+            {{ Math.ceil(totalResults / 5) }}
+          </span>
+        </span>
+
+        <Icon
+          class="size-6"
+          :class="{
+            'cursor-not-allowed opacity-50': nextPageToken === null,
+            'cursor-pointer': nextPageToken !== null,
+          }"
+          name="lucide:chevron-right"
+          @click="
+            () => {
+              if (nextPageToken !== null) {
+                currentPage++;
+                fetchVideos(nextPageToken);
+              }
+            }
+          "
+        />
+      </div>
     </div>
     <div
       v-else

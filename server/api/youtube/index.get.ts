@@ -1,11 +1,11 @@
 export default defineCachedEventHandler(
-  async (event) => {
+  async (event): Promise<YoutubeResponse> => {
     const config = useRuntimeConfig(event);
 
     const apiKey = config.youtubeApiKey;
     const channelId = config.public.channelId;
 
-    const { maxResults = '10' } = getQuery(event);
+    const { maxResults = '5', pageToken } = getQuery(event);
 
     const url = 'https://www.googleapis.com/youtube/v3/search';
 
@@ -16,9 +16,10 @@ export default defineCachedEventHandler(
           channelId: String(channelId),
           part: 'snippet,id',
           order: 'date',
-          maxResults: String(maxResults),
           type: 'video',
-          videoDuration: 'any',
+          videoDuration: 'medium',
+          maxResults: String(maxResults),
+          ...(pageToken && { pageToken: String(pageToken) }),
         },
       });
 
@@ -38,6 +39,9 @@ export default defineCachedEventHandler(
 
       return {
         items,
+        nextPageToken: res?.nextPageToken ?? null,
+        prevPageToken: res?.prevPageToken ?? null,
+        totalResults: res?.pageInfo?.totalResults ?? 0,
       };
     } catch {
       throw createError({
@@ -51,7 +55,7 @@ export default defineCachedEventHandler(
     maxAge: 60 * 60,
     getKey: (event) => {
       const q = getQuery(event);
-      return `yt-videos:${q.channelId}:${q.maxResults}`;
+      return `yt-videos:${q.channelId}:${q.maxResults}:${q.pageToken ?? 'first'}`;
     },
   },
 );
