@@ -79,6 +79,14 @@ function closePortfolioVersions() {
               >
                 Resume
               </NuxtLink>
+
+              <NuxtLink
+                to="/detours"
+                class="hover:text-foreground-active transition-all"
+                active-class="text-foreground-active underline underline-offset-2"
+              >
+                Detours
+              </NuxtLink>
             </div>
           </div>
 
