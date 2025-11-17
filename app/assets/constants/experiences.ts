@@ -3,7 +3,7 @@ import type { Experience } from '~/types';
 export const EXPERIENCES: Experience[] = [
   {
     id: 5,
-    title: 'Lead Developer / Owner',
+    title: 'Lead Software Engineer / Owner',
     company: 'The Inked Network',
     summary:
       'Launched a Nuxt + Supabase platform adopted by 200+ artists with real-time chat, subscriptions, and AI-powered search. Integrated Stripe, GPT-4o, Google Maps, and ImageKit/S3, and enforced RLS policies for secure, scalable data isolation.',
