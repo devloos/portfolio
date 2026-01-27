@@ -1,13 +1,19 @@
 <script setup lang="ts">
 const { lock, unlock } = useBodyScroll();
 const refPortfolioVersions = useTemplateRef('portfolio-versions');
+const shouldAllowTransitions = ref(false);
 
 function openPortfolioVersions() {
   refPortfolioVersions.value?.showModal();
   lock();
+
+  setTimeout(() => {
+    shouldAllowTransitions.value = true;
+  }, 300);
 }
 
 function closePortfolioVersions() {
+  shouldAllowTransitions.value = false;
   refPortfolioVersions.value?.close();
   unlock();
 }
@@ -95,12 +101,12 @@ function closePortfolioVersions() {
       </div>
     </div>
 
-    <div class="space-x-3.5 self-end pt-5 pb-3.5 text-center">
+    <div class="flex items-center justify-center gap-x-3.5 self-end pt-5 pb-3.5">
       <a
         href="https://www.linkedin.com/in/aguilerac"
         aria-label="Linkedin"
         target="_blank"
-        class="hover:text-foreground-active transition-all"
+        class="hover:text-foreground-active flex items-center justify-center transition-all"
       >
         <Icon name="lucide:linkedin" class="size-6" />
       </a>
@@ -109,7 +115,7 @@ function closePortfolioVersions() {
         href="https://github.com/devloos"
         aria-label="Github"
         target="_blank"
-        class="hover:text-foreground-active transition-all"
+        class="hover:text-foreground-active flex items-center justify-center transition-all"
       >
         <Icon name="lucide:github" class="size-6" />
       </a>
@@ -118,7 +124,7 @@ function closePortfolioVersions() {
         href="https://www.youtube.com/@devlos-labs"
         aria-label="Youtube"
         target="_blank"
-        class="hover:text-foreground-active transition-all"
+        class="hover:text-foreground-active flex items-center justify-center transition-all"
       >
         <Icon name="lucide:youtube" class="size-6" />
       </a>
@@ -127,30 +133,30 @@ function closePortfolioVersions() {
         href="https://leetcode.com/devlos/"
         aria-label="Leetcode"
         target="_blank"
-        class="hover:text-foreground-active transition-all"
+        class="hover:text-foreground-active flex items-center justify-center transition-all"
       >
         <Icon name="lucide:pyramid" class="size-6" />
       </a>
 
       <button
-        class="hover:text-foreground-active cursor-pointer transition-all"
+        class="hover:text-foreground-active flex cursor-pointer items-center justify-center transition-all"
         @click="openPortfolioVersions"
       >
         <Icon name="lucide:timer" class="size-6" />
       </button>
 
       <ClientOnly>
-        <AppTransition name="scale" mode="out-in" :duration="150">
+        <AppTransition name="fade" mode="out-in" :duration="150">
           <Icon
             v-if="$colorMode.preference === 'dark'"
             name="lucide:sun"
-            class="hover:text-foreground-active size-6 cursor-pointer transition-all"
+            class="hover:text-foreground-active flex size-6 cursor-pointer items-center justify-center transition-all"
             @click="$colorMode.preference = 'light'"
           />
           <Icon
             v-else
             name="lucide:moon"
-            class="hover:text-foreground-active size-6 cursor-pointer transition-all"
+            class="hover:text-foreground-active flex size-6 cursor-pointer items-center justify-center transition-all"
             @click="$colorMode.preference = 'dark'"
           />
         </AppTransition>
@@ -165,7 +171,7 @@ function closePortfolioVersions() {
       <div class="flex h-full flex-col">
         <form method="dialog" class="flex justify-end p-2">
           <button
-            class="hover:text-foreground-active text-foreground cursor-pointer transition-all"
+            class="hover:text-foreground-active text-foreground flex cursor-pointer items-center justify-center transition-all"
           >
             <Icon name="lucide:x" class="size-6" />
           </button>
@@ -181,7 +187,10 @@ function closePortfolioVersions() {
               target="_blank"
             >
               <div
-                class="relative transform transition-all hover:rotate-y-0 lg:rotate-y-12"
+                class="relative transform lg:rotate-y-12"
+                :class="{
+                  'transition-all hover:rotate-y-0': shouldAllowTransitions,
+                }"
               >
                 <SafariMockup
                   url="v1.caguilera.dev"
@@ -197,7 +206,10 @@ function closePortfolioVersions() {
               target="_blank"
             >
               <div
-                class="relative transform transition-all hover:rotate-y-0 lg:-rotate-y-12"
+                class="relative transform lg:-rotate-y-12"
+                :class="{
+                  'transition-all hover:rotate-y-0': shouldAllowTransitions,
+                }"
               >
                 <SafariMockup
                   url="v2.caguilera.dev"
