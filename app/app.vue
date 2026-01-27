@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const BG_DARK_HEX = '#1A1A1A';
+const BG_DARK_HEX = '#000000';
 const BG_LIGHT_HEX = '#F1F1F1';
 
 const config = useRuntimeConfig();

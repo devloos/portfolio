@@ -33,16 +33,26 @@ function closePortfolioVersions() {
         <div class="w-full pt-1">
           <div class="pb-10">
             <ClientOnly>
-              <NuxtLink to="/" class="mb-3 inline-block" aria-label="About">
-                <RadiantText
-                  class="hover:text-foreground inline-flex items-center justify-center transition ease-out hover:duration-300"
-                  :duration="5"
-                >
+              <template #default>
+                <NuxtLink to="/" class="mb-3 inline-block" aria-label="About">
+                  <RadiantText
+                    class="hover:text-foreground inline-flex items-center justify-center transition ease-out hover:duration-300"
+                    :duration="5"
+                  >
+                    <h1 class="font-instrument-serif text-4xl tracking-wider italic">
+                      Carlos Aguilera
+                    </h1>
+                  </RadiantText>
+                </NuxtLink>
+              </template>
+
+              <template #fallback>
+                <NuxtLink to="/" class="mb-3 inline-block" aria-label="About">
                   <h1 class="font-instrument-serif text-4xl tracking-wider italic">
                     Carlos Aguilera
                   </h1>
-                </RadiantText>
-              </NuxtLink>
+                </NuxtLink>
+              </template>
             </ClientOnly>
 
             <div class="flex flex-wrap gap-3 sm:gap-6">
@@ -146,20 +156,25 @@ function closePortfolioVersions() {
       </button>
 
       <ClientOnly>
-        <AppTransition name="fade" mode="out-in" :duration="150">
-          <Icon
-            v-if="$colorMode.preference === 'dark'"
-            name="lucide:sun"
-            class="hover:text-foreground-active flex size-6 cursor-pointer items-center justify-center transition-all"
-            @click="$colorMode.preference = 'light'"
-          />
-          <Icon
-            v-else
-            name="lucide:moon"
-            class="hover:text-foreground-active flex size-6 cursor-pointer items-center justify-center transition-all"
-            @click="$colorMode.preference = 'dark'"
-          />
-        </AppTransition>
+        <template #default>
+          <AppTransition name="fade" mode="out-in" :duration="150">
+            <Icon
+              v-if="$colorMode.preference === 'dark'"
+              name="lucide:sun"
+              class="hover:text-foreground-active flex size-6 cursor-pointer items-center justify-center transition-all"
+              @click="$colorMode.preference = 'light'"
+            />
+            <Icon
+              v-else
+              name="lucide:moon"
+              class="hover:text-foreground-active flex size-6 cursor-pointer items-center justify-center transition-all"
+              @click="$colorMode.preference = 'dark'"
+            />
+          </AppTransition>
+        </template>
+        <template #fallback>
+          <Icon name="lucide:sun" class="size-6" />
+        </template>
       </ClientOnly>
     </div>
 
