@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     public: {
       baseUrl: process.env.NUXT_BASE_URL,
       channelId: 'UCDAXiYNVkGEZxb6AOgbz14g',
+      imageKitUrl: 'https://ik.imagekit.io/devlos/portfolio',
     },
   },
   modules: [
