@@ -71,6 +71,25 @@ function getGridStyle(item: GalleryItem) {
         />
       </div>
     </div>
+
+    <p class="pt-4 pb-1 text-lg font-bold">"I told you not to take the website down!"</p>
+    <iframe
+      class="aspect-video w-full"
+      src="https://www.youtube.com/embed/uRGljemfwUE?si=sMLnpC7vUUFaW08v"
+      title="YouTube video player"
+      frameborder="0"
+      allow="
+        accelerometer;
+        autoplay;
+        clipboard-write;
+        encrypted-media;
+        gyroscope;
+        picture-in-picture;
+        web-share;
+      "
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    />
   </div>
 </template>
 
