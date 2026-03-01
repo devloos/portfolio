@@ -246,7 +246,7 @@ export const PROJECTS: Project[] = [
     id: 6,
     title: 'Vue.js Snippets (Vscode Extension)',
     description:
-      'Built a Vue 3 productivity extension for VS Code used by over 10,000 developers to speed up component and template creation.',
+      'Built a Vue 3 productivity extension for VS Code used by over 15,000 developers to speed up component and template creation.',
     featured: false,
     site: 'https://marketplace.visualstudio.com/items?itemName=devlos.vuejs-snippets',
     source: 'https://github.com/devloos/vuejs-snippets',
