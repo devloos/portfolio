@@ -1,11 +1,11 @@
 import type { Project } from '~/types';
 
-export const FEATURED_PROJECTS: Project[] = [
+export const PROJECTS: Project[] = [
   {
     id: 9,
     title: 'Saddleback Robotics',
     description:
-      'Built a ROS2-integrated Django GUI controlling rover subsystems (pumps, drill, height), and visualized navigation data (GPS & heading). Helped team climb 3 ranks in competition.',
+      'Built a ROS2-integrated Django GUI to control rover subsystems and visualize GPS and heading data, helping the team climb 3 ranks in competition.',
     featured: true,
     site: 'https://www.youtube.com/watch?v=2kkPbTSSpe0',
     source: 'https://github.com/SaddlebackCollegeRobotics',
@@ -52,7 +52,7 @@ export const FEATURED_PROJECTS: Project[] = [
     id: 2,
     title: 'Street Fighter',
     description:
-      'Built a networked Java multiplayer fighting game using multithreading and a client-server model. Ensured thread safety (locks, volatile), and serialized game state updates across clients.',
+      'Built a networked Java multiplayer fighting game using a client server model with multithreading and synchronized game state across players.',
     featured: true,
     site: null,
     source: 'https://github.com/devloos/Street-Fighter',
@@ -77,7 +77,7 @@ export const FEATURED_PROJECTS: Project[] = [
     id: 5,
     title: 'Monster Quest',
     description:
-      'Created a modular Python RPG (pygame-ce) with event-driven architecture, sprite animations, and optimized game loop for smooth gameplay. Designed for extensibility and reusability.',
+      'Built a modular Python RPG with event driven architecture, sprite animations, and a smooth optimized game loop designed for easy expansion.',
     featured: true,
     site: null,
     source: 'https://github.com/devloos/monster-quest',
@@ -114,7 +114,7 @@ export const FEATURED_PROJECTS: Project[] = [
     id: 4,
     title: 'Sales System',
     description:
-      'Delivered a terminal POS in C++ with auto-complete, employee-level permissions, receipt generation, and custom STL containers. Employed RAII and move semantics to ensure safety and performance.',
+      'Built a terminal based C++ POS with role based permissions, receipt generation, and custom data structures using RAII for safety and performance.',
     featured: true,
     site: null,
     source: 'https://github.com/devloos/Sales-System',
@@ -147,14 +147,11 @@ export const FEATURED_PROJECTS: Project[] = [
       },
     ],
   },
-] as const;
-
-export const PROJECTS: Project[] = [
   {
     id: 3,
     title: 'Graphics Modeler',
     description:
-      "This project implements a C++ library for 2D graphical objects, emphasizing core programming concepts such as inheritance, aggregation, polymorphism, and more. It utilizes Qt's GUI capabilities, featuring a user-friendly interface for manipulating object properties and adheres to agile development methodologies, including Scrum practices and UML diagrams for design and implementation planning.",
+      'Built a 2D graphics library in C++ with Qt, applying inheritance and polymorphism to power a GUI for manipulating shapes and object properties.',
     featured: false,
     site: null,
     source: 'https://github.com/devloos/Graphics-Modeler',
@@ -178,13 +175,7 @@ export const PROJECTS: Project[] = [
         url: 'https://github.com/torvalds/linux',
         featured: false,
       },
-      {
-        id: 17,
-        title: 'QT',
-        logoName: 'qt',
-        url: 'https://doc.qt.io',
-        featured: false,
-      },
+      { id: 17, title: 'QT', logoName: 'qt', url: 'https://doc.qt.io', featured: false },
       {
         id: 18,
         title: 'CMake',
@@ -198,7 +189,7 @@ export const PROJECTS: Project[] = [
     id: 8,
     title: 'Terminal Snake Game',
     description:
-      'Developed a terminal-based Snake game using modern C++ and ncurses. Implemented a modular architecture, separating game logic, rendering, and input handling for maintainability and scalability.',
+      'Built a modular terminal based Snake game in modern C++ using ncurses, cleanly separating game logic, rendering, and input handling.',
     featured: false,
     site: null,
     source: 'https://github.com/devloos/Snake-Game',
@@ -212,20 +203,8 @@ export const PROJECTS: Project[] = [
         url: 'https://en.cppreference.com/w',
         featured: true,
       },
-      {
-        id: 45,
-        title: 'Tui',
-        logoName: null,
-        url: null,
-        featured: false,
-      },
-      {
-        id: 46,
-        title: 'Ncurses',
-        logoName: null,
-        url: null,
-        featured: false,
-      },
+      { id: 45, title: 'Tui', logoName: null, url: null, featured: false },
+      { id: 46, title: 'Ncurses', logoName: null, url: null, featured: false },
       {
         id: 18,
         title: 'CMake',
@@ -239,7 +218,7 @@ export const PROJECTS: Project[] = [
     id: 11,
     title: 'Standard Template Library',
     description:
-      'A custom implementation of my own version of the C++ Standard Template Library (STL). This repository serves as a growing library where I design and add various data structures as I encounter the need for them in different projects. Each data structure is implemented to mimic or enhance the functionality found in the standard STL.',
+      'Built a custom C++ STL style library implementing core data structures from scratch to mirror and extend standard container behavior.',
     featured: false,
     site: null,
     source: 'https://github.com/devloos/STL',
@@ -253,13 +232,7 @@ export const PROJECTS: Project[] = [
         url: 'https://en.cppreference.com/w',
         featured: true,
       },
-      {
-        id: 47,
-        title: 'Library',
-        logoName: null,
-        url: null,
-        featured: false,
-      },
+      { id: 47, title: 'Library', logoName: null, url: null, featured: false },
       {
         id: 14,
         title: 'Linux',
@@ -273,7 +246,7 @@ export const PROJECTS: Project[] = [
     id: 6,
     title: 'Vue.js Snippets (Vscode Extension)',
     description:
-      'Vue.js snippets to increase your productivity (supports vue 3). Has reached over 10,000 active users.',
+      'Built a Vue 3 productivity extension for VS Code used by over 10,000 developers to speed up component and template creation.',
     featured: false,
     site: 'https://marketplace.visualstudio.com/items?itemName=devlos.vuejs-snippets',
     source: 'https://github.com/devloos/vuejs-snippets',
@@ -287,27 +260,15 @@ export const PROJECTS: Project[] = [
         url: 'https://vuejs.org/guide/introduction.html',
         featured: true,
       },
-      {
-        id: 39,
-        title: 'Vscode',
-        logoName: null,
-        url: null,
-        featured: false,
-      },
-      {
-        id: 40,
-        title: 'Extensions',
-        logoName: null,
-        url: null,
-        featured: false,
-      },
+      { id: 39, title: 'Vscode', logoName: null, url: null, featured: false },
+      { id: 40, title: 'Extensions', logoName: null, url: null, featured: false },
     ],
   },
   {
     id: 7,
     title: 'Raycast Format JSON Extension',
     description:
-      'Formats a JSON file with a selected indentation. If the JSON is stringified, it will be parsed before formatting. Reached over 30k active users.',
+      'Built a Raycast extension with 30K+ users that parses and formats JSON with customizable indentation for fast everyday workflows.',
     featured: false,
     site: 'https://www.raycast.com/destiner/json-format',
     source:
@@ -315,41 +276,17 @@ export const PROJECTS: Project[] = [
     file: null,
     visible: true,
     tags: [
-      {
-        id: 42,
-        title: 'Typescript',
-        logoName: null,
-        url: null,
-        featured: false,
-      },
-      {
-        id: 43,
-        title: 'Raycast',
-        logoName: null,
-        url: null,
-        featured: false,
-      },
-      {
-        id: 44,
-        title: 'Extensions',
-        logoName: null,
-        url: null,
-        featured: false,
-      },
-      {
-        id: 41,
-        title: 'React.js',
-        logoName: 'react',
-        url: null,
-        featured: true,
-      },
+      { id: 42, title: 'Typescript', logoName: null, url: null, featured: false },
+      { id: 43, title: 'Raycast', logoName: null, url: null, featured: false },
+      { id: 44, title: 'Extensions', logoName: null, url: null, featured: false },
+      { id: 41, title: 'React.js', logoName: 'react', url: null, featured: true },
     ],
   },
   {
     id: 1,
     title: 'El Andariego',
     description:
-      'Developed a responsive website for a local food truck. Added language switching (i18n), Square API for online orders, and automated emails for confirmations, helping the business grow its customer base. Implemented cron jobs to automate database updates for new menu items and designed reusable utility components, including image, table, select, and calendar tools.',
+      'Built a responsive website for a local food truck with i18n, Square online ordering, automated emails, and cron driven menu updates to support growth.',
     featured: false,
     site: 'https://www.elandariegotruck.com/',
     source: 'https://github.com/devloos/El-Andariego',
@@ -400,7 +337,7 @@ export const PROJECTS: Project[] = [
     id: 10,
     title: 'LeetCode',
     description:
-      'This is a curated collection of my solved LeetCode problems. Each problem includes detailed explanations of the solution, with a clear breakdown of time and space complexity to help understand the efficiency of the approach.',
+      'A curated collection of solved LeetCode problems with clear explanations and time and space complexity breakdowns.',
     featured: false,
     site: 'https://leetcode.com/u/devlos',
     source: 'https://github.com/devloos/Leetcode',
@@ -421,13 +358,7 @@ export const PROJECTS: Project[] = [
         url: 'https://docs.python.org/3',
         featured: true,
       },
-      {
-        id: 27,
-        title: 'Algorithms',
-        logoName: null,
-        url: null,
-        featured: false,
-      },
+      { id: 27, title: 'Algorithms', logoName: null, url: null, featured: false },
       {
         id: 1,
         title: 'Typescript',
@@ -441,41 +372,17 @@ export const PROJECTS: Project[] = [
     id: 12,
     title: 'Shortcut Manager',
     description:
-      'This extension makes managing keyboard shortcuts for your application effortless. It lets you create and customize hotkeys to fit your workflow. It also helps you spot and fix duplicate shortcuts to avoid any conflicts.',
+      'Built a shortcut management extension that lets users create, customize, and resolve conflicting hotkeys for a smoother workflow.',
     featured: false,
     site: null,
     source: 'https://github.com/devloos/Shortcut-Manager',
     file: null,
     visible: true,
     tags: [
-      {
-        id: 42,
-        title: 'Typescript',
-        logoName: null,
-        url: null,
-        featured: false,
-      },
-      {
-        id: 43,
-        title: 'Raycast',
-        logoName: null,
-        url: null,
-        featured: false,
-      },
-      {
-        id: 44,
-        title: 'Extensions',
-        logoName: null,
-        url: null,
-        featured: false,
-      },
-      {
-        id: 41,
-        title: 'React.js',
-        logoName: 'react',
-        url: null,
-        featured: true,
-      },
+      { id: 42, title: 'Typescript', logoName: null, url: null, featured: false },
+      { id: 43, title: 'Raycast', logoName: null, url: null, featured: false },
+      { id: 44, title: 'Extensions', logoName: null, url: null, featured: false },
+      { id: 41, title: 'React.js', logoName: 'react', url: null, featured: true },
     ],
   },
 ] as const;

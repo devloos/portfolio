@@ -41,8 +41,8 @@ const normalizedDate = computed(() => {
 
     <div>
       <a
-        :href="experience.url"
-        target="_blank"
+        :href="experience.url || '#'"
+        :target="experience.url ? '_blank' : ''"
         class="group/title text-foreground-active mb-3 flex items-center gap-2 text-lg font-bold tracking-wide"
       >
         <span>{{ experience.title }} - {{ experience.company }}</span>
