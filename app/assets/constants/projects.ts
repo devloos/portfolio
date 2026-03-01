@@ -111,6 +111,19 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    id: 13,
+    title: 'Devlos UI',
+    description:
+      'Vue and CSS framework-agnostic. Fully typed, tree-shakeable, and customizable. Built for performance, DX, and seamless integration. Published on npm.',
+    featured: true,
+    site: null,
+    source: 'https://github.com/devloos/devlos-ui',
+    file: null,
+    visible: true,
+    tags: [],
+  },
+
+  {
     id: 4,
     title: 'Sales System',
     description:
@@ -184,6 +197,18 @@ export const PROJECTS: Project[] = [
         featured: false,
       },
     ],
+  },
+  {
+    id: 15,
+    title: 'DoodleMorph',
+    description:
+      'An AI-powered web app where you draw a quick sketch and watch it morph into a fully generated artwork using Diffusers and Florence-2, built with Vue, Flask, and Tailwind.',
+    featured: false,
+    site: null,
+    source: 'https://github.com/devloos/DoodleMorph',
+    file: null,
+    visible: true,
+    tags: [],
   },
   {
     id: 8,
@@ -384,5 +409,27 @@ export const PROJECTS: Project[] = [
       { id: 44, title: 'Extensions', logoName: null, url: null, featured: false },
       { id: 41, title: 'React.js', logoName: 'react', url: null, featured: true },
     ],
+  },
+  {
+    id: 14,
+    title: 'ZMK Config',
+    description: 'Custom ZMK config for the Corne Wireless keyboard.',
+    featured: false,
+    site: null,
+    source: 'https://github.com/devloos/corne-wireless-view-zmk-config',
+    file: null,
+    visible: true,
+    tags: [],
+  },
+  {
+    id: 16,
+    title: 'Runner Gunner',
+    description: "It's a game where you run and gun! Using Raylib and C++.",
+    featured: false,
+    site: null,
+    source: 'https://github.com/devloos/Runner-Gunner',
+    file: null,
+    visible: true,
+    tags: [],
   },
 ] as const;
