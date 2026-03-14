@@ -6,7 +6,7 @@ export const EXPERIENCES: Experience[] = [
     title: 'Lead Software Engineer',
     company: 'The Inked Network',
     summary:
-      'Led the end-to-end development of a cross-platform iOS and Android app, delivering v1 in four months and achieving 400 MAU, and designing secure backend infrastructure with new schemas, row-level security, and complete Stripe subscription management including Apple Pay compliance. Developed and ran high-scale systems such as an AI-driven media pipeline processing 130K images per month, real-time chat with RLS, push notifications with Edge Functions, and a production-grade CI/CD pipeline with preview environments and rollbacks.',
+      'Led development of a cross-platform iOS/Android app, shipping v1 in 4 months and reaching 400 MAU. Built the platform architecture, including Stripe subscription infrastructure, AI image pipelines (130k images/month), real-time chat, secure RLS database design, and CI/CD automation.',
     url: 'https://www.theinkednetwork.com',
     startDate: {
       date: '2025-06-18 17:00:00.000000',
@@ -22,7 +22,7 @@ export const EXPERIENCES: Experience[] = [
     title: 'Full Stack Developer',
     company: 'Ethika',
     summary:
-      'Saved over $75K per year in infrastructure and search cost savings by re-designing CDN architecture for CloudFront + S3 for our 300K MAU and moving away from Algolia towards TypeSense, as well as improving developer velocity through Docker environments that reduced our onboarding time from a day to under an hour. Built scalable internal systems such as an AI-powered CMS for music content with auto-processing of audio content, an ERP-integrated promo inventory system with barcode scanning capabilities, as well as a fully automated returns system with self-service functionality and one-click refunds.',
+      'Helped drive infrastructure and platform improvements for a 300k MAU e-commerce ecosystem, saving $78k+ annually through CDN and search migrations. Built internal infrastructure such as an AI-powered music CMS, ERP-integrated inventory tooling, automated return workflows, and modern analytics infrastructure.',
     url: 'https://www.ethika.com/',
     startDate: {
       date: '2022-05-25 23:00:00.000000',
@@ -79,10 +79,10 @@ export const EXPERIENCES: Experience[] = [
   },
   {
     id: 3,
-    title: 'Web Programmer',
+    title: 'Programmer',
     company: 'Saddleback College Robotics Club',
     summary:
-      'Built a Django + ROS2 GUI for real-time rover control and telemetry. Integrated live camera feeds into a Vue.js base station, helping the team reach the University Rover Challenge finals and rank three places higher.',
+      'Member of the only community college team to reach the University Rover Challenge Finals (World Rank 17). Built a ROS2-integrated Django base station for real-time rover navigation, telemetry, sensor streaming, and science platform control while training new members in robotics and autonomous systems.',
     url: '',
     startDate: {
       date: '2023-07-01 00:00:00.000000',
