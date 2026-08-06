@@ -26,13 +26,25 @@ const { imageKitUrl } = useRuntimeConfig().public;
 
     <br />
 
-    <p class="mb-3">
-      This is my son, Mateo. But us nerds call him Devteo. Get it Developer Teo... Anyways
-      hes already cracked at vim, gadot, and leetcode.
-    </p>
+    <div
+      class="pointer-events-none flex flex-col items-center gap-1 bg-linear-to-b from-black/70 via-black/25 to-transparent pt-3"
+    >
+      <p
+        class="font-caveat -rotate-6 text-center text-4xl leading-none text-white drop-shadow-lg sm:text-5xl"
+      >
+        my son, Mateo
+        <span class="block rotate-3 text-3xl sm:text-4xl">but we call him</span>
+        <span class="block -rotate-2 text-5xl text-orange-300 sm:text-6xl">Devteo</span>
+      </p>
+
+      <Icon
+        name="lucide:arrow-big-down-dash"
+        class="size-10 rotate-6 animate-bounce text-orange-300 drop-shadow-lg"
+      />
+    </div>
 
     <div
-      class="mx-auto mt-10 max-w-1/3 overflow-hidden rounded-2xl border-3 border-gray-600"
+      class="mx-auto mt-4 max-w-1/2 overflow-hidden rounded-2xl border-3 border-gray-600 md:max-w-1/3"
     >
       <img
         :src="`${imageKitUrl}/devteo.JPG`"

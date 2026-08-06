@@ -37,6 +37,11 @@ export default defineNuxtConfig({
         provider: 'google',
         weights: [400, 600, 700, 800, 900],
       },
+      {
+        name: 'Caveat',
+        provider: 'google',
+        weights: [400, 600, 700],
+      },
     ],
   },
   icon: {

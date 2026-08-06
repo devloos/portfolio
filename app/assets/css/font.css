@@ -7,3 +7,8 @@ body {
   font-weight: 500;
   font-style: normal italic;
 }
+
+@utility font-caveat {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+}
