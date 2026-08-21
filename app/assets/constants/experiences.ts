@@ -2,24 +2,8 @@ import type { Experience } from '~/types';
 
 export const EXPERIENCES: Experience[] = [
   {
-    id: 5,
-    title: 'Lead Software Engineer',
-    company: 'The Inked Network',
-    summary:
-      'Led development of a cross-platform iOS/Android app, shipping v1 in 4 months and reaching 400 MAU. Built the platform architecture, including Stripe subscription infrastructure, AI image pipelines (130k images/month), real-time chat, secure RLS database design, and CI/CD automation.',
-    url: 'https://www.theinkednetwork.com',
-    startDate: {
-      date: '2025-06-18 17:00:00.000000',
-      timezone_type: 3,
-      timezone: 'UTC',
-    },
-    endDate: null,
-    visible: true,
-    tags: [],
-  },
-  {
     id: 1,
-    title: 'Full Stack Developer',
+    title: 'Software Engineer',
     company: 'Ethika',
     summary:
       'Helped drive infrastructure and platform improvements for a 300k MAU e-commerce ecosystem, saving $78k+ annually through CDN and search migrations. Built internal infrastructure such as an AI-powered music CMS, ERP-integrated inventory tooling, automated return workflows, and modern analytics infrastructure.',
@@ -76,6 +60,22 @@ export const EXPERIENCES: Experience[] = [
         featured: true,
       },
     ],
+  },
+  {
+    id: 5,
+    title: 'Software Engineer',
+    company: 'The Inked Network',
+    summary:
+      'Led development of a cross-platform iOS/Android app, shipping v1 in 4 months and reaching 400 MAU. Built the platform architecture, including Stripe subscription infrastructure, AI image pipelines (130k images/month), real-time chat, secure RLS database design, and CI/CD automation.',
+    url: 'https://www.theinkednetwork.com',
+    startDate: {
+      date: '2025-06-18 17:00:00.000000',
+      timezone_type: 3,
+      timezone: 'UTC',
+    },
+    endDate: null,
+    visible: true,
+    tags: [],
   },
   {
     id: 3,
