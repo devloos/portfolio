@@ -13,8 +13,9 @@ const { imageKitUrl } = useRuntimeConfig().public;
     <br />
 
     <p class="mb-3">
-      I have 5 years of experience in software development. I like to desgin clean
-      systems, think about performance, and most importantly own projects end-to-end.
+      I have 4+ years of professional software development experience. I like to design
+      clean systems, think about performance, and most importantly, own projects
+      end-to-end.
     </p>
 
     <br />
