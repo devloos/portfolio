@@ -6,8 +6,9 @@ const { imageKitUrl } = useRuntimeConfig().public;
   <div class="leading-7">
     <p class="mb-3">
       Hey I'm Carlos. Someone who enjoys tech. I am a full time software developer at
-      Ethika. I am also a lead software engineer at The Inked Network. For school, I am a
-      Computer Science student at CSULB.
+      Ethika an e-commerce lifestyle company. I am also a lead software engineer at The
+      Inked Network a social networking app. For school, I am a Computer Science student
+      at CSULB.
     </p>
 
     <br />
