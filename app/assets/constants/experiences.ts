@@ -3,7 +3,7 @@ import type { Experience } from '~/types';
 export const EXPERIENCES: Experience[] = [
   {
     id: 1,
-    title: 'Software Engineer',
+    title: 'Full Stack Software Engineer',
     company: 'Ethika',
     summary:
       'Helped drive infrastructure and platform improvements for a 300k MAU e-commerce ecosystem, saving $78k+ annually through CDN and search migrations. Built internal infrastructure such as an AI-powered music CMS, ERP-integrated inventory tooling, automated return workflows, and modern analytics infrastructure.',
