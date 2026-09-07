@@ -80,13 +80,13 @@ function closePortfolioVersions() {
                 Projects
               </NuxtLink>
 
-              <NuxtLink
+              <!-- <NuxtLink
                 to="/youtube"
                 class="hover:text-foreground-active transition-all"
                 active-class="text-foreground-active underline underline-offset-2"
               >
                 Youtube
-              </NuxtLink>
+              </NuxtLink> -->
 
               <NuxtLink
                 to="/resume"
