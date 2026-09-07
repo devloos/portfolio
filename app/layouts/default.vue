@@ -130,14 +130,14 @@ function closePortfolioVersions() {
         <Icon name="lucide:github" class="size-6" />
       </a>
 
-      <a
+      <!-- <a
         href="https://www.youtube.com/@devlos-labs"
         aria-label="Youtube"
         target="_blank"
         class="hover:text-foreground-active flex items-center justify-center transition-all"
       >
         <Icon name="lucide:youtube" class="size-6" />
-      </a>
+      </a> -->
 
       <a
         href="https://leetcode.com/devlos/"
