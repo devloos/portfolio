@@ -1,6 +1,12 @@
 <script lang="ts" setup>
 import { PROJECTS } from '~/assets/constants/projects';
 
+useSeoMeta({
+  description: 'Side projects and apps built by Carlos Aguilera.',
+});
+
+useSchemaOrg([defineWebPage({ '@type': 'CollectionPage' })]);
+
 const PAGE_SIZE = 3;
 const currentPage = ref(1);
 const totalPages = computed(() => Math.ceil(PROJECTS.length / PAGE_SIZE));

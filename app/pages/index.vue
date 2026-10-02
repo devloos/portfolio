@@ -1,5 +1,12 @@
 <script lang="ts" setup>
 const { imageKitUrl } = useRuntimeConfig().public;
+
+useSchemaOrg([
+  defineWebPage({
+    '@type': ['WebPage', 'ProfilePage'],
+    mainEntity: { '@id': '#identity' },
+  }),
+]);
 </script>
 
 <template>

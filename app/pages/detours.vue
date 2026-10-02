@@ -11,6 +11,12 @@ const BASE_ROW_HEIGHT = 120;
 
 const { imageKitUrl } = useRuntimeConfig().public;
 
+useSeoMeta({
+  description: 'A photo gallery of life outside of code.',
+});
+
+useSchemaOrg([defineWebPage({ '@type': 'CollectionPage' })]);
+
 const galleryItems: GalleryItem[] = [
   { src: `${imageKitUrl}/1.jpg`, alt: 'Photo 1', width: 1486, height: 1984 },
   { src: `${imageKitUrl}/2.jpg`, alt: 'Photo 2', width: 1486, height: 1982 },

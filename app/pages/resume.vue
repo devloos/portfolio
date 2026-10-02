@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+useSeoMeta({
+  description: 'The resume of Carlos Aguilera, software engineer.',
+});
+</script>
+
 <template>
   <div class="w-full">
     <ClientOnly>
